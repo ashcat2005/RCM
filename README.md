@@ -1,3 +1,5 @@
 # MCR
 
-Notas de Clase del curso Mecánica Celeste Relativista.
+Lecture notes for the course **Relativistic Celestial Mechanics**.
+
+
