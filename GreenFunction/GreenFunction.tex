@@ -1,0 +1,82 @@
+The solution of the linearized field equations (\ref{eq:LinearizedWaveFieldEquations}),
+\begin{equation}
+\square \bar{h}_{\mu \nu}  = - \frac{16 \pi G}{c^4} T_{\mu \nu} + \Ordof \left( \epsilon^4 \right) , \label{eq:WaveEquationAppendix}
+\end{equation}
+can be written formally in terms of a Green function. We consider the auxiliary equation
+\begin{equation}
+\square \mathcal{G} (x,x') = - 4\pi \delta (x-x') = -4\pi \delta (ct-ct') \delta (\textbf{x} - \textbf{x}') \label{eq:GreenEquationAppendix}
+\end{equation}
+and propose that its solution has the form
+\begin{equation}
+ \mathcal{G} (x,x') = \frac{1}{2\pi} \int \mathcal{K} (\textbf{x},\textbf{x}';k) e^{-ik(x^0 - x'^0)}  dk. \label{eq:GreenFunction01Appendix}
+ \end{equation} 
+ 
+Replacing this transform into the wave equation (\ref{eq:GreenEquationAppendix}) gives
+\begin{eqnarray}
+\frac{1}{2\pi} \int \square \left[ \mathcal{K} (\textbf{x},\textbf{x}';k) e^{-ik(x^0 - x'^0)} \right] dk &=& -4\pi \delta (ct-ct') \delta (\textbf{x} - \textbf{x}')\notag \\
+ \frac{1}{2\pi} \int \left[k^2 +\nabla^2  \right] \mathcal{K} (\textbf{x},\textbf{x}';k) e^{-ik(x^0 - x'^0)}  dk &=&-4\pi \delta (ct-ct') \delta (\textbf{x} - \textbf{x}') \notag .
+\end{eqnarray} 
+
+Using the integral representation of the Dirac delta function,
+\begin{equation}
+\delta (x^0 - x'^0)=\frac{1}{2\pi} \int  e^{-ik(x^0 - x'^0)}  dk,
+\end{equation}
+the right hand side becomes
+ \begin{equation}
+  \frac{1}{2\pi} \int \left[k^2 +\nabla^2  \right] \mathcal{K} (\textbf{x},\textbf{x}';k) e^{-ik(x^0 - x'^0)}  dk =-4\pi \frac{1}{2\pi} \int  e^{-ik(x^0 - x'^0)}   \delta (\textbf{x} - \textbf{x}')  dk
+ \end{equation}
+and we conclude that
+  \begin{equation}
+  \left[k^2 +\nabla^2  \right] \mathcal{K} (\textbf{x},\textbf{x}';k)  =-4\pi  \delta (\textbf{x} - \textbf{x}'). \label{eq:aux01Appendix}
+ \end{equation}
+ 
+ The form of this equation let us write that the function $\mathcal{K}$ is
+ \begin{equation}
+ \mathcal{K}(\textbf{x},\textbf{x}';k) =
+ \begin{cases}
+ \frac{1}{\left| \textbf{x} - \textbf{x}' \right|} \text{ if } k=0 \\
+  \frac{ \bar{\mathcal{K}}\left(\left| \textbf{x} - \textbf{x}' \right|; k \right)}{\left| \textbf{x} - \textbf{x}' \right|} \text{ if } k\neq 0
+ \end{cases}
+ \end{equation}
+ where $\mathcal{K}\left(\left| \textbf{x} - \textbf{x}' \right|; k \right)$ must be a function with a regular behavior when $R = \left| \textbf{x} - \textbf{x}' \right| \rightarrow 0$. Replacing the $k \neq 0$ case in equation (\ref{eq:aux01Appendix}) gives
+ \begin{equation}
+\left[k^2 +\nabla^2  \right] \left[ \frac{ \bar{\mathcal{K}}\left(\left| \textbf{x} - \textbf{x}' \right|; k \right)}{\left| \textbf{x} - \textbf{x}' \right|} \right]  =-4\pi  \delta (\textbf{x} - \textbf{x}'). \label{eq:aux02Appendix}
+ \end{equation}
+ 
+ For $R \neq 0$ we have $\delta (\textbf{x} - \textbf{x}')=0$ and the Laplacian becomes
+ \begin{eqnarray}
+ \nabla^2 \left[ \frac{ \bar{\mathcal{K}}\left(\left| \textbf{x} - \textbf{x}' \right|; k \right)}{\left| \textbf{x} - \textbf{x}' \right|} \right] &=&  \frac{1}{R^2} \frac{d}{dR}\left[ R^2 \frac{d}{dR}\left( \frac{ \bar{\mathcal{K}}\left(R; k \right)}{R} \right) \right] \notag \\
+ &=& \frac{1}{R^2} \frac{d}{dR}\left[ R^2 \left(\frac{ 1}{R} \frac{d\bar{\mathcal{K}}\left(R; k \right)}{dR} - \frac{ \bar{\mathcal{K}}\left(R; k \right)}{R^2} \right) \right] \notag \\
+ &=& \frac{1}{R^2} \frac{d}{dR}\left[ R \frac{d\bar{\mathcal{K}}\left(R; k \right)}{dR} - \bar{\mathcal{K}}\left(R; k \right)  \right] \notag \\
+ &=& \frac{1}{R^2} \left[  \frac{d\bar{\mathcal{K}}\left(R; k \right)}{dR} + R \frac{d^2 \bar{\mathcal{K}}\left(R; k \right)}{dR^2} - \frac{d\bar{\mathcal{K}}\left(R; k \right)}{dR}  \right] \notag \\
+ &=& \frac{1}{R}  \frac{d^2\bar{\mathcal{K}}\left(R; k \right)}{dR^2} .
+ \end{eqnarray}
+ 
+ Then, equation (\ref{eq:aux02Appendix}) becomes
+  \begin{equation}
+\frac{d^2\bar{\mathcal{K}}\left(R; k \right)}{dR^2} + k^2 \bar{\mathcal{K}}\left(R; k \right)   = 0
+ \end{equation}
+ and its solution is
+ \begin{equation}
+ \bar{\mathcal{K}}_\pm \left(R; k \right) = e^{\pm ik R}.
+ \end{equation}
+ 
+ The Green functions are obtained by replacing this results back  in (\ref{eq:GreenEquationAppendix}),
+ \begin{equation}
+  \mathcal{G}_\pm (x,x') = \frac{1}{2\pi} \int \frac{e^{\pm ik \left| \textbf{x} - \textbf{x}' \right|}}{\left| \textbf{x} - \textbf{x}' \right|}  e^{-ik(x^0 - x'^0)}  dk =  \frac{1}{2\pi \left| \textbf{x} - \textbf{x}' \right|} \int  e^{-ik(x^0 - x'^0 \mp \left| \textbf{x} - \textbf{x}' \right| )}  dk.
+ \end{equation}
+ 
+Using the definition of the Dirac delta function let us write 
+\begin{equation}
+\mathcal{G}_\pm (x,x') = \frac{\delta \left( x^0 - x'^0 \mp \left| \textbf{x} - \textbf{x}' \right| \right)}{\left| \textbf{x} - \textbf{x}' \right| }
+ \end{equation}
+ or using $x^0 = ct$,
+ \begin{equation}
+\mathcal{G}_\pm (x,x') = \frac{\delta \left( ct - ct' \mp \left| \textbf{x} - \textbf{x}' \right| \right)}{\left| \textbf{x} - \textbf{x}' \right| }.
+ \end{equation}
+ 
+Due to causality relations, we are interested in the solution which is non-zero when  $ct-ct' = \left| \textbf{x} - \textbf{x}' \right| $, corresponding to $\mathcal{G}_\pm (x,x') = \mathcal{G}_R (x,x')$ and which is known as the \textit{retarded Green function},
+\begin{equation}
+\mathcal{G}_R (x,x') = \frac{\delta \left( ct - ct' - \left| \textbf{x} - \textbf{x}' \right| \right)}{\left| \textbf{x} - \textbf{x}' \right| }.
+\end{equation}
+ 

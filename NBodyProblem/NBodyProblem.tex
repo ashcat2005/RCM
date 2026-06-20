@@ -1,0 +1,77 @@
+\section{Energy-Momentum Tensor for a System of N-Particles}
+The energy momentum tensor for a system of N-particles labeled with the index $a=1,2,3,...,N$, with masses $m_a$ and located at the positions $x^\mu _a (\tau_a)$ is given by
+\begin{equation}
+T^{\mu \nu} (x) = \frac{1}{\sqrt{-g}} \sum _a m_a \int \frac{dx^\mu _a}{d\tau _a} \frac{dx^\nu _a}{d\tau _a} \delta ^4 \left( x - x_a (\tau_a) \right) d\tau_a ,
+\end{equation}
+where $\tau_a$ is the proper time of particle $m_a$.  Using the coordinate time $t$ as the parameter an integrating, the energy-momentum tensor components become
+\begin{equation}
+T^{\mu \nu} (x) = \frac{1}{\sqrt{-g}} \sum _a m_a  \frac{dx^\mu _a}{d t} \frac{dx^\nu _a}{dt} \left( \frac{d\tau _a}{dt}\right)^{-1}  \delta ^3 \left( \textbf{x} - \textbf{x}_a (t) \right). \label{eq:NParticlesEnergyMomentum01}
+\end{equation}
+
+In order to obtain the power expansion of these components, we use the definition of the Lagrangian in equation (\ref{eq:PNLagrangianDefinition}), to write
+\begin{equation}
+\frac{d\tau _a}{dt} = 1 - \frac{L_a}{m_a c^2 }.
+\end{equation}
+Using the post-Newtonian Lagrangian (\ref{eq:LagrangianMassiveParticle}), this equation gives
+\begin{equation}
+\left( \frac{d\tau _a}{dt}\right)^{-1}  = 1 + \frac{1}{2} \frac{\dot{\textbf{x}}^2}{c^2} + \frac{1}{2} \leftidx{^{(2)}}h_{00} + \Ordof \left( \epsilon^4 \right).
+\end{equation}
+
+The determinant of the post-Newtonian metric (\ref{eq:PNMetricInitial}), is approximated to 
+\begin{equation}
+g = -1 + \leftidx{^{(2)}} g +  \Ordof \left( \epsilon^4 \right) = -1 + \leftidx{^{(2)}}h_{00} - \delta^{jk} \leftidx{^{(2)}}h_{jk} +  \Ordof \left( \epsilon^4 \right),
+\end{equation}
+or in terms of the post-Newtonian potentials,
+\begin{equation}
+g = -1 + \frac{4\phi}{c^2} +  \Ordof \left( \epsilon^4 \right).
+\end{equation}
+
+Hence, we obtain the relation
+\begin{equation}
+\frac{1}{\sqrt{-g}} = 1 + \frac{2\phi}{c^2} +  \Ordof \left( \epsilon^4 \right),
+\end{equation}
+and replacing these relations in equation (\ref{eq:NParticlesEnergyMomentum01}) , there are obtained the different orders of approximation of the energy-momentum tensor components,
+\begin{subequations}\label{eq:NParticlesEnergyMomentum}
+\begin{align}
+\leftidx{^{(0)}} T^{00} (x) = & \sum _a m_a c^2 \delta^3 (\textbf{x} - \textbf{x}_a (t)) \\
+\leftidx{^{(2)}} T^{00} (x) = & \sum _a m_a \delta^3 (\textbf{x} - \textbf{x}_a (t)) \left( \frac{1}{2} \frac{\dot{\textbf{x}}^2_a}{c^2} + \frac{\phi (x)}{c^2} \right) \\
+\leftidx{^{(1)}} T^{0j} (x) = & \sum _a m_a c^2 \frac{\dot{x}^j_a}{c}\delta^3 (\textbf{x} - \textbf{x}_a (t)) \\
+\leftidx{^{(3)}} T^{0j} (x) = & \sum _a m_a c^2 \frac{\dot{x}^j_a}{c}\delta^3 (\textbf{x} - \textbf{x}_a (t))  \left( \frac{1}{2} \frac{\dot{\textbf{x}}^2_a}{c^2} + \frac{\phi (x)}{c^2} \right) \\
+\leftidx{^{(2)}} T^{jk} (x) = & \sum _a m_a c^2 \frac{\dot{x}^j_a}{c}  \frac{\dot{x}^k_a}{c} \delta^3 (\textbf{x} - \textbf{x}_a (t)) .
+\end{align}
+\end{subequations}
+
+\section{Post-Newtonian Potentials for a System of N-Particles}
+Integration of the differential equations (\ref{eq:PoissonEquations}) using the above components for the energy-momentum tensor gives the post-Newtonian potentials for the system of N-particles,
+\begin{subequations}\label{eq:NParticlesPNPotentials}
+\begin{align}
+\phi (x) = &- G \sum _a \frac{m_a}{\left| \textbf{x} - \textbf{x}_a (t)\right|} \\
+\zeta_j (x) = & - G \sum _a \frac{m_a \dot{x}^j _a}{\left| \textbf{x} - \textbf{x}_a (t)\right|} \\
+\psi (x) =  &\frac{G^2}{c^2} \sum _a \sum _{b \neq a} \frac{m_a }{\left| \textbf{x} - \textbf{x}_a (t)\right|} \frac{m_b }{\left| \textbf{x}_a (t) - \textbf{x}_b (t) \right|} - \frac{3}{2} \frac{G}{c^2} \sum _a \frac{m_a \dot{\textbf{x}}^2 _a}{\left| \textbf{x} - \textbf{x}_a (t)\right|} \\
+\chi (x) = & - \frac{G}{2c^2} \sum _a m_a \left| \textbf{x} - \textbf{x}_a (t)\right| .
+\end{align}
+\end{subequations}
+
+\section{Motion of a Test Particle in the Field of a System of N-Particles}
+Using the above relations in equations (\ref{eq:LagrangianMassiveParticle}) and (\ref{eq:LagrangianMassiveParticlePotentials}), we obtain the Lagrangian describing the motion of a test particle with mass $m_a$ in the gravitational field produced by a system of N-particles,
+\begin{align}
+L_a = &\frac{1}{2} m_a \dot{\textbf{x}}^2_a + G m_a \sum _{b \neq a} \frac{m_b}{r_{ab}} + \frac{1}{8} m_a \frac{ \left( \dot{\textbf{x}}^2_a \right)^2}{c^2} - \frac{G^2}{c^2} m_a \sum _{b \neq a} \sum _{c \neq b} \frac{m_b}{r_{ab}} \frac{m_c}{r_{bc}} \notag \\
+& - \frac{1}{2} \frac{G^2}{c^2} m_a \sum _{b \neq a} \sum _{c \neq a} \frac{m_b}{r_{ab}} \frac{m_c}{r_{ac}} + \frac{3}{2} \frac{G}{c^2} m_a \sum _{b \neq a} \frac{m_b}{r_{ab}} \left( \dot{\textbf{x}}^2_a + \dot{\textbf{x}}^2_b \right) \notag \\
+& -  \frac{1}{2} \frac{G}{c^2} m_a \sum _{b \neq a} \frac{m_b}{r_{ab}} \left[ 7 \dot{\textbf{x}}_a \cdot \dot{\textbf{x}}_b + \frac{ (\textbf{x}_{ab} \cdot \dot{\textbf{x}}_a ) (\textbf{x}_{ab} \cdot \dot{\textbf{x}}_b )}{r_{ab} ^2} \right] +  \Ordof \left( \epsilon^6 \right) ,
+\end{align}
+where we introduced the quantities $ \textbf{x}_{ab} = \textbf{x}_a - \textbf{x}_b $ and $ r_{ab} =\left| \textbf{x}_{ab}  \right| =  \left| \textbf{x}_a - \textbf{x}_b \right| $. From this equation it is straightforward to define the complete Lagrangian for the system of $N$-particles by summing over the index $a=1,2,3,...,N$ and taking into account that the resulting expression must be symmetric in the variables $m_a$, $\textbf{x}_a$ and $\dot{\textbf{x}}_a$, so it is necessary to introduce some coefficients to avoid double sums. The resulting Lagrangian is
+\begin{align}
+L = &\sum _a  \frac{1}{2} m_a \dot{\textbf{x}}^2_a + \frac{1}{2} G \sum _a \sum _{b \neq a} \frac{m_a m_b}{r_{ab}} + \frac{1}{8} \sum _a m_a \frac{ \left( \dot{\textbf{x}}^2_a \right)^2}{c^2} - \frac{1}{2} \frac{G^2}{c^2} \sum _a  \sum _{b \neq a} \sum _{c \neq a} \frac{m_a m_b m_c}{r_{ab} r_{ac}}  \notag \\
+& + \frac{3}{2} \frac{G}{c^2} \sum _a m_a \dot{\textbf{x}}^2_a  \sum _{b \neq a} \frac{m_b}{r_{ab}}   -  \frac{1}{4} \frac{G}{c^2} \sum _a  \sum _{b \neq a} \frac{m_a m_b}{r_{ab}} \left[ 7 \dot{\textbf{x}}_a \cdot \dot{\textbf{x}}_b + (\textbf{n}_{ab} \cdot \dot{\textbf{x}}_a ) (\textbf{n}_{ab} \cdot \dot{\textbf{x}}_b ) \right] +  \Ordof \left( \epsilon^6 \right). \label{eq:NBodySystemLagrangian}
+\end{align}
+
+\begin{exercise}[Einstein-Infeld-Hoffmann Equations]
+\textbf{Einstein-Infeld-Hoffmann Equations}
+
+Obtain the Euler-Lagrange equations associated with the Lagrangian (\ref{eq:NBodySystemLagrangian}), known as the \textit{Einstein-Infeld-Hoffmann Equations} \cite{Einstein1938} ,
+\begin{align}
+\ddot{\textbf{x}}_a = & - G \sum_{b \neq a} m_b \frac{\textbf{x}_{ab}}{r^3_{ab}} \left[ 1 - \frac{4G}{c^2} \sum _{c \neq a} \frac{m_c}{r_{ac}} + \frac{G}{c^2} \sum_{c \neq b} m_c \left( - \frac{1}{r_{bc}} + \frac{\textbf{x}_{ab} \cdot \textbf{x}_{bc}}{2r^3_{bc}} \right) \right. \notag \\
+& \left. + \frac{\dot{\textbf{x}}_a^2 - 4 \dot{\textbf{x}}_a \cdot \dot{\textbf{x}}_b + 2 \dot{\textbf{x}}_b^2}{c^2} - \frac{3}{2c^2} \left( \frac{\dot{\textbf{x}}_b \cdot \textbf{x}_{ab}}{r_{ab}} \right)^2 \right] - \frac{7}{2} \frac{G^2}{c^2} \sum _{b \neq a} \frac{m_b}{r_{ab}} \sum _{c \neq b} \frac{m_c \textbf{x}_{bc}}{r^3_{bc}} \notag \\
+& + \frac{G}{c^2} \sum _{b \neq a} m_b \frac{\textbf{x}_{ab} \cdot \left(4\dot{\textbf{x}}_a - 3 \dot{\textbf{x}}_b \right)}{r^3 _{ab}} \left( \dot{\textbf{x}}_a  - \dot{\textbf{x}}_b \right).
+\end{align}
+\end{exercise}

@@ -1,0 +1,316 @@
+In this chapter we will present a brief review of the General Theory of Relativity formulation. It is not intended to be a deep introduction to the field and therefore, we recommend to the un-experienced reader to consult other references for a detailed approach \cite{Bambi2018}.
+
+\section{Basic Principles}
+
+General relativity is a 4-dimensional geometrical model of gravity  based on two basic principles. The first one is the \textit{general principle of relativity}, which states that
+\begin{quote}
+\textit{The laws of physics are the same in all reference frames.}
+\end{quote}
+
+Introducing the idea of a \textit{general covariant transformation} as a transformation between two arbitrary reference frames\footnote{In the general theory of relativity, inertial and non-inertial frames are allowed.}, the general principle o relativity can be stated in an alternative form, known as the \textit{principle of general covariance},
+\begin{quote}
+\textit{The form of the laws of physics is invariant under arbitrary differentiable coordinate transformations.}
+\end{quote}
+
+Mathematically, an equation is said to be covariant if it is written using only \textit{tensors} and therefore we will write all physical quantities using these objects. For example, under a general coordinate transformation $x^\mu \rightarrow x'^\mu = x'^\mu (x^\alpha)$, an arbitrary third-order tensor, $T^{\alpha \beta}_\gamma$, obeys the well known transformation law,  
+\begin{equation}
+T^{\mu ' \nu '}_{\rho '} = \frac{\partial x'^\mu}{\partial x^\alpha}  \frac{\partial x'^\nu}{\partial x^\beta}  \frac{\partial x^\gamma}{\partial x'^\rho} T^{\alpha \beta}_\gamma
+\end{equation}
+
+\begin{exercise}[Vanishing of a Tensor]
+\textbf{Vanishing of a Tensor}
+
+Probe that if some arbitrary fourth-order tensor tensor vanishes in a certain coordinate system, $R_{\alpha \mu \beta \nu}  = 0$, it will vanish in any coordinate system.
+\end{exercise}
+
+The second postulate of general relativity is the \textit{Einstein Equivalence Principle} (EEP), which states that
+\begin{quote}
+\begin{enumerate}
+\item Weak Equivalence Principle (WEP): \textit{The trajectory of a freely-falling test-particle is independent of its internal structure and composition.}
+\item Local Lorentz Invariance: \textit{The outcome of any local non-gravitational experiment is independent of the velocity of the freely-falling reference frame in which it is performed.}
+\item Local Position Invariance: \textit{The outcome of any local non-gravitational experiment is independent of where and when it is performed.}  
+\end{enumerate}
+\end{quote}
+
+Based on these principles, general relativity is one of the so-called \textit{metric theories of gravity}, for which the space-time will be equipped with a symmetric metric from which we will derive all the geometric quantities. For example, the 4-dimensional line element is written in terms of the metric as
+\begin{equation}
+ ds^2 = g_{\mu \nu} dx^\mu dx^\nu,
+\end{equation} 
+where $x^\mu$ are the space-time coordinates and $g_{\mu \nu}$ are the general metric tensor components\footnote{In this work we will use the metric signature (-+++)}. Due to the WEP,  free-falling test-particles will follow trajectories known as \textit{geodesics}, that are also defined by the metric tensor. Finally, it is important to note that a consequence of the Einstein equivalence principle is that the non-gravitational laws of physics in local freely-falling reference frames will be the same as those in special relativity, which are described in terms of a Minkowskian metric.
+
+\subsection{Covariant Derivative}
+In general relativity, the partial derivative operator $\partial_\mu$ is not the adequate to write the equations of physics because it is not covariant under general coordinate transformations. Therefore, it must be generalized to the \textit{covariant derivative} operator $\nabla _\mu$ which acts, for example, over a (3,2)-tensor as
+\begin{equation}
+\nabla _\mu T^{\alpha \beta}_{\nu} = \partial_\mu T^{\alpha \beta}_{\nu}  + \Gamma^\alpha_{\mu \sigma} T^{\sigma \beta}_{\nu} + \Gamma^\beta _{\mu \sigma} T^{\alpha \sigma}_{\nu} - \Gamma^\sigma _{\mu \nu} T^{\alpha \beta}_{\sigma} 
+\end{equation}
+where the \textit{connections} or \textit{Christoffel symbols the second kind} are defined by the metric,
+\begin{equation}
+\Gamma ^\alpha _{\mu \nu} = \frac{1}{2}g^{\alpha \sigma} \left[  \partial_\mu g_{\sigma \nu}+  \partial_\nu g_{\mu \sigma} - \partial_\sigma g_{\mu \nu} \right],
+\end{equation}
+and therefore  $\nabla _\mu g_{\alpha \beta} = 0$.
+
+\begin{exercise}[Covariant Divergence]
+\textbf{Covariant Divergence}
+
+The divergence of a vector field $A^\mu$ is defined as the contracted covariant derivative $\nabla _\mu A^\mu$. Show that this can be written as
+\begin{equation}
+\nabla _\mu A^\mu = \frac{1}{\sqrt{-g}} \partial_\mu \left ( \sqrt{-g} A^\mu \right), \label{eq:CovariantDivergence}
+\end{equation}
+where $g$ represents the determinant of the metric $g_{\mu \nu}$.
+\end{exercise}
+
+\subsection{Curvature Tensors}
+The complete information about the curvature of a space-time manifold is stored in the \textit{Riemann tensor}, which is defined in terms of the Christoffel symbols as
+\begin{equation}
+R^\alpha_{\mu \beta \nu} = \partial_\beta \Gamma^\alpha_{\mu \nu} - \partial_\nu \Gamma^\alpha_{\mu \beta} + \Gamma^\alpha_{\sigma \beta} \Gamma^\sigma_{\mu \nu} - \Gamma^\alpha_{\sigma \nu} \Gamma^\sigma_{\mu \beta}. \label{eq:RiemannTensor}
+\end{equation}
+
+Using the metric, we obtain the components $R_{\alpha \mu \beta \nu}$,
+\begin{equation}
+R_{\alpha \mu \beta \nu} = g_{\alpha \sigma}R^\sigma _{ \mu \beta \nu},  \label{eq:RiemannTensor2}
+\end{equation}
+which satisfy the following symmetry properties
+\begin{equation}
+R_{\alpha \mu \beta \nu} = - R_{\mu \alpha \beta \nu} =- R_{\alpha \mu \nu \beta} = R_{ \beta \nu \alpha \mu}.
+\end{equation}
+
+\begin{exercise}[Bianchi Identities]
+\textbf{Bianchi identities.}
+Show explicitly that the Riemann tensor also satisfies the \textit{first Bianchi identities},
+\begin{equation}
+R^\alpha_{\mu \beta \nu}+ R^\alpha_{\nu \mu \beta} + R^\alpha_{ \beta \nu \mu}=0,
+\end{equation}
+and the \textit{second Bianchi identities},
+\begin{equation}
+\nabla_\rho R^\alpha_{\mu \beta \nu} + \nabla_\beta R^\alpha_{\mu  \nu \rho} + \nabla_\nu R^\alpha_{\mu \rho \beta} = 0.
+\end{equation}
+\end{exercise}
+
+From the Riemann tensor, we can define other curvature tensors such as the Ricci tensor,
+\begin{equation}
+R_{\mu \nu} = R^\sigma_{\mu \sigma \nu},
+\end{equation}
+which is symmetric $R_{\mu \nu} = R_{\nu \mu}$. The contraction of this tensor is known as the \textit{Ricci curvature scalar},
+\begin{equation}
+R=g^{\mu \nu} R_{\mu \nu}.
+\end{equation}
+
+The Einstein tensor is a second order symmetric tensor defined as
+\begin{equation}
+G_{\mu \nu} = R_{\mu \nu} - \frac{1}{2} g_{\mu \nu} R.
+\end{equation}
+
+\begin{exercise}[Bianchi identities for the Einstein tensor]
+\textbf{Bianchi identities for the Einstein tensor}
+
+Probe that the Einstein tensor satisfy the Bianchi identity
+\begin{equation}
+\nabla _\mu G^{\mu \nu} = 0. \label{eq:BianchiIdentitiesG}
+\end{equation}
+\end{exercise}
+
+\section{Energy-Momentum Tensor}
+
+Two very important concepts in the construction of general relativity are those of \textit{energy} and \textit{momentum}. The simplest construction concerning these quantities corresponds to the momentum vector, which provides a complete description of the energy and momentum for a single relativistic particle. The components of this vector are given by
+\begin{equation}
+p^\mu = \left( mc, m \textbf{u}  \right)= \left( \frac{E}{c}, \textbf{p}  \right).
+ \end{equation} 
+
+In the co-moving frame (i.e. the proper frame of the particle), the components of this vector are simply
+\begin{equation}
+p^\mu = \left( m_0 c, \textbf{0}  \right) = \left( \frac{E_0}{c}, \textbf{0}  \right)
+\end{equation}
+
+However, the momentum vector is not enough to give the relevant information in the case of  extended or continuous systems. In these cases, it is necessary to introduce the \textit{energy-momentum} tensor\footnote{It is also common to call it the \textit{stress-energy} tensor.}, which will provide a complete description of the energy and momentum. The components $T^{\mu \nu}$ of this tensor are defined as the \textit{``flux of 4-momentum $P^{\mu}$ across a surface of constant $x^{\nu}$``}. Hence, it results in a symmetric second-order tensor and its components include the energy density, the pressure and the stresses.
+
+
+\subsubsection{Single Isolated Particle}
+The simplest example of an energy-momentum tensor corresponds to that associated to a single, isolated, relativistic particle. Denoting the proper time of this particle by $\tau$, its position will be represented by the function
+\begin{equation}
+x_{p}^{\mu}\left(\tau\right)=\left(t\left(\tau\right),\textbf{x}_{p}\left(\tau\right)\right),
+\end{equation}
+while its velocity will be
+\begin{equation}
+u^{\mu}\left(\tau\right) = \frac{d{x}^\mu_{p}}{d\tau} 
+\end{equation}
+
+The corresponding energy-momentum tensor is defined as
+\begin{equation}
+T^{\alpha\beta}=m_0 u^{\alpha}\left(\tau\right)u^{\beta}\left(\tau\right)\delta\left(\textbf{x} - \textbf{x}_{p}\left(\tau\right)\right)=\frac{E_0}{c^{2}}u^{\alpha}\left(\tau\right)u^{\beta}\left(\tau\right)\delta\left(\textbf{x} - \textbf{x}_{p}\left(\tau\right)\right),
+\end{equation}
+where $E_0 =m_0 c^2$ is the rest energy/mass of the particle and $\delta\left(\textbf{x} - \textbf{x}_{p}\left(\tau\right)\right)$ is the Dirac's delta function . In the co-moving frame, the components of this tensor take the simple form
+\begin{equation}
+T^{\mu\nu}=\left(\begin{array}{cccc}
+m_0 c^2 \delta\left(\textbf{x} - \textbf{x}_{p}\left(\tau\right)\right) & 0 & 0 & 0\\
+0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0
+\end{array}\right),
+\end{equation}
+where the non-vanishing component corresponds to the rest energy density of the particle,
+\begin{equation}
+\varepsilon_0 = m_0 c^2 \delta\left(\textbf{x} -\textbf{x}_{p}\left(\tau\right)\right).
+\end{equation}
+
+In other frame, the components of the energy-momentum tensor are
+\begin{subequations}
+\begin{align}
+T^{00} = &m_0 c^2 \gamma^2 (u) \delta\left(\textbf{x}-\textbf{x}_{p}\left(\tau\right)\right)  \\
+T^{0j} = &m_0 c^2 \gamma^2 (u) \delta\left(\textbf{x}-\textbf{x}_{p}\left(\tau\right)\right)\frac{u^j}{c} \\
+T^{ij} = &m_0 c^2 \gamma^2 (u) \delta\left(\textbf{x}-\textbf{x}_{p}\left(\tau\right)\right)\frac{u^i u^j}{c^2},
+\end{align}
+\end{subequations}
+from which it is clear that the $T^{00}$ component corresponds to the relativistic energy density, the $T^{0j}$ components form the momentum density and the $T^{ij}$ components represent the stresses, i.e. flux of $i$-momentum in the $j$-direction.
+
+\subsubsection{Incoherent Matter. Dust}
+The terms \textit{incoherent matter} or \textit{dust} are used to describe a collection of non-interacting particles at rest with respect to each
+other, i.e. a perfect fluid with zero pressure. Therefore, dust is characterized only by its density and by a velocity field. The corresponding energy-momentum tensor is defined as
+\begin{equation}
+\mathbf{T}_{Dust}=p \otimes N
+\end{equation}
+where
+\begin{equation}
+p^\mu = m_{0} u^\mu
+\end{equation}
+is the momentum vector for each particle in the system and
+\begin{equation}
+N^\mu = n u^\mu
+\end{equation}
+is the \textit{number-flux} vector, with $n$ the number density of particle and $u^\mu$ the velocity field. The components of the energy-momentum tensor are defined as 
+\begin{equation}
+T_{Dust}^{\mu\nu}=\rho_{0} u^{\mu}u^{\nu} =\frac{\varepsilon_{0}}{c^{2}}u^{\mu}u^{\nu} \label{eq:DustEnergyMomentumTensor}
+\end{equation}
+where $\rho_0 = m_0 n$ is the rest mass density of the system and $\varepsilon_0 = \rho_0 c^2$ is the corresponding rest energy density. In the co-moving frame, the components of this tensor become
+\begin{equation}
+T^{\mu\nu} _{Dust} =\left(\begin{array}{cccc}
+\varepsilon_{0} & 0 & 0 & 0\\
+0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0
+\end{array}\right).
+\end{equation}
+
+In other frame of reference, the components of the energy-momentum tensor are
+\begin{subequations}
+\begin{align}
+T_{Dust}^{00} = &\rho_0 c^2 \gamma^2 (u) = \varepsilon_0 \gamma^2 (u)  = \varepsilon \\
+T_{Dust}^{0j} = &\rho_0 c^2 \gamma^2 (u) \frac{u^j}{c}= \varepsilon \frac{u^j}{c}  \\
+T_{Dust}^{ij} = & \rho_0 c^2 \gamma^2 (u) \frac{u^i u^j}{c^2}= \varepsilon \frac{u^i u^j}{c^2},
+\end{align}
+\end{subequations}
+where $\varepsilon = \varepsilon_0 \gamma^2 (u)$ is the relativistic energy density.
+
+\begin{exercise}
+\textbf{Conservation of Energy}
+
+Show explicitly that the energy-momentum tensor for incoherent matter in absence of gravitational fields, i.e. in a Minkowskian background, satisfies the conservation equation
+\begin{equation}
+ \partial_\nu T^{\mu \nu} _{Dust} = 0.
+\end{equation}
+\end{exercise}
+
+\subsubsection{Perfect Fluid}
+A perfect fluid consist of a collection of particles with no heat conduction and no viscosity, so it will be completely characterized by its pressure, $p$, and its energy density, $\varepsilon_0$. This system looks isotropic in its rest frame, which implies that the energy-momentum tensor will be diagonal in that frame and the non-zero spatial components must be equal, $T^{11} = T^{22} = T^{33}$. Therefore, the two independent components of the energy-momentum tensor will be chosen as $T^{00} = \varepsilon_0$ and $T^{ii} = p$, which gives the following form in the co-moving frame
+\begin{equation}
+T^{\mu\nu}_{PF}=\left(\begin{array}{cccc}
+\varepsilon_{0} & 0 & 0 & 0\\
+0 & P & 0 & 0\\
+0 & 0 & P & 0\\
+0 & 0 & 0 & P
+\end{array}\right). \label{eq:GRPerfectFluidcomoving}
+\end{equation}
+
+Generalizing the definition of the energy-momentum tensor for dust, we propose the general form for the perfect fluid,
+\begin{equation}
+T_{PF}^{\mu\nu}=\frac{\varepsilon_{0}}{c^{2}}u^{\mu}u^{\nu} + p s^{\mu \nu} 
+\end{equation}
+where $ s^{\mu \nu} $ is a symmetric tensor. Considering a Minkowskian background, the only second order symmetric tensor built with the metric and the 4-velocity is
+\begin{equation}
+s^{\mu \nu} = \alpha u^\mu u^\nu + \beta \eta^{\mu \nu}.
+\end{equation}
+
+In order to fix the constants $\alpha$ and $\beta$ we impose the form (\ref{eq:GRPerfectFluidcomoving}) in the co-moving frame and the conservation equation $\partial_\nu T^{\mu \nu} _{PF} = 0$. This gives the components of the energy-momentum tensor as 
+\begin{equation}
+T_{PF}^{\mu\nu}=\frac{\varepsilon_{0}+P}{c^{2}}u^{\mu}u^{\nu}+P\eta^{\mu\nu}. 
+\end{equation}
+
+In a general curved space-time, the energy-momentum tensor for the perfect fluid is defined as 
+\begin{equation}
+T_{PF}^{\mu\nu}=\frac{\varepsilon_{0}+P}{c^{2}}u^{\mu}u^{\nu}+Pg^{\mu\nu}. 
+\end{equation}
+
+
+\section{Einstein's Field Equations}
+
+The field equations of Einstein's general relativity are constructed following some physical assumptions concerning gravity and its mathematical structure:
+\begin{enumerate}
+\item The gravitational field should be completely described by the metric tensor.
+\item The field equations must be a set of covariant second order differential equations and they must lead to a correct Newtonian limit, recovering Poisson equation for the gravitational field.
+\item The source term of the field equations must include the mass/energy density. Because of the covariant nature of the field equations, the obvious candidate to use is the energy-momentum tensor.
+\item In the absence of mass/energy sources, we  should obtain Minkowski space-time.
+\end{enumerate}
+
+The resulting field equations, according to Einstein's proposal, are\footnote{It is possible to include an additional term, $G_{\mu \nu} + \Lambda g_{\mu \nu}= \frac{8\pi G}{c^4}  T_{\mu \nu}$, where $\Lambda$ is called the \textit{cosmological constant}. However, we will  assume that this constant is zero because its effects in the typical problems of celestial mechanics are negligible.} 
+\begin{equation}
+G_{\mu \nu} = \frac{8\pi G}{c^4}  T_{\mu \nu}.  \label{eq:EinsteinFieldEquations}
+\end{equation}
+
+This is a system of ten second-order differential equations which determine the ten  components of the metric tensor if the components of the energy-momentum tensor are given.
+
+\begin{exercise}[Another form of the Field Equations]
+\textbf{Another form of the Field Equations}
+
+Use index contraction to show that 
+\begin{equation}
+R = -\frac{8\pi G}{c^4} T
+\end{equation}
+where $T=g_{\mu \nu}T^{\mu \nu}$ is the trace of the energy-momentum tensor. Using this result, show that Einstein's field equations can be written in the form
+\begin{equation}
+R_{\mu \nu} = \frac{8\pi G}{c^4} S_{\mu \nu} \label{eq:EinsteinFieldEquations2}
+\end{equation}
+where 
+\begin{equation}
+S_{\mu \nu} = T_{\mu \nu} - \frac{1}{2} g_{\mu \nu} T .
+\end{equation}
+\end{exercise}
+
+Einstein's field equations can be derived from a variational principle. The total action is written as
+\begin{equation}
+S = S_{EH} + S_M,
+\end{equation}
+where $S_M$ is the matter action, which defines the energy-momentum tensor through
+\begin{equation}
+T^{\mu \nu} = \frac{1}{\sqrt{-g}} \frac{\delta S_M}{\delta g_{\mu \nu}}
+\end{equation}
+ and $S_{EH}$ is the Einstein-Hilbert action
+ \begin{equation}
+ S_{EH} = \frac{c^4}{16 \pi G} \int R \sqrt{-g} d^4 x,
+ \end{equation}
+which gives the left hand side of the field equations.
+
+\section{Geodesics}
+
+The WEP implies that free-falling test-particles will follow the trajectories known as \textit{geodesics}. Geometrically, these are defined by the metric tensor and the covariant derivative through the concept of parallel transport. However, they can be obtained applying a variational principle to the action of the test particle,
+\begin{equation}
+S= -m_0  \int_1^2 ds = - m_0c^2 \int_{\tau_1}^{\tau_2} d\lambda =  -  m_0c \int_{\tau_1}^{\tau_2} \sqrt{g_{\mu \nu} \frac{dx^\mu}{d\lambda}\frac{dx^\nu}{d\lambda}} d\lambda, \label{eq:ActionSingleParticle}
+\end{equation}
+where $\lambda$ represents the proper time associated to a massive particle or an affine parameter in the case of mass-less particles. 
+
+\begin{exercise}[Lagrangian for a single particle]
+\textbf{Lagrangian for a single particle}
+
+Use the lagrangian arising from equation (\ref{eq:ActionSingleParticle}),
+\begin{equation}
+L = \sqrt{g_{\mu \nu} \frac{dx^\mu}{d\lambda}\frac{dx^\nu}{d\lambda}},\label{eq:GRParticleLagrangian01}
+\end{equation}
+and the corresponding  Euler-Lagrange equations to obtain the geodesic equations
+\begin{equation}
+\frac{d^2 x^\mu}{d\lambda^2} + \Gamma^\mu_{\alpha \beta} \frac{dx^\alpha}{d\lambda} \frac{dx^\alpha}{d\lambda} =0. \label{eq:GeneralGeodesicEquations}
+\end{equation}
+
+Show that the alternative lagrangian 
+\begin{equation}
+L = -\frac{1}{2} g_{\mu \nu} \frac{dx^\mu}{d\lambda}\frac{dx^\nu}{d\lambda} \label{eq:GRParticleLagrangian}
+\end{equation}
+leads to the same geodesic equations.
+\end{exercise}

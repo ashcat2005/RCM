@@ -1,0 +1,490 @@
+Equations (\ref{eq:PNMetricTensor}) give a general form of the post-Newtonian metric components in quasi-cartesian coordinates. These components can be used not only in general relativity but also in other theories of gravity. The difference between one and the other lies in the coefficients multiplying each term in the metric components. Hence, we can propose a more generalized metric depending on a set of parameters in such a way that each particular set of values of these parameters distinguishes different gravity theories. The generalized metric is usually called a \textit{Parameterized Post-Newtonian} (PPN) metric and the parameters are called PPN-parameters. In this chapter we will present this kind of methodology to study the spacetime curvature produced by a static, spherically symmetric, non-rotating body.
+
+\section{A General Static Spherically Symmetric Metric}
+In order to begin with the description of the static one body problem, we introduce a general static metric with spherical symmetry with the form
+\begin{equation}
+ds^2 = - \mathcal{A}(r) c^2 dt^2 + \mathcal{B}(r) dr^2 + \mathcal{R}^2(r) \left[ d\theta^2 + \sin^2 \theta d\varphi ^2 \right]. \label{eq:generalStaticMetric}
+\end{equation}
+
+Clearly, Schwarzschild's solution in standard coordinates, (\ref{eq:SchwarzschildMetric}), is recovered by choosing the functions 
+\begin{align}
+\mathcal{A}(r) = & \frac{1}{\mathcal{B}(r)} =1 -  \frac{2m}{r} \\
+\mathcal{R}(r) = & r,
+\end{align}
+where $m = \frac{GM}{c^2}$ and $M$ is the total mass of the central object. In fact, the general line element (\ref{eq:generalStaticMetric}) also represents the Schwazrschild's solution in isotropic  (\ref{eq:SchwIsotropic}) and harmonic (\ref{eq:SchwHarmonic}) coordinates by a suitable choice of the functions $\mathcal{A}(r)$, $\mathcal{B}(r)$ and $\mathcal{R}(r)$. For example, considering that 
+\begin{subequations}
+\begin{align}
+\mathcal{A}(r) =& 1 - \frac{2m}{\mathcal{R}(r)} \\
+\mathcal{B}(r)=& \frac{\left( \frac{d\mathcal{R}}{dr}\right)^2}{\mathcal{A}(r)},
+\end{align}
+\end{subequations}
+it is possible to obtain the Schwarzschild's metric in the three coordinate systems by setting an appropiate function $\mathcal{R}(r)$ (see Table \ref{tab:SchwarzschildForms}).
+
+\begin{table}[h]
+\centering
+\footnotesize
+\begin{tabular}{|c|c|c|}
+\hline
+$\mathcal{R}(r)$ & Coordinates & Equation \\
+\hline
+ $r$ & Standard & (\ref{eq:SchwarzschildMetric}) \\
+$r\left(1 + \frac{m}{2r} \right)^2$ & Isotropic & (\ref{eq:SchwIsotropic}) \\
+$r+m$ & Harmonic & (\ref{eq:SchwHarmonic})\\
+\hline
+\end{tabular}
+\caption{Schwarzschild's metric in three different coordinates systems.}
+\label{tab:SchwarzschildForms}
+\end{table}
+
+\subsection{Motion of Particles}
+
+As described in Section \ref{sec:ParticleMotionSchwarzschild}, the motion of a particle in this kind of spaces can be restricted to the $\theta = \frac{\pi}{2}$ and therefore, the lagrangian describing the motion of a particle in the background (\ref{eq:generalStaticMetric}) can be written as
+\begin{equation}
+L = \frac{1}{2} \left[ \mathcal{A}(r) c^2 \left( \frac{dt}{d\lambda} \right)^2 - \mathcal{B}(r) \left( \frac{dr}{d\lambda} \right)^2 - \mathcal{R}^2(r) \left( \frac{d\varphi}{d\lambda} \right)^2 \right],
+\end{equation}
+where $\lambda$ is an adequate parameter for the description (for massive particle we chose the proper time $\lambda = \tau$ while for massless particles $\lambda$ is a so-called \textit{affine parameter}). From this lagrangian it is easy to obtain the conserved quantities
+\begin{subequations} 
+\begin{align}
+\mathcal{E} = &\mathcal{A}(r) c^2 \left( \frac{dt}{d\lambda} \right) \\
+\ell = &  \mathcal{R}^2(r) \left( \frac{d\varphi}{d\lambda} \right) \\
+H = &L = \delta,
+\end{align}
+\end{subequations}
+where $\delta = \frac{c^2}{2}$ for massive particles while $\delta = 0$ for massless particles.
+
+In order to describe the motion of particles in the background given by metric (\ref{eq:generalStaticMetric}), we write the radial equation of motion using the conserved quantities as
+\begin{equation}
+\mathcal{B}(r) \left( \frac{dr}{d\lambda} \right)^2 = \mathcal{V} (r) -2\delta  ,\label{eq:GeneralEoMaux01}
+\end{equation}
+where we introduce the function
+\begin{equation}
+\mathcal{V} (r) = \frac{\mathcal{E}^2}{ \mathcal{A}(r) c^2}-\frac{\ell}{\mathcal{R}^2 (r)} . 
+\end{equation}
+
+\subsubsection{Circular Motion}
+Circular trajectories are defined by the condition $\frac{dr}{d\lambda} = 0$, or equivalently $\frac{d\mathcal{V}}{dr} = 0$. This condition corresponds to the relation
+\begin{equation}
+\frac{\mathcal{A}^2 (r)}{\mathcal{R}(r)}= \frac{m\mathcal{E}^2}{\ell^2 } . \label{eq:CircularMotionGeneralStaticMetric}
+\end{equation}
+
+Following the treatment of Newtonian mechanics, we define the mean motion of the particle as $
+n = \frac{d\varphi}{dt}$,
+and therefore, equation (\ref{eq:CircularMotionGeneralStaticMetric}) writes as the generalization of Kepler's third law,
+\begin{equation}
+ n^2 \mathcal{R}^3(r) = GM
+ \end{equation} 
+
+\subsubsection{Introducing the Proper Time}
+Since we are working with a general metric, some mathematical quantities manifest differently in different coordinate systems. Hence, we will find some special quantities that are coordinate independent and therefore directly measurable from observation, without depending on the choice of a particular coordinate system. For example, considering the motion of massive particles, the adequate parameter to describe the motion is the proper time of the particle, i.e. $\lambda = \tau$, which is an invariant quantity (independent of the coordinate system). With the definition of the mean motion above and the metric (\ref{eq:generalStaticMetric}), we obtain the relation between proper and coordinate times as
+%\begin{equation}
+ %\left( \frac{d\tau}{dt} \right)^2 = p(r) - \frac{n^2 a^2 (r)}{c^2}  
+ %\end{equation} 
+\begin{equation}
+\frac{d\tau}{dt} = \sqrt{1 - \frac{3m}{\mathcal{R}(r)}}.
+\end{equation}
+
+Using this relation, we can write the definition of the motion in terms of the proper time,
+\begin{equation}
+ N = \frac{d\varphi}{d\tau} = \frac{n}{\sqrt{1 - \frac{3m}{\mathcal{R}(r)}}},
+ \end{equation} 
+which gives the interesting relation
+\begin{equation}
+N^2 \mathcal{R}^3(r)= \frac{GM}{1 - \frac{3m}{\mathcal{R}(r)}} 
+\end{equation}
+
+Since the corresponding sidereal period of revolution, $T_N=\frac{2\pi}{N}$, can be obtained directly by observation, the mean motion $N$ is measurable quantity, independent of the coordinate system.
+
+\subsubsection{Differential equation of the orbit}
+ 
+For a general motion case, equation (\ref{eq:GeneralEoMaux01}) may be written as a first order differential equation for the trajectory of the particle,
+\begin{equation}
+\left( \frac{d\mathcal{U}}{d\varphi} \right)^2 = \frac{\mathcal{E}^2}{\ell ^2 c^2} - \frac{2\delta}{\ell^2} + \frac{4m\delta}{\ell^2}\mathcal{U} - \mathcal{U}^2 + 2m\mathcal{U}^3,
+\end{equation}
+or as a second order differential equation with the form
+\begin{equation}
+\frac{d^2 \mathcal{U}}{d\varphi^2} + \mathcal{U} = \frac{2m}{\ell^2} \delta + 3m\mathcal{U}^2, \label{eq:SecondOrderDiffEqTraj}
+\end{equation}
+where we have introduced the function $\mathcal{U}(r)=\frac{1}{\mathcal{R}(r)}$\footnote{Note the similarities with the treatment of equations (\ref{eq:2BodyTrayectoryEquation}) and (\ref{eq:SchwarzschildOrbitEquation})}. 
+These equations are valid both for massive and massless particles by choosing the appropriate value for $\delta$ and because equation (\ref{eq:SecondOrderDiffEqTraj}) is mathematically equal to (\ref{eq:SchwarzschildOrbitEquation}), it can be solved as described in section \ref{sec:SchwarzschildOrbitEquation}.
+
+\subsection{A Parameterized Post-Newtonian Function}
+
+Following the proposal of V. Brumberg (\citep{Brumberg1991}) and assuming that $\frac{m}{r}\ll 1$, it is interesting to study the possibility of writing the function $\mathcal{R} (r)$ as a parameterized expansion with the form
+\begin{equation}
+\mathcal{R}(r) = r\left[ 1 + (1-\sigma_1) \frac{m}{r} + \sigma_2 \frac{m^2}{r^2} + ...\right],\label{eq:ParameterizedExpansion}
+\end{equation}
+where we introduced two constant parameters, $\sigma_1$ and $\sigma_2$, which may be chosen to reproduce Schwarzschild's metric in different coordinates, as shown in Table \ref{tab:SchwarzschildFormsParam}. 
+
+\begin{table}[h]
+\centering
+\footnotesize
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+$\sigma_1$ & $\sigma_2$ &$ \mathcal{R}(r)$ & Coordinates & Equation \\
+\hline
+$1$ & $0$ &$r$ & Standard & (\ref{eq:SchwarzschildMetric}) \\
+$0$ & $\frac{1}{4}$ &$r\left(1 + \frac{m}{2r} \right)^2$ & Isotropic & (\ref{eq:SchwIsotropic}) \\
+$0$ & $0$ &$r+m$ & Harmonic & (\ref{eq:SchwHarmonic})\\
+\hline
+\end{tabular}
+\caption{Values of the parameters in the expansion of the function $\mathcal{R}(r)$ given in equation (\ref{eq:ParameterizedExpansion}) to obtain Schwarzschild's metric in three different coordinates systems.}
+\label{tab:SchwarzschildFormsParam}
+\end{table}
+
+Using this expansion, it is possible to write Kepler's third law in a parameterized form,
+\begin{equation}
+N^2 r^3 \left[ 1 - 3\sigma_1 \frac{m}{r} - 3(1-\sigma_2 - \sigma_1^2) \frac{m^2}{r^2} + ... \right]= GM,
+\end{equation}
+showing the Newtonian term as well as the relativistic corrections which are measured by the parameters $\sigma_1$ and $\sigma_2$. It is possible to use this expansion into (\ref{eq:SecondOrderDiffEqTraj}) to obtain a parameterized orbit equation. However, since we have presented a general post-Newtonian approach which can be applied also in other situations, we will sue a parameterized post-newtonian metric for describing the static one-body problem used by Will\cite{Will1993}.
+
+
+\section{A  PPN-Metric describing a Static Spherically Symmetric Body}
+
+All our treatment of the Post-Newtonian approximation in previous chapters was done in cartesian coordinates. Therefore, in order to introduce a suitable Parameterized Post-Newtonian (PPN) metric to describe the geometry around a static spherically symmetric body, we will consider the Schwarzschild line element in harmonic coordinates presented in equation (\ref{eq:LineElementCartesianHarmonicCoordinates}),
+ \begin{equation}
+ ds^2 = - \left( \frac{1-\frac{m}{r_h}}{1+\frac{m}{r_h}}\right) c^2 dt^2 + \left( 1 + \frac{m}{r_h}\right)^2  \left[ \delta_{ij} + \frac{\left(\frac{m}{r_h}\right)^2}{1-\left(\frac{m}{r_h}\right)^2} \frac{x_i x_j}{r_h^2}  \right] dx^i dx^j .
+ \end{equation}
+
+Considering that $  \frac{m}{r_h} \sim \epsilon^2 \ll 1$, this metric can be expanded, up to the orders of the 1PN approximation, as 
+%\begin{align}
+ %ds^2 =& - \left[ 1-\frac{2m}{r_h} +\frac{2m^2}{r_h^2} + %\mathcal{O} \left( \epsilon ^6 \right)  \right] c^2 dt^2 \notag \\
+% &+ \left[ \delta_{ij} + \frac{2 m}{r_h} \delta_{ij} +  \frac{m^2}{r_h^2} \left(\delta_{ij} + \frac{x^i x^j}{r_h^2} \right) + \mathcal{O} \left( \epsilon^6 \right) \right] dx^i dx^j ,\label{eq:LineElementCartHarmonicCoorApprox}
+% \end{align}
+ \begin{align}
+ ds^2 = - \left[ 1-\frac{2m}{r_h} +\frac{2m^2}{r_h^2} + \mathcal{O} ( \epsilon ^6 )  \right] c^2 dt^2 + \left[ \delta_{ij} + \frac{2 m}{r_h} \delta_{ij}  + \mathcal{O} ( \epsilon^6 ) \right] dx^i dx^j ,\label{eq:LineElementCartHarmonicCoorApprox}
+ \end{align}
+where $m=\frac{GM}{c^2}$ is the mass of the gravitational source in geometric units. 
+
+\begin{exercise}[ExpansionSchwarzschildIsotropic]
+\textbf{Expansion of the Schwarzschild metric in Isotropic Coordinates}
+
+Show explicitly that the expansion, up to the 1PN order, of the line element of the Schwarzschild metric in isotropic coordinates (\ref{eq:LineElementCartesianIsotropicicCoordinates}), is mathematically equal to equation (\ref{eq:LineElementCartHarmonicCoorApprox}).
+\end{exercise}
+
+
+In order to describe the behavior of the Solar System and other systems in the weak gravitational field regime, some authors such as Eddington \cite{Eddington1922}, Robertson \cite{Robertson1962}, Schiff \cite{Schiff1967}, Brumberg \cite{Brumberg1972, Brumberg1991} and Will\cite{Will1993} proposed a PPN metric modeling a static, spherically symmetric, non-rotating body based on this approximation.  Using quasi-cartesian harmonic coordinates, we introduce the PPN metric in the form
+%\begin{subequations}\label{eq:PPNOneBodyProblem}
+%\begin{align}
+%g_{00} =& -\left( 1 - 2\kappa \frac{m}{r_h} + 2\left( \beta - \alpha  \right)\frac{ m^2}{r_h^2} + \mathcal{O} \left( \epsilon ^6 \right)  \right) \\
+%g_{0j} =& 0 \\
+%g_{ij} =& \left[ \delta_{ij} + \frac{2 m}{r_h} \left( (\gamma - \alpha ) \delta_{ij} + \alpha \frac{x^i x^j}{r_h^2} \right) + \mathcal{O} \left( \epsilon ^4 \right)  \right] ,
+%\end{align}
+%\end{subequations}
+\begin{subequations}\label{eq:PPNOneBodyProblem}
+\begin{align}
+g_{00} =& -\left( 1 - 2\kappa \frac{m}{r} + 2\left( \beta - \alpha  \right)\frac{ m^2}{r^2} + \mathcal{O} ( \epsilon ^6 )  \right) \\
+g_{0j} =& 0 \\
+g_{ij} =& \left[ \delta_{ij} + \frac{2 m}{r} \left( (\gamma - \alpha ) \delta_{ij} + \alpha \frac{x^i x^j}{r^2} \right) + \mathcal{O} ( \epsilon ^4 )  \right] ,
+\end{align}
+\end{subequations}
+where  $\alpha$, $\beta$, $\gamma$ and $\kappa$ will be the PPN parameters which may be constrained by observational data and we have dropped the subindex $h$ in the radial coordinate because up to 1PN orders, harmonic and isotropic coordinates coincide\footnote{From now on, we will use the variable $r$ instead of $r_h$ in the PPN metric.}. Equations (\ref{eq:PPNOneBodyProblem}) show that the parameter $\kappa$ measures the contribution of the Newtonian potential while the parameters $\alpha$ and $\beta$ measure the amount of the non-linear term $\frac{m^2}{r^2}$ in the components of the metric. 
+
+\begin{exercise}[Spatial Riemann Tensor]
+\textbf{Spatial Components of the Riemann Tensor}
+
+The significance of the parameter $\gamma$ is better understood by calculating the spatial components of the Riemann tensor. Explicitly show that they are
+\begin{align}
+R_{ijkl} = \gamma \frac{m}{r^3} & \left[ -\delta_{il}\left( \delta_{jk} - 3 \frac{x^j x^k}{r^2} \right) - \delta_{jk} \left( \delta_{il} - 3 \frac{x^i x^l}{r^2} \right) \right. \notag \\
+& \left. +\delta_{ik}\left( \delta_{jl} - 3 \frac{x^j x^l}{r^2} \right) +\delta_{jl}\left( \delta_{ik} - 3 \frac{x^i x^k}{r^2} \right) + \mathcal{O} (\epsilon ^4)\right].
+\end{align}
+
+From this expression it is possible to see that $\gamma$ directly measures the spatial curvature contribution due to the mass $m$. 
+\end{exercise}
+
+
+The general relativity solution (both in harmonic and isotropic coordinates) is recovered using the values $\kappa = \beta = \gamma = 1$ and $\alpha=0$ for the PPN parameters. Now, we will study the motion of test particles in this parameterized background.
+
+%Introducing spherical-like coordinates $(t,r_h, \theta, \varphi)$ similar to those in equations (\ref{eq:CartesianHarmonicCoordinates})
+%\begin{subequations}
+ %\begin{align}
+ %x = &r_{h} \sin \theta \cos \varphi \\
+ %y = &r_{h} \sin \theta \sin \varphi \\
+ %z = &r_{h} \cos \theta , 
+ %\end{align}
+ %\end{subequations}
+%the PPN metric becomes
+%\begin{align}
+%ds^2 = &- \left( 1 - 2\kappa \frac{m}{r_h} + 2\left( \beta - \alpha  \right)\frac{ m^2}{r_h^2} + \mathcal{O} \left( \epsilon ^6 \right)   \right) c^2 dt^2  \notag \\
+%&+ \left[ 1 + 2 \gamma \frac{m}{r_h} + \mathcal{O} \left( \epsilon ^4 \right)  \right] \left( dr_h^2 + r_h ^2 d\theta^2 + r_h^2 \sin ^2 \theta d\varphi^2 \right).
+%\end{align}
+
+%In order to write the line element in "usual Schwarzschild's coordinates", we introduce a transformation similar to (\ref{eq:HarmonicCoordinatesTransformation}),
+% \begin{equation}
+ %r = r_h + (\gamma - \alpha)m = r_h \left[ 1 + (\gamma - \alpha) \frac{m}{r_h} \right] 
+% \end{equation} 
+ %and its inverse
+ % \begin{equation}
+%r_h = r - (\gamma - \alpha)m = r \left[ 1 - (\gamma - \alpha) \frac{m}{r} \right] ,
+% \end{equation} 
+%giving the line element in cartesian coordinates
+%\begin{align}\label{eq:PPNSchwarzschildCartesian}
+%ds^2 = &- \left[ 1 - 2\kappa \frac{m}{r} - 2\left[ \kappa \gamma - \beta +  (1-\kappa)\alpha  \right] \frac{ m^2}{r^2} + \mathcal{O} \left( \epsilon ^6 \right)   \right] c^2 dt^2  \notag \\
+%&+ \left[ \delta_{ij} +  \frac{2m}{r}  \left( (\gamma - \alpha ) \delta_{ij} + \alpha \frac{x^i x^j}{r^2} \right) + \mathcal{O} \left( \epsilon ^4 \right)  \right] dx^i dx^j.
+%\end{align}
+
+%Introducing spherical Schwarzschild coordinates through the expressions
+%\begin{subequations}
+% \begin{align}
+% x = &r \sin \theta \cos \varphi \\
+% y = &r \sin \theta \sin \varphi \\
+% z = &r \cos \theta , 
+% \end{align}
+% \end{subequations}
+%we obtain the line element
+%\begin{align}
+%ds^2 = &- \left[ 1 - 2\kappa \frac{m}{r} - 2\left[ \kappa \gamma - \beta +  (1-\kappa)\alpha  \right] \frac{ m^2}{r^2} + \mathcal{O} \left( \epsilon ^6 \right)   \right] c^2 dt^2  \notag \\
+%&+ \left[ 1 + 2 \gamma \frac{m}{r} + \mathcal{O} \left( \epsilon ^4 \right)  \right] dr^2 + r ^2 \left( d\theta^2 +  \sin ^2 \theta d\varphi^2 \right).
+%\end{align}
+
+%Note that the original Schwarzschild's line element (\ref{eq:SchwarzschildMetric}) is obtained by setting the parameters $\kappa =1$ and $\beta = \gamma = 0$  (the actual value of the parameter $\alpha$ is not important to recover the metric under this approximation). 
+
+\section{Motion of Test Particles }
+
+In order to describe the motion of a test particle in the PPN formulation, we will consider the Lagrangian describing a massive particle given in equation (\ref{eq:LagrangianMassiveParticle}). Comparing with the PPN metric in (\ref{eq:PPNOneBodyProblem}), we identify the contributions
+\begin{subequations}
+\begin{align}
+\leftidx{^{(2)}} h_{00} &= 2\kappa \frac{m}{r} \\
+\leftidx{^{(4)}} h_{00} &= 2\left( \alpha - \beta  \right) \frac{ m^2}{r^2} \\
+\leftidx{^{(3)}} h_{0j} &=0\\
+\leftidx{^{(2)}} h_{ij} &=  \frac{2m}{r}  \left[ (\gamma - \alpha ) \delta_{ij} + \alpha \frac{x_i x_j}{r^2} \right]
+\end{align}
+\end{subequations}
+and therefore the Lagrangian for the test particle becomes
+\begin{align}
+L = & \frac{1}{2} m_0\dot{\textbf{x}}^2 + \kappa \frac{GMm_0}{r} + \frac{1}{8} m_0\frac{\left( \dot{\textbf{x}}^2 \right)^2}{c^2} \notag \\
+& +  \frac{m m_0}{r} \left[ \left( \gamma + \frac{1}{2}\kappa - \alpha \right) \dot{\textbf{x}}^2 + \left( \alpha  + \frac{1}{2} \kappa^2 - \beta \right) \frac{GM}{r} + \alpha \frac{(\textbf{x} \cdot \dot{\textbf{x}} )^2}{r^2}  \right] + \mathcal{O} ( \epsilon ^4 ) . \label{eq:PPNLagrangian1}
+\end{align}
+
+The equations of motion derived form this Lagrangian,  equivalent to those in equation (\ref{eq:EoMMassiveParticle}),  take the form
+\begin{align}
+\ddot{\textbf{x}} + \kappa \frac{GM}{r^3} \textbf{x} = \frac{m}{r^3} & \left[  \left( 2(\beta + \kappa \gamma -\alpha ) \frac{GM}{r} - (\gamma + \alpha) \dot{\textbf{x}}^2 + 3\alpha \frac{(\textbf{x} \cdot \dot{\textbf{x}})^2}{r^2} \right) \textbf{x}   \right. \notag \\
+& \left. +\left( 2(\gamma +\kappa - \alpha) \textbf{x} \cdot \dot{\textbf{x}} \right) \dot{\textbf{x}} \right] + \mathcal{O} ( \epsilon ^4 ). \label{eq:PPNEoM1}
+\end{align}
+
+\subsection{Conserved Quantities}
+Now, we will introduce the polar coordinates $r$ and $\varphi$ in the plane of the orbit following the definition in equations (\ref{eq:2BodyPositionVelocityAcceleration}),
+\begin{subequations}
+\begin{align}
+\textbf{x} =& r \textbf{n} \\
+\dot{ \textbf{x}} =& \dot{r} \textbf{n} + r \dot{\varphi} \boldsymbol{\lambda}  \\
+\ddot{ \textbf{x}} =& \left( \ddot{r} - r \dot{\varphi} ^2 \right) \textbf{n} + \frac{1}{r} \frac{d}{dt} \left( r^2 \dot{\varphi} \right) \boldsymbol{\lambda}.
+\end{align}
+\end{subequations}
+in which we use the time dependent basis in the orbital plane given by the vectors $\textbf{n}$ and $\boldsymbol{\lambda}$ ( see equation (\ref{eq:2BodyTimeDependentBasis})).
+
+\begin{exercise}[Equation of Motion in the PPN Approximation]
+\textbf{Equation of Motion in the PPN Approximation.}
+
+Show that using the polar coordinates defined above, the equations of motion given in (\ref{eq:PPNEoM1}) become
+\begin{small}
+\begin{subequations}\label{eq:PPNEoM2}
+\begin{align}
+\ddot{r}  - r \dot{\varphi}^2= &  -\kappa  \frac{GM}{r^2} + m \left[  \left( \beta + \kappa \gamma - \alpha \right) \frac{2GM}{r^3}  + \left( \gamma + 2\kappa \right) \frac{\dot{r}^2}{r^2} - \left( \alpha + \gamma \right) \dot{\varphi}^2 \right] \\
+\frac{d}{dt} \left( r^2 \dot{\varphi} \right) = & 2m( \gamma + \kappa - \alpha ) \dot{r} \dot{\varphi} .
+\end{align}
+\end{subequations}
+\end{small}
+\end{exercise}
+
+The Lagrangian describing the motion of a test particle (\ref{eq:PPNLagrangian1}), in polar coordinates, is
+\begin{align}
+L = & \frac{1}{2} m_0 \left( \dot{r}^2 + r^2 \dot{\varphi}^2 \right) + \kappa \frac{GMm_0}{r} + \frac{1}{8} m_0 \frac{\left( \dot{r}^2 + r^2 \dot{\varphi}^2 \right)^2}{c^2} \notag \\
+& + \frac{m m_0}{r} \left[ \left( \gamma + \frac{1}{2} \right)  \dot{r}^2 + \left( \gamma + \frac{1}{2}\kappa - \alpha \right) r^2 \dot{\varphi}^2  +  \left(\alpha + \frac{1}{2} \kappa^2 -\beta \right) \frac{GM}{r} \right] + \mathcal{O} ( \epsilon ^4 ).
+\end{align}
+
+From the functional dependence of this Lagrangian, it is easy to observe that there are two conserved quantities: the angular momentum of the test particle,
+\begin{align}
+\ell = \frac{p_\varphi}{m_0} = \frac{1}{m_0} \frac{\partial L}{\partial \dot{\varphi}} = r^2 \dot{\varphi} \left[ 1 + \frac{1}{2} \frac{ \left( \dot{r}^2 + r^2 \dot{\varphi}^2 \right)}{c^2} +\left( \gamma + \frac{1}{2} \kappa - \alpha \right) \frac{2m}{r}   \right]+ \mathcal{O} ( \epsilon ^4 ) \label{eq:angularMomentumOB1}
+\end{align}
+and the Hamiltonian,
+\begin{align}
+\mathcal{E} = \frac{H}{m_0} = & \frac{1}{2}  \left( \dot{r}^2 + r^2 \dot{\varphi}^2 \right) - \kappa \frac{GM}{r} + \frac{3}{8}  \frac{\left( \dot{r}^2 + r^2 \dot{\varphi}^2 \right)^2}{c^2} \notag \\
+& + \frac{m }{r} \left[ \left( \gamma + \frac{1}{2}\kappa \right)  \dot{r}^2 + \left( \gamma + \frac{1}{2} \kappa - \alpha \right) r^2 \dot{\varphi}^2  -  \left(\alpha + \frac{1}{2} \kappa^2 -\beta \right) \frac{GM}{r} \right] + \mathcal{O} ( \epsilon ^4 ). \label{eq:HamiltonianOB1}
+\end{align}
+
+In order to eliminate some of the time derivatives in the right hand side of equation (\ref{eq:angularMomentumOB1}) we use the zeroth order of the Hamiltonian (i.e. the Newtonian value) to obtain the relation
+\begin{equation}
+r^2 \dot{\varphi} = \ell \left[ 1 - \frac{\mathcal{E}}{c^2} - \frac{2m}{r} \left( \gamma - \alpha +\kappa \right) \right]. \label{eq:dotVarphiOB1}
+\end{equation}
+
+Similarly, using the Newtonian values for the Hamiltonian and for the angular momentum, equation (\ref{eq:HamiltonianOB1}) can be written as a differential equation for $\dot{r}$,
+\begin{align}
+\dot{r}^2 = &2\mathcal{E} - r^2 \dot{\varphi}^2 + 2\kappa \frac{GM}{r}  \notag \\
+ & + 2m \left[ \alpha \frac{\ell ^2}{r^3} +  \left( \alpha - \beta - 2\kappa^2  - 2\kappa \gamma \right) \frac{GM}{r^2} - 2 \left( \gamma + 2\kappa \right) \frac{\mathcal{E}}{r} - \frac{3}{2}\frac{\mathcal{E} ^2}{GM} \right]  + \mathcal{O} ( \epsilon ^4 ).
+\end{align}
+
+\subsection{Differential Equation of the Orbit}
+
+Using the angle $\varphi$ as the independent variable, instead of time, and defining the new variable $u(\varphi) = \frac{1}{r(\varphi)}$, just as in the Newtonian case, we obtain the differential equation of the orbit as
+\begin{footnotesize}
+\begin{align}
+\left( \frac{du}{d\varphi} \right)^2 + u^2 = &\frac{2\mathcal{E}}{\ell^2} + 2\kappa \frac{GM}{\ell^2} u  \notag \\
+ & + 2m \left[  \alpha u^3 +    \left( \alpha - 4\kappa \alpha - \beta + 2\kappa \gamma  + 2\kappa^2  \right) \frac{GM}{\ell^2} u^2 + 2 \left( \kappa + \gamma - 2\alpha \right) \frac{\mathcal{E}}{\ell^2} u + \frac{1}{2}\frac{\mathcal{E} ^2}{GM\ell^2} \right] + \mathcal{O} ( \epsilon ^4 ).\label{eq:FirstOrderOrbitEquationOB}
+\end{align}
+\end{footnotesize}
+
+Differentiation with respect to $\varphi$ gives the second order differential equation of the orbit,
+\begin{footnotesize}
+\begin{align}
+\frac{d^2 u}{d\varphi^2} + u = & \kappa \frac{GM}{\ell^2} + m \left[  3\alpha u^2  +2 \left( \alpha - 4\kappa \alpha - \beta + 2\kappa \gamma  + 2\kappa^2  \right) \frac{GM}{\ell^2} u + 2 \left( \kappa + \gamma - 2\alpha \right) \frac{\mathcal{E}}{\ell^2}  \right] + \mathcal{O} ( \epsilon ^4 ). \label{eq:SecondOrderOrbitEquationOB}
+\end{align}
+\end{footnotesize}
+
+\subsection{Circular Motion}
+
+A particular solution of the orbital equations obtained above correspond to the circular orbit $u(\varphi)=\textrm{constant}$ or
+\begin{equation}
+\begin{cases}
+r = &r_0 \\
+\varphi = &nt + \textrm{const.}
+\end{cases}
+\end{equation}
+
+Replacing these functions into equation (\eqref{eq:PPNEoM2}) gives the mean motion $n=\frac{d\varphi}{dt}$ as
+\begin{equation}
+n^2 = \frac{GM}{r_0^3}  \left[ \kappa + \left( (2+\kappa)\alpha - 2\beta - \kappa \gamma \right) \frac{m}{r_0} \right] + \mathcal{O} ( \epsilon ^4 )  
+\end{equation}
+
+\subsection{Elliptic Motion}
+
+In order to solve the orbit equation, we will factorize the third order polynomial in the right hand side of equation (\ref{eq:FirstOrderOrbitEquationOB}) as
+\begin{equation}
+\frac{\ell^2}{GM}\left( \frac{du}{d\varphi} \right)^2 = \left( u - u_1 \right)\left( u - u_2 \right)\left( 2m\alpha \ell^2 u - u_3 \right).\label{eq:EomFactorization}
+\end{equation}
+
+Two of the roots of this polynomial will correspond to the radii of the pericenter and the apocenter of the orbit, which we will write as $u_1 = \frac{1}{r_p} =\frac{1}{a(1-e)}$ and  $u_2 = \frac{1}{r_a} = \frac{1}{a(1+e)}$, respectively, introducing the semi-major axis $a$ and the eccentricity $e$ of the orbit.  Comparison of coefficients in equations (\ref{eq:FirstOrderOrbitEquationOB}) and (\ref{eq:EomFactorization}) gives the third root as 
+%\begin{footnotesize}
+%\begin{align}
+%\left( \frac{du}{d\varphi} \right)^2 =&  \left( u - \frac{1}{a(1-e)} \right)  \left( u - \frac{1}{a(1+e)} \right) \notag \\
+% & \times \left( 2\alpha m u - \kappa (2 - \kappa ) + \left[ (1-\kappa ) \left( \gamma + \frac{3}{2} - \frac{\kappa}{2} - \alpha \right) + 2\kappa \frac{(3-4\kappa ) \alpha - \beta - \kappa^2 + 3 \kappa + 2\kappa \gamma }{1-e^2} \right]\frac{m}{a} \right),
+%\end{align}
+%\end{footnotesize}
+\begin{equation}
+u_3 = \kappa a (1-e^2) + m(\alpha  - \gamma - \kappa) (1-e^2) + \mathcal{O}(\epsilon^4 ),
+\end{equation}
+together with the values of the angular momentum and the Hamiltonian,
+\begin{align}
+\ell^2 = & GMa(1-e^2) \left[ \kappa + \frac{m}{a} \left( \alpha - \gamma - \kappa + 2 \frac{(3-4\kappa ) \alpha - \beta + 2\kappa \gamma +2 \kappa^2}{1-e^2}  \right)  \right] + \mathcal{O} (\epsilon^4 ) \label{eq:angularMomentumOB2}\\
+\mathcal{E} = & - \frac{GM}{2a} \left[ \kappa + \frac{m}{a} \left( \alpha - \gamma -\kappa + \frac{1}{4} \right)  \right]+ \mathcal{O} (\epsilon^4 ). \label{eq:HamiltonianOB2}
+\end{align}
+
+Considering a conic function with the form
+\begin{equation}
+u(\varphi) = \frac{1+e \cos f}{a(1-e^2)}
+\end{equation}
+as an ansatz for the solution of the differential equation of the orbit, we obtain the following differential equation for the true anomaly, $f=f(\varphi)$,   
+\begin{align}
+\left( \frac{df}{d\varphi } \right)^2 = 1- \frac{m}{\kappa a (1-e^2)} \left( 4\alpha - 4\kappa \alpha - \beta + 2\kappa \gamma + 2\kappa^2 \right) -  \frac{\alpha m}{\kappa a (1-e^2)} e\cos f + \mathcal{O} (\epsilon^4).
+\end{align}
+
+In order to integrate this equation note that it can be written, up to second order in $\epsilon$, as
+\begin{equation}
+\frac{df}{d\varphi} = \nu \left( 1 - \frac{\alpha m}{\kappa a(1-e^2)} e \cos f \right) + \mathcal{O} ( \epsilon ^4 ) \label{eq:TrueAnomalyEquationOB1}
+\end{equation}
+where
+\begin{align}
+\nu =1- \frac{m}{\kappa a (1-e^2)} \left( 4\alpha - 4\kappa \alpha - \beta + 2\kappa \gamma + 2\kappa^2 \right).
+\end{align}
+
+Hence, the zeroth order contribution is obtained by integrating just the first term,
+\begin{equation}
+\frac{d \leftidx{^{(0)}}f}{d\varphi} = \nu ,
+\end{equation}
+which gives
+\begin{equation}
+\leftidx{^{(0)}}f = \nu (\varphi - \omega)
+\end{equation}
+where the constant $\omega$ corresponds to the longitude of the pericenter. Replacing this solution into the right hand side of equation (\ref{eq:TrueAnomalyEquationOB1}) we get the equation for the second order contribution 
+\begin{equation}
+\frac{d \leftidx{^{(2)}}f }{d\varphi} = - \nu  \frac{\alpha m}{\kappa a(1-e^2)} e \cos [\nu (\varphi - \omega)] ,
+\end{equation}
+which is integrated to obtain
+\begin{equation}
+\leftidx{^{(2)}}f = -   \frac{\alpha m}{\kappa a(1-e^2)} e \sin[\nu (\varphi - \omega)]. 
+\end{equation}
+
+Therefore, the true anomaly up to second order is given by the expression
+\begin{equation}
+f (\varphi ) = \nu (\varphi - \omega) -   \frac{\alpha m}{\kappa a(1-e^2)} e \sin [\nu (\varphi - \omega)] + \mathcal{O} ( \epsilon ^4 ).
+\end{equation}
+
+\subsection{Advance of the Perihelion}
+
+The true anomaly obtained above shows a secular contribution to the orbit of the test particle which reflects as an advance in the location of the perihelion. Just as calculated in Section \ref{sec:PerihelionSchwarzschild}, two successive perihelia occur with the angular difference $\Delta \varphi = \frac{2\pi}{\nu}$ and therefore the perihelion shift is given by $\Delta \omega = \frac{2\pi}{\nu} - 2\pi$. This expression is approximated as
+\begin{align}
+\Delta \omega =   \frac{2\pi m}{\kappa a (1-e^2)} \left( 4\alpha - 4\kappa \alpha - \beta + 2\kappa \gamma + 2\kappa^2 \right) + \mathcal{O} ( \epsilon ^4 ).
+\end{align}
+
+It is clear that the Schwarzschild's perihelion advance (\ref{eq:SchwarzschildPerihelionAdvance}) is recovered when using the PPN parameters $\alpha=0$ and $\kappa = \beta = \gamma = 1$.
+
+\subsection{Time Dependence and Kepler's Equation}
+We recover time dependence following a similar treatment as that in Section \ref{sec:TimeDependenceCM}. Using equation (\ref{eq:dotVarphiOB1}) and replacing the expressions for the angular momentum and the Hamiltonian in equations (\ref{eq:angularMomentumOB1}) and (\ref{eq:HamiltonianOB2}), the equation (\ref{eq:TrueAnomalyEquationOB1}) becomes a differential equation for the true anomaly as function of time,
+\begin{small}
+\begin{align}
+\frac{df}{dt} =  \frac{na^2 \sqrt{1-e^2}}{r^2} & \left[ 1 - \frac{m}{r}\left( 2\gamma - 2\alpha + \frac{\alpha}{\kappa} + 2\kappa \right)  - \frac{m}{2\kappa a}\left((\kappa +1) \alpha - 2\beta - (\kappa -1)\gamma + \kappa - \kappa^2 \right) \right].
+\end{align}
+\end{small}
+
+Now we introduce the eccentric anomaly exactly as in Section \ref{sec:TimeDependenceCM}, using equations (\ref{eq:2BodyEandfRelations1}). The generalization of equation (\ref{eq:2BodyEderivative}) is
+\begin{align}
+\dot{E} = \frac{na}{r}  & \left[ 1 - \frac{m}{2\kappa a}\left((\kappa +1) \alpha - 2\beta - (\kappa -1)\gamma + \kappa - \kappa^2 \right)- \frac{m}{r}\left( 2\gamma - 2\alpha + \frac{\alpha}{\kappa} + 2\kappa \right) \right].
+\end{align}
+
+Replacing the radial coordinate in terms of the eccentric anomaly as in equation (\ref{eq:2BodyPositionwithE}) an integrating in both sides gives the generalization of Kepler's equation,
+\begin{equation}
+E -  \left[ 1 + \frac{m}{\kappa a} \left(  (2\kappa -1)\alpha - 2\kappa \gamma - 2\kappa^2 \right)  \right] e \sin E = l,
+\end{equation}
+where the mean anomaly is defined through the equation 
+\begin{align}
+\frac{dl}{dt} = n  \left[ 1 + \frac{m}{2\kappa a} \left( 3(\kappa -1)\alpha + 2\beta - (3\kappa +1)\gamma - \kappa - 3\kappa^2 \right) \right].
+\end{align}
+
+\subsection{Osculating Elements}
+Following the celestial mechanics approach, we have now the required relations to describe the motion of a test particle moving in the spacetime described by the metric (\ref{eq:PPNOneBodyProblem}) using the osculating elements method. Note that, from the equation of motion (\ref{eq:PPNEoM1}) one can identify a disturbing force to the Newtonian problem with the form
+\begin{align}
+\delta \textbf{A} = (1- \kappa) \frac{GM}{r^3}\textbf{x} + \frac{m}{r^3} & \left[  \left( 2(\beta + \kappa \gamma -\alpha ) \frac{GM}{r} - (\alpha + \gamma ) \dot{\textbf{x}}^2 + 3\alpha \frac{(\textbf{x} \cdot \dot{\textbf{x}})^2}{r^2} \right) \textbf{x}   \right. \notag \\
+& \left. +2(\gamma +\kappa - \alpha)( \textbf{x}\cdot \dot{\textbf{x}} ) \dot{\textbf{x}} \right] + \mathcal{O} ( \epsilon ^4 ).
+\end{align}
+
+The components of this force in the time dependent basis $(\textbf{n}, \boldsymbol{\lambda}, \textbf{k})$ are given by equations (\ref{eq:PerturbingForceComponents}), 
+\begin{align}
+\mathcal{R} = &\frac{n^2 a^2}{\kappa r^2}  \left\lbrace (1 - \kappa)a + m \left[  \left( 1 - \frac{1}{\kappa} \right) \left((2+\kappa)\alpha - 2\beta -\kappa \gamma \right) -\kappa (\gamma + 2\kappa) \right. \right. \notag \\
+& \left. \left. + 2(\beta + 2 \kappa \gamma - \alpha + 2 \kappa^2)\frac{a}{r}  - \kappa(\alpha + 2\gamma + 2\kappa ) \frac{a^2 (1-e^2)}{r^2}   \right] \right\rbrace + \mathcal{O} ( \epsilon ^4 ) \\
+\mathcal{T} =& \frac{2n^2 a^3}{r^3} m  (\gamma - \alpha + \kappa) e \sin f + \mathcal{O} ( \epsilon ^4 )\\
+\mathcal{W} = & 0  .
+\end{align}
+
+Replacing these relations into the osculating elements in equations (\ref{eq:OsculatingOrbitalElements}) gives the evolution equations for the orbital parameters,
+\begin{footnotesize}
+\begin{align}
+\frac{da}{dt} = & \frac{2}{\sqrt{1-e^2}} \frac{na^2}{\kappa r^2} e \sin f \left\lbrace (1-\kappa) a + m \left[ \left( 1 - \frac{1}{\kappa} \right) \left((2+\kappa)\alpha - 2\beta -\kappa \gamma \right) -\kappa (\gamma + 2\kappa) \right. \right. \notag \\ 
+& \left. \left. +2(\beta + 2 \kappa \gamma - \alpha + 2 \kappa^2)  \frac{a}{r} - 3 \kappa \alpha \frac{a^2 (1-e^2)}{r^2}  \right] \right\rbrace + \mathcal{O} ( \epsilon ^4 )
+\end{align}
+\end{footnotesize}
+
+\begin{footnotesize}
+\begin{align}
+\frac{de}{dt} = & \sqrt{1-e^2} \frac{na}{\kappa r^2}  \sin f \left\lbrace (1-\kappa) a + m \left[ \left( 1 - \frac{1}{\kappa} \right) \left((2+\kappa)\alpha - 2\beta -\kappa \gamma \right) + \kappa (2\alpha-3\gamma - 4\kappa)  \right. \right. \notag \\ 
+& \left. \left. +  2(\beta + 2 \kappa \gamma - \alpha + 2 \kappa^2)\frac{a}{r} -3 \kappa \alpha \frac{a^2 (1-e^2)}{r^2}  \right] \right\rbrace
+\end{align}
+\end{footnotesize}
+
+\begin{footnotesize}
+\begin{align}
+\frac{d\omega}{dt} = & \frac{\sqrt{1-e^2}}{e^2} \frac{na}{\kappa r^2}  \left\lbrace (1-\kappa) a \left( 1 - \frac{a(1-e^2)}{r} \right)+ m \left[ \left( 1 - \frac{1}{\kappa} \right) \left((2+\kappa)\alpha - 2\beta -\kappa \gamma \right) + \kappa (2\alpha-3\gamma - 4\kappa) \right. \right. \notag \\ 
+& \left. \left. \left[ 2 (\beta + 4\kappa \gamma - (1+2\kappa)\alpha + 4\kappa^2) - \left( (2-\kappa)\alpha - 2\beta - \frac{1}{\kappa} \left( (2+\kappa)\alpha - 2\beta - \kappa \gamma \right) \right)(1-e^2) \right] \frac{a}{r}  \right. \right. \notag \\
+&\left. \left. -\left( (3\kappa -1)\alpha + 2\beta + 4\kappa \gamma + 2 \kappa^2 \right) \frac{a^2 (1-e^2)}{r^2}  +3\kappa \alpha \frac{a^3 (1-e^2)^2}{r^3}  \right] \right\rbrace
+\end{align}
+\end{footnotesize}
+
+\begin{footnotesize}
+\begin{equation}
+\frac{d \iota}{dt} =0
+\end{equation}
+\end{footnotesize}
+
+\begin{footnotesize}
+\begin{equation}
+\frac{d \Omega}{dt} =0
+\end{equation}
+\end{footnotesize}

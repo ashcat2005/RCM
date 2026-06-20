@@ -1,0 +1,463 @@
+\documentclass[11pt]{book}
+
+% Package for left superscripts
+\usepackage{leftidx}
+
+% include figures
+\usepackage{epsfig,wrapfig}
+
+% rotating long tables
+\usepackage{rotating}
+
+% prefer PDF to PNG
+\DeclareGraphicsExtensions{%
+  .pdf, .png}
+
+% Bibliographic Package
+\usepackage[numbers,sort&compress]{natbib}
+
+% code listings
+\usepackage[procnames]{listings}
+
+\lstset{basicstyle=\ttfamily\small, 
+        keywordstyle=\color{keywords},
+        commentstyle=\color{comments},
+        stringstyle=\color{red},
+        showstringspaces=false,
+        identifierstyle=\color{blue},
+        procnamekeys={def,class}}
+
+\graphicspath{{preface/}{intro/}{CelestialMechanics/}{PerturbationTheory/}{Schwarzschild/}}
+
+\usepackage{longtable}
+
+% AMS symbols
+\usepackage{amsmath,amssymb}
+
+% for forcing a figure to appear on a single page
+% see http://tex.stackexchange.com/questions/109219/force-position-of-full-page-sized-figure
+\usepackage{afterpage}
+
+% cancel
+\usepackage{cancel}
+
+% Palatino font (and math symbols) -- looks nicer than the standard
+% LaTeX font
+\usepackage[osf]{mathpazo}
+\linespread{1.05}        % Palatino needs more leading
+%\usepackage[scaled]{helvet} % ss
+\usepackage{raleway}
+\normalfont
+\usepackage[T1]{fontenc}
+
+% URLs (special font for monospace)
+\usepackage{inconsolata}
+%\usepackage[T1]{fontenc}
+
+% footnotes use symbols
+\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+
+% margins and paper size -- this needs to come before fncychap
+% see http://stackoverflow.com/questions/3729099/latex-paper-size
+\usepackage[top=0.75in,
+            bottom=0.75in,
+            inner=0.65in,
+            outer=0.65in]{geometry}
+\geometry{papersize={8.5in,11in}}
+
+% this needs to be done before the fncychap style, since that will
+% redo the chapter stuff
+\usepackage{sectsty}
+\allsectionsfont{\sffamily}
+
+
+% chapter title styles
+\usepackage[PetersLenny]{fncychap}
+\ChNameVar{\fontsize{16}{16}\sffamily\selectfont}%usefont{OT1}{raleway}{m}{n}\selectfont}
+\ChNumVar{\fontsize{60}{62}\sffamily\selectfont}%\fontsize{60}{62}}\usefont{OT1}{raleway}{m}{n}\selectfont}
+\ChTitleVar{\Huge\bfseries\sffamily}
+\ChRuleWidth{1pt}
+
+% part page style
+\usepackage{titlesec}
+
+\titleformat{\part}[display]
+   {\bfseries\sffamily\Huge\filcenter}
+   {{\partname{}} \thepart}
+   {0em}
+   {\hrule}
+
+
+% hyperlinks -- load after fncychap
+\usepackage{hyperref}
+\usepackage[hyperpageref]{backref}
+\renewcommand*{\backref}[1]{}% for backref < 1.33 necessary
+\renewcommand*{\backrefalt}[4]{%
+\ifcase #1 %
+  No citations.%
+\or
+  (Cited on page #2)%
+\else
+  (Cited on pages #2)%
+\fi
+}
+
+% back references
+
+
+% color package
+\usepackage{xcolor}
+\definecolor{mygray}{gray}{0.5}
+
+
+% custom hrule for title page
+\newcommand{\HRule}{\rule{\linewidth}{0.125mm}}
+
+\newcommand{\git}{{\tt git}}
+
+
+\usepackage{xfrac}
+
+
+% documentation (section 9)
+\usepackage{fancyhdr}
+\renewcommand{\chaptermark}[1]{%
+\markboth{\chaptername
+\ \thechapter.\ #1}{}}
+
+\renewcommand{\sectionmark}[1]{\markright{\thesection---#1}}
+
+
+% don't put a header on blank pages, see
+% http://www.latex-community.org/forum/viewtopic.php?f=4&p=51559
+% change ``plain'' to ``empty'' to eliminate the page number
+\makeatletter
+\renewcommand*\cleardoublepage{\clearpage\if@twoside
+\ifodd\c@page\else
+\hbox{}
+\thispagestyle{empty}
+\newpage
+\if@twocolumn\hbox{}\newpage\fi\fi\fi}
+\makeatother
+
+
+% no page number of the part page
+% http://latex.org/forum/viewtopic.php?f=47&t=4293&p=16738
+\makeatletter
+\renewcommand\part{%
+   \if@openright
+     \cleardoublepage
+   \else
+     \clearpage
+   \fi
+   \thispagestyle{empty}%
+   \if@twocolumn
+     \onecolumn
+     \@tempswatrue
+   \else
+     \@tempswafalse
+   \fi
+   \null\vfil
+   \secdef\@part\@spart}
+\makeatother
+
+% skip a bit of space between paragraphs, to enhance readability
+\usepackage{parskip}
+
+% captions
+\usepackage{caption}
+\renewcommand{\captionfont}{\footnotesize}
+\renewcommand{\captionlabelfont}{\footnotesize}
+\setlength{\captionmargin}{3em}
+
+
+%-----------------------------------------------------------------------------
+% define a new environment for exercises
+%\newcounter{exercise}    % simple way -- no TOC list
+% toclot allows us to make a list of exercises
+% the new environment stuff came from http://www.dickimaw-books.com/latex/novices/html/newenv.html
+\usepackage{tocloft}
+\newcommand{\listexercisename}{List of Exercises}
+
+% the [chapter] argumenet here means that we reset the numbers each chapter
+% exc is the short name we give to this new list
+\newlistof[chapter]{exercise}{exc}{\listexercisename}
+\usepackage{changepage}   % used to adjust the margins within the environment
+
+% environment name, with optional argument for display in the list of
+% exercises
+\newenvironment{exercise}[1][]
+{% begin code
+  %
+  % this indents our text from the left and right
+  \begin{adjustwidth}{1.0cm}{1.0cm}%
+  %
+  % this skips a line before
+  %\par\vspace{\baselineskip}\noindent
+  %
+  % this increments our counter
+  \refstepcounter{exercise}%
+  \begin{tcolorbox}[enhanced, breakable, title={\sffamily Exercise \theexercise}]
+  %
+  % this displays the exercise number and starts italics
+  \begin{itshape}%
+  %
+  % this adds an entry to our custom List of Exercises
+  \addcontentsline{exc}{exercise}{\protect\numberline{\theexercise}~~ #1}
+}%
+{% end code -- this is done at the end of the environment
+  %
+  % stop the italics
+  \end{itshape}%
+  %
+  \end{tcolorbox}
+  % this stops our custom margins
+  \end{adjustwidth}%
+  %
+  % this skips a line at the end
+  %\vspace{\baselineskip}\ignorespacesafterend
+}
+
+% this makes the List of Exercises have a line break before each chapter,
+% just like in the main ToC.
+%
+% this has a bug -- it does not omit the space if the chapter has 0 exercises
+\usepackage{etoolbox}
+\preto\section{%
+  \ifnum\value{chapter}=1{}\else   % don't skip before Ch 1
+    \ifnum\value{section}=0\addtocontents{exc}{\vskip10pt}\fi
+  \fi
+}
+
+% indent these the standard amount for a chaptered section
+\setlength{\cftexerciseindent}{1.5em}
+
+%-----------------------------------------------------------------------------
+
+% license
+\usepackage{ccicons}
+
+% computer keyboard symbol
+\usepackage{marvosym}
+
+% for dotted lines in the matrics/arrays
+\usepackage{arydshln}
+
+
+% fonts for TOC, list of figures, etc
+\renewcommand*\listfigurename{\bf\textsf{List of Figures}}
+\renewcommand*\listexercisename{\bf\textsf{List of Exercises}}
+\renewcommand*\contentsname{\bf\textsf{Table of Contents}}
+
+% short table of contents
+\usepackage{shorttoc}
+
+
+% pack more figures on a page
+\usepackage{float}
+\renewcommand\floatpagefraction{.9}
+\renewcommand\topfraction{.9}
+\renewcommand\bottomfraction{.9}
+\renewcommand\textfraction{.1}
+
+
+\usepackage{multirow}
+
+% MarginPars
+\setlength{\marginparwidth}{0.75in}
+\newcommand{\aMarginPar}[1]{\marginpar{\vskip-\baselineskip\raggedright\tiny\sffamily\hrule\smallskip{\color{red}#1}\par\smallskip\hrule}}
+\newcommand{\MarginPar}[1]{\ifdefined\debugmode\aMarginPar{#1}\fi}
+
+
+% New command for cover picture!
+\usepackage{eso-pic}
+\newcommand\BackgroundPic{%
+\put(-0,-0){%
+\parbox[b][\paperheight]{\paperwidth}{%
+\vfill
+\centering
+\includegraphics[width=\paperwidth, %height=\paperheight, % 
+keepaspectratio]{Artwork.pdf}%
+\vfill
+}}}
+
+
+\usepackage[many]{tcolorbox}
+
+\newtcolorbox{mybox}[1][]{
+    width=\textwidth,
+    arc=0mm,
+    auto outer arc,
+    boxsep=0.05cm,
+    toprule=2pt,
+    leftrule=2pt,
+    bottomrule=2pt,
+    rightrule=2pt,
+    colframe=black,
+    colback=white,
+    fontupper=\centering\fontsize{28pt}{28pt}\sffamily,
+    breakable,
+    nobeforeafter,
+    enhanced jigsaw,
+    opacityframe=0.7,
+    opacityback=0.75,
+    title={\hfill\sffamily Astrophysics Books},
+}
+
+\pdfpageattr{/Group <</S /Transparency /I true /CS /DeviceRGB>>}
+
+% My own symbol definitions
+\input mysymbols
+
+%------------------------------------------------------------------
+
+\begin{document}
+
+% Adds the cover picture
+\AddToShipoutPicture*{\BackgroundPic}
+
+\frontmatter
+
+\begin{titlepage}
+
+\ \\[1.25in]
+
+{\sffamily \color{white}
+\begin{center}
+\fontsize{22}{18}\selectfont
+An Introduction to \\
+\fontsize{32}{26}\selectfont
+Relativistic Celestial Mechanics
+\end{center}
+}
+\vspace{0.5em}
+
+\vfill
+
+{\sffamily \color{white} \fontsize{20}{18}\selectfont %Astrophysics Books
+ \hfill\color{white}\fontsize{20}{18}\selectfont Eduard Larrañaga}
+
+\end{titlepage}
+
+\pagestyle{plain}
+
+\null \vfill
+
+\noindent \ccCopy\ 2019 Eduard Larrañaga \\
+
+\noindent \today
+
+\noindent The source for these notes are available online (via \git):\\
+\url{https://github.com/ashcat2005/RelativisticCelestialMechanics}
+
+\noindent \ccbyncsa \\
+\noindent This work is licensed under the Creative Commons
+Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA
+4.0) license.
+
+\clearpage
+
+\shorttoc{Index of Chapters}{0}
+
+\clearpage
+
+
+\setcounter{tocdepth}{2}
+\tableofcontents
+
+\clearpage
+
+\listoffigures
+\addcontentsline{toc}{chapter}{List of Figures}
+
+\clearpage
+
+\listofexercise
+\addcontentsline{toc}{chapter}{List of Exercises}
+
+\clearpage
+
+%\chapter*{Preface}
+%\chaptermark{Preface}
+%\addcontentsline{toc}{chapter}{Preface}
+
+%\input preface/preface.tex
+
+\clearpage
+
+\pagestyle{headings}
+
+\renewcommand{\chaptermark}[1]{%
+\markboth{\chaptername
+\ \thechapter.\ #1}{}}
+
+\renewcommand{\sectionmark}[1]{\markright{\thesection---#1}}
+
+% The git version is presented on the first page of each chapter 
+\fancypagestyle{plain}{%
+\fancyhf{} % clear all header and footer fields
+\fancyfoot[C]{\thepage} % except the center
+\fancyfoot[L]{\scriptsize git version: v1.0}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}}
+
+
+\mainmatter
+
+%\input intro/intro.tex
+
+\part{Celestial Mechanics}
+
+\chapter{Newtonian Celestial Mechanics} 
+\input CelestialMechanics/CelestialMechanics.tex
+
+\chapter{Perturbation Theory} 
+\input PerturbationTheory/PerturbationTheory.tex
+
+\part{General Relativity}
+
+\chapter{General Relativity Fundamentals}
+\input GR/GR.tex
+
+\chapter{Schwarzschild Spacetime}
+\input Schwarzschild/Schwarzschild.tex
+
+\part{Weak Gravitational Field}
+
+\chapter{Linearized Gravity}
+\input LinearGrav/LinearGrav.tex
+
+\chapter{ The Post-Newtonian Approximation}
+\input PNApproximation/PNApproximation.tex
+
+\chapter{Equations of Motion in the Post-Newtonian Approximation}
+\input PNParticleMotion/PNParticleMotion.tex
+
+\part{Relativistic Celestial Mechanics}
+
+\chapter{(Parameterized) Post-Newtonian description of the Static One Body Problem}
+\input OneBodyProblem/OneBodyProblem.tex
+
+\chapter{Post-Newtonian Description of the N-Body Problem}
+\input NBodyProblem/NBodyProblem.tex
+
+\chapter{Post-Newtonian Description of a Binary System}
+\input BinarySystem/BinarySystem.tex
+
+\appendix
+\part{ Appendix}
+
+\chapter{Astronomical Data}\label{A:AstronomicalData}
+\input AstronomicalData/AstronomicalData.tex
+
+\chapter{Deduction of the Green Function for Poisson Equation} \label{A:GreenFunctionPoisson}
+
+\chapter{Deduction of the Retarded Green Function} \label{A:GreenFunctionWave}
+\input GreenFunction/GreenFunction.tex
+
+\backmatter
+\addcontentsline{toc}{chapter}{References}
+\bibliographystyle{plain}
+\bibliography{refs}{}
+
+\end{document}

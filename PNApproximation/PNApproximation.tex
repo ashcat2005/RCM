@@ -1,0 +1,385 @@
+In the previous chapter, we use a linearization of the Einstein's field equations to show that Poisson equation is included into the formulation of general relativity and that the Newtonian gravitational potential is included into the components of the metric tensor. An interesting result was obtained in equation (\ref{eq:NewtonianMetric2}), which corresponds to a non-Newtonian contribution to the gravitational field. Following this result, in this chapter we will continue the series expansion of the metric tensor, including high order terms and therefore obtaining new relativistic contributions to the gravitational field. This formulation is called \textit{post-Newtonian approximation} and will be constructed by assuming systems with slow motions and weak gravitational fields.
+
+\section{Required Order of the Metric Tensor in the Post-Newtonian Approximation}
+
+The construction of the post-Newtonian approximation depends on the context in which we are interested. Since we want to study the motion of particles, we will consider a Lagrangian with the form of equation (\ref{eq:GRParticleLagrangian01}),
+\begin{equation}
+L= - m_0 c \sqrt{-g_{\mu \nu} \frac{dx^\mu}{d\tau}\frac{dx^\nu}{d\tau}},
+\end{equation}
+describing a particle with proper mass $m_0$ and with proper time $\tau$. We will use the approximation of slow motion (\ref{eq:gammaApproximation}) and the nearly Newtonian metric given in equations (\ref{eq:NewtonianMetric})  to obtain 
+\begin{equation}
+L = -m_0c^2 + \frac{1}{2} m_0v^2 + m_0\phi + \mathcal{O} ( \epsilon^2 ),
+\end{equation}
+which corresponds to the Newtonian lagrangian, except for the first term which is an irrelevant constant. This result let us conclude that the contribution of order $\mathcal{O}(\epsilon^2)$ in $g_{00}$ is enough to reproduce the Newtonian gravity and that the first post-Newtonian (denoted \textit{1PN}) corrections will be given by the neglected contributions, $\mathcal{O} ( \epsilon^4 )$ in $g_{00}$, $\mathcal{O} ( \epsilon^{3} )$ in $g_{0j}$ and  $\mathcal{O}(\epsilon^2)$ in $g_{jk}$.  
+
+In general, the nPN (n-th Post-Newtonian) contribution requires to calculate the metric to the orders
+\begin{subequations}
+\begin{align}
+\mathcal{O} \left( \epsilon^{2n+2}\right)  &\text{ for } g_{00} \\
+\mathcal{O} \left( \epsilon^{2n+1}\right)  &\text{ for } g_{0j} \\
+\mathcal{O} \left( \epsilon^{2n}\right)  &\text{ for } g_{jk} .
+\end{align} 
+\end{subequations}
+
+For example,  in Table \ref{tab:nPNOrder} we show the required values of the parameter $\epsilon$  in the metric expansion for a given nPN order.
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+Order & 0PN & 0.5PN & 1PN & 1.5PN & 2PN \\
+\hline
+$g_{00}$ & $\epsilon^2$ & $\epsilon^3$ &  $\epsilon^4$& $\epsilon^5$ & $\epsilon^6$ \\
+$g_{0j}$ & $\epsilon$  & $\epsilon^2$ & $\epsilon^3$ & $\epsilon^4$  & $\epsilon^5$  \\ 
+$g_{jk}$ & $\epsilon^0$ & $\epsilon$  & $\epsilon^2$ & $\epsilon^3$ & $\epsilon^4$ \\
+\hline
+\end{tabular}
+\caption{ Order of the metric terms needed to calculate the nPN contribution in terms of the parameter $\epsilon$.}
+\label{tab:nPNOrder}
+\end{center}
+\end{table}
+
+\section{The 1PN Approximation}
+According to the discussion in the above section, we will obtain the metric coefficients for a 1PN approximation. This require an expansion of the metric tensor and the energy-momentum tensor in powers of the parameter $\epsilon$. However, before we begin it is important to note that, neglecting gravitational radiation, a gravitational system subject to conservative forces must be invariant under time inversion, $t \rightarrow -t$. In order to preserve this invariance, and remembering that the expansions are given in powers of $\epsilon \sim \frac{v}{c} $,  the metric coefficients $g_{00}$ and $g_{jk}$ must contain only even powers of $\epsilon$, while the coefficients $g_{0j}$ must contain only odd powers of $\epsilon$. According to equation (\ref{eq:NewtonianMetric}) and the above argument, we expand the metric as
+\begin{subequations}\label{eq:PNMetricInitial}
+\begin{align}
+g_{00} &= -1 + \leftidx{^{(2)}}h_{00} + \leftidx{^{(4)}}h_{00} + \mathcal{O} \left( \epsilon^6 \right) \\
+g_{0j} &= \leftidx{^{(3)}}h_{0j} +  \mathcal{O} \left( \epsilon^5 \right)  \\
+g_{jk} &= \delta_{jk} + \leftidx{^{(2)}}h_{jk} + \mathcal{O} \left( \epsilon^4 \right) .
+\end{align}
+\end{subequations}
+
+\begin{exercise}[Inverse metrics approximation]
+\textbf{Inverse of the Expanded Metric}\\
+Using the relation $g^{\mu \sigma} g_{\sigma \nu} = \delta^\mu _\nu$ show that the inverse of the power expanded metric (\ref{eq:PNMetricInitial}) is
+\begin{subequations}
+\begin{align}
+g^{00} &= -1 + \leftidx{^{(2)}}h^{00} + \leftidx{^{(4)}}h^{00} + \mathcal{O} \left( \epsilon^6 \right) \\
+g^{0j} &= \leftidx{^{(3)}}h^{0j} +  \mathcal{O} \left( \epsilon^5 \right)  \\
+g^{jk} &= \delta^{jk} + \leftidx{^{(2)}}h^{jk} + \mathcal{O} \left( \epsilon^4 \right) ,
+\end{align}
+\end{subequations}
+where
+\begin{subequations}
+\begin{align}
+\leftidx{^{(2)}}h^{00} &= -  \leftidx{^{(2)}}h_{00} \\
+\leftidx{^{(4)}}h^{00} &= -  \leftidx{^{(4)}}h_{00} - \leftidx{^{(2)}}h_{00}^2\\
+\leftidx{^{(3)}}h^{0j} &=   \delta ^{jk} \leftidx{^{(3)}}h_{0k} \\
+\leftidx{^{(2)}}h^{jk} &= - \delta ^{ij} \delta^{lk} \leftidx{^{(2)}}h_{il} .
+\end{align}
+\end{subequations}
+\end{exercise}
+
+\subsection{Connections in the 1PN Approximation}
+In order to calculate the connections, we must differentiate the metric components. Remembering that space and time derivatives increase the order of the terms according to equation (\ref{eq:PartialDerivativesOrder}), i.e. $\partial_0 \sim  \frac{1}{R} \frac{v}{c} \sim \frac{\epsilon}{R} $ and $\partial_j \sim  \frac{1}{R}$, the resulting expansion up to 1PN order gives the terms
+\begin{subequations} \label{eq:PNConnections}
+\begin{align}
+\Gamma ^0_{00} &=  \leftidx{^{(3)}}\Gamma ^0_{00} + \mathcal{O} \left( \frac{\epsilon ^5}{R} \right) \\
+\Gamma ^0_{0j} &=  \leftidx{^{(2)}}\Gamma ^0_{0j} + \mathcal{O} \left( \frac{\epsilon ^4}{R} \right) \\
+\Gamma ^0_{jk} &=   \leftidx{^{(3)}}\Gamma ^0_{jk} + \mathcal{O} \left( \frac{\epsilon ^5}{R} \right) \\
+\Gamma ^i_{00} &=  \leftidx{^{(2)}}\Gamma ^i_{00} + \leftidx{^{(4)}}\Gamma ^i_{00} + \mathcal{O} \left( \frac{\epsilon ^6}{R} \right) \\
+\Gamma ^i_{0j} &=  \leftidx{^{(3)}}\Gamma ^i_{0j} + \mathcal{O} \left( \frac{\epsilon ^5}{R} \right) \\
+\Gamma ^i_{jk} &= \leftidx{^{(2)}}\Gamma ^i_{jk} + \mathcal{O} \left( \frac{\epsilon ^4}{R} \right) 
+\end{align}
+\end{subequations}
+with the contributions \footnote{In the following expressions we use that $\delta^{ij} \partial_j = \partial_i$.} 
+\begin{subequations} \label{eq:PNConnectionsComponents}
+\begin{align}
+\leftidx{^{(3)}}\Gamma ^0_{00} &= - \frac{1}{2} \partial _0 \leftidx{^{(2)}}h_{00} \\
+\leftidx{^{(2)}}\Gamma ^0_{0j} &= - \frac{1}{2} \partial _j \leftidx{^{(2)}}h_{00} \\
+\leftidx{^{(3)}}\Gamma ^0_{jk} &= - \frac{1}{2} \left[ \partial _j \leftidx{^{(3)}}h_{0k} + \partial _k \leftidx{^{(3)}}h_{0j} - \partial _0 \leftidx{^{(2)}}h_{jk} \right] \\
+\leftidx{^{(2)}}\Gamma ^i_{00} &= - \frac{1}{2} \partial _i \leftidx{^{(2)}}h_{00} \\
+\leftidx{^{(4)}}\Gamma ^i_{00} &= - \frac{1}{2} \partial _i \leftidx{^{(4)}}h_{00} + \partial _0 \leftidx{^{(3)}}h_{0i} + \frac{1}{2} \leftidx{^{(2)}}h_{ij}  \partial _j \leftidx{^{(2)}}h_{00}\\
+\leftidx{^{(3)}}\Gamma ^i_{0j} &=  \frac{1}{2} \left[  \partial _0 \leftidx{^{(2)}}h_{ij} + \partial _j \leftidx{^{(3)}}h_{0i} - \partial _i \leftidx{^{(3)}}h_{0j} \right]\\
+\leftidx{^{(2)}}\Gamma ^i_{jk} &= \frac{1}{2} \left[ \partial _k \leftidx{^{(2)}}h_{ij} + \partial _j \leftidx{^{(2)}}h_{ik} - \partial _i \leftidx{^{(2)}}h_{jk} \right].
+\end{align}
+\end{subequations}
+
+\subsection{Ricci Tensor in the 1PN Approximation}
+
+The Ricci tensor is calculated in terms of the expansion of the connections (\ref{eq:PNConnections}), giving
+\begin{subequations}
+\begin{align}
+R_{00} &= \leftidx{ ^{(2)}}R_{00} + \leftidx{ ^{(4)}} R_{00} + \mathcal{O} \left( \epsilon^6 \right) \\
+R_{0j} &= \leftidx{ ^{(3)}}R_{00} + \mathcal{O} \left( \epsilon^5 \right) \\
+R_{jk} &= \leftidx{ ^{(2)}}R_{jk} +  \mathcal{O} \left( \epsilon^4 \right) 
+\end{align}
+\end{subequations}
+where
+\begin{subequations}
+\begin{align}
+\leftidx{ ^{(2)}}R_{00} &= \partial _i \leftidx{ ^{(2)}}\Gamma ^i_{00} \\
+\leftidx{ ^{(4)}}R_{00} &= \partial _i \leftidx{ ^{(4)}}\Gamma ^i_{00} -  \partial _0 \leftidx{ ^{(3)}}\Gamma ^i_{0i}  + \leftidx{ ^{(2)}}\Gamma ^i_{00} \leftidx{ ^{(2)}}\Gamma ^j_{ij} - \leftidx{ ^{(2)}}\Gamma ^0_{0i} \leftidx{ ^{(2)}}\Gamma ^i_{00}\\
+\leftidx{ ^{(3)}}R_{0i} &= \partial _0 \leftidx{ ^{(2)}}\Gamma ^0_{0i} +  \partial _j \leftidx{ ^{(3)}}\Gamma ^j_{0i} - \partial _i \leftidx{ ^{(3)}}\Gamma ^0_{00} - \partial _i \leftidx{ ^{(3)}}\Gamma ^j_{0j} \\
+\leftidx{ ^{(2)}}R_{ij} &= \partial _k \leftidx{ ^{(2)}}\Gamma ^k_{ij} -  \partial _j \leftidx{ ^{(2)}}\Gamma ^0_{0i} - \partial _j \leftidx{ ^{(2)}}\Gamma ^k_{ik} .
+\end{align}
+\end{subequations}
+
+Using the equations (\ref{eq:PNConnectionsComponents}), these components are written in terms of the metric tensor components as
+\begin{subequations}\label{eq:1PNRicciTensorComponents}
+\begin{align}
+\leftidx{ ^{(2)}}R_{00} = &- \frac{1}{2} \nabla^2 \left[ \leftidx{ ^{(2)}} h_{00} \right] \\
+\leftidx{ ^{(4)}}R_{00} = &- \frac{1}{2} \nabla^2 \left[ \leftidx{ ^{(4)}} h_{00} \right]+  \partial_0 \partial _i \leftidx{ ^{(3)}} h_{0i}  - \frac{1}{2} \partial_0 \partial_0 \leftidx{ ^{(2)}} h_{ii}  + \frac{1}{2} \leftidx{ ^{(2)}} h_{ij} \partial_i \partial j \leftidx{ ^{(2)}} h_{00} \notag \\ 
+&+ \frac{1}{2}  \partial _j \leftidx{ ^{(2)}} h_{ij} \partial _i  \leftidx{ ^{(2)}} h_{00} - \frac{1}{4} \partial _i \leftidx{ ^{(2)}} h_{00}  \partial _i \leftidx{ ^{(2)}} h_{jj} -\frac{1}{4} \partial _i \leftidx{ ^{(2)}} h_{00}  \partial _i \leftidx{ ^{(2)}} h_{00} \\
+\leftidx{ ^{(3)}}R_{0i} = & -\frac{1}{2} \partial_0 \partial_i \leftidx{ ^{(2)}} h_{jj} + \frac{1}{2} \partial_i \partial_j \leftidx{ ^{(3)}} h_{0j} + \frac{1}{2} \partial_0 \partial_j \leftidx{ ^{(2)}} h_{ij} - \frac{1}{2} \nabla^2 \left[ \leftidx{ ^{(3)}} h_{0i}\right]\\
+\leftidx{ ^{(2)}}R_{ij} = & \frac{1}{2} \partial_i \partial_j \leftidx{ ^{(2)}} h_{00} - \frac{1}{2} \partial_i \partial_j \leftidx{ ^{(2)}} h_{kk} + \frac{1}{2} \partial_k \partial_j \leftidx{ ^{(2)}} h_{ik} + \frac{1}{2} \partial_k \partial_i \leftidx{ ^{(2)}} h_{kj} - \frac{1}{2} \nabla^2  \left[\leftidx{ ^{(2)}} h_{ij} \right].
+\end{align}
+\end{subequations}
+
+\subsection{Fixing the Gauge}
+
+Imposing a gauge may simplify considerably the curvature tensors, the field equations and the whole mathematical description. Here, we will describe two of the possible gauges due to their applicability to gravitational radiation and to the celestial mechanics theory.
+
+\subsubsection{The Harmonic Gauge}
+The components of the Ricci tensor are conveniently simplified by choosing the so-called \textit{harmonic gauge}. This was introduced by Einstein in 1912 \cite{Straumann2011}  and states that the coordinate functions satisfies the harmonic condition
+\begin{equation}
+\square x^\mu =0. \label{eq:HarmonicGauge}
+\end{equation}
+
+However, this condition can be put in terms of the metric tensor components as
+\begin{equation}
+\partial_\nu \left( \sqrt{-g} g^{\mu \nu} \right) = 0,
+\end{equation}
+
+or in terms of the connection as the relation
+\begin{equation}
+g^{\mu \nu} \Gamma^\alpha_{\mu \nu} = 0. \label{eq:HarmonicGauge02}
+\end{equation}
+
+Using the post-Newtonian approximation of the metric, the harmonic gauge impose a restriction to the perturbation components $h_{\mu \nu}$. This gauge is appropriate for describing gravitational radiation, just as the Lorentz gauge is appropriate to describe electromagnetic radiation. Since celestial mechanics will be described in the near field approximation, we will not use the harmonic gauge here. Instead, we will introduce a more appropriate gauge.
+
+\vspace{2cm}
+\begin{exercise}[Harmonic Gauge Conditions]
+\textbf{Harmonic gauge conditions}\\
+Consider the $\alpha=0$ case of equation (\ref{eq:HarmonicGauge02}). Show that the vanishing of the  order $\mathcal{O}(\epsilon^3)$ terms in this equation corresponds to the condition
+\begin{equation}
+\frac{1}{2} \partial_0  \leftidx{ ^{(2)}} h_{00} -  \partial_j  \leftidx{ ^{(3)}} h_{0j} + \frac{1}{2} \partial_0  \leftidx{ ^{(2)}} h_{jj} = 0. \label{eq:HarmonicCondition01}
+\end{equation}
+
+Similarly, from the $\alpha=i$ case of equation (\ref{eq:HarmonicGauge02}), show that the vanishing of  the order $\mathcal{O}(\epsilon^2)$ terms is given the condition
+\begin{equation}
+\frac{1}{2} \partial_i  \leftidx{ ^{(2)}} h_{00} +  \partial_j  \leftidx{ ^{(2)}} h_{ij} - \frac{1}{2} \partial_i  \leftidx{ ^{(2)}} h_{jj} = 0. \label{eq:HarmonicCondition02}
+\end{equation}
+\end{exercise}
+
+\subsubsection{The Standard Post-Newtonian Gauge}
+Relativistic celestial mechanics deals with slowly moving systems with weak gravitational fields in the near region. Therefore, the harmonic gauge is not the adequate for this description. In order to study the effects of general relativity in the celestial mechanics formulation we will follow the works of Will\cite{Will1993} and impose the so-called the \textit{Standard Post-Newtonian Gauge}, given by the conditions
+\begin{subequations}\label{eq:StandardGaugeCondition}
+\begin{align}
+ \partial_j  \leftidx{ ^{(3)}} h_{0j} -  \frac{1}{2} \partial_0  \leftidx{ ^{(2)}} h_{jj} &= 0 \label{eq:GaugeOrder3} \\
+\frac{1}{2} \partial_i  \leftidx{ ^{(2)}} h_{00} +  \partial_j  \leftidx{ ^{(2)}} h_{ij} - \frac{1}{2} \partial_i  \leftidx{ ^{(2)}} h_{jj} &= 0. \label{eq:GaugeOrder2}
+\end{align}
+\end{subequations}
+
+Comparing with equations (\ref{eq:HarmonicCondition01}) and (\ref{eq:HarmonicCondition02}), we note that these conditions are similar to those in the harmonic gauge, except for one term. Indeed, the nature of the standard PN gauge is analog to the conditions in the Coulomb gauge in electrodynamics. 
+
+\begin{exercise}[Ricci Tensor under the Standard PN Gauge Conditions]
+\textbf{Ricci tensor under the standard PN gauge conditions}\\
+Show that under the standard Post-Newtonian gauge imposed by conditions (\ref{eq:GaugeOrder3}) and (\ref{eq:GaugeOrder2}), the Ricci tensor (\ref{eq:1PNRicciTensorComponents}) simplifies to
+\begin{subequations}\label{eq:1PNGaugedRicciComponents}
+\begin{align}
+\leftidx{ ^{(2)}}R_{00} = &- \frac{1}{2} \nabla^2 \left[ \leftidx{ ^{(2)}} h_{00} \right] \\
+\leftidx{ ^{(4)}}R_{00} = &- \frac{1}{2} \nabla^2 \left[ \leftidx{ ^{(4)}} h_{00} \right] + \frac{1}{2}  \partial _j \leftidx{ ^{(2)}} h_{ij} \partial _i  \leftidx{ ^{(2)}} h_{00} + \frac{1}{2} \leftidx{ ^{(2)}} h_{ij} \partial_i \partial_j \leftidx{ ^{(2)}} h_{00} \notag \\
+&    - \frac{1}{4} \partial _i \leftidx{ ^{(2)}} h_{00}  \partial _i \leftidx{ ^{(2)}} h_{jj} -\frac{1}{4} \partial _i \leftidx{ ^{(2)}} h_{00}  \partial _i \leftidx{ ^{(2)}} h_{00}  \\
+\leftidx{ ^{(3)}}R_{0i} = & - \frac{1}{2} \nabla^2 \left[ \leftidx{ ^{(3)}} h_{0i}\right] + \frac{1}{2} \partial_0 \partial_j \leftidx{ ^{(2)}} h_{ij} - \frac{1}{4} \partial_0 \partial_i \leftidx{ ^{(2)}} h_{jj} \\
+\leftidx{ ^{(2)}}R_{ij} =& - \frac{1}{2} \nabla^2  \left[\leftidx{ ^{(2)}} h_{ij} \right].
+\end{align}
+\end{subequations}
+\end{exercise}
+
+
+\section{The Field Equations in the Post-Newtonian Approximation}
+Now that we have the components of the metric tensor and the Ricci tensor in the 1PN approximation, we are ready to set the field equations. We will write the expansion of the energy-momentum tensor, following the results of equation (\ref{eq:ApproximationT01}), as
+\begin{subequations}
+\begin{align}
+T^{00} &= \leftidx{ ^{(0)}} T^{00} + \leftidx{ ^{(2)}} T^{00} + \mathcal{O} \left( \epsilon^4 \right) \\
+T^{0j} &= \leftidx{ ^{(1)}} T^{0j} + \leftidx{ ^{(3)}} T^{0j} + \mathcal{O} \left( \epsilon^5 \right) \\
+T^{ij} &= \leftidx{ ^{(2)}} T^{ij} + \leftidx{ ^{(4)}} T^{ij} + \mathcal{O} \left( \epsilon^6 \right).
+\end{align}
+\end{subequations}
+
+We will use the second form of the equations (\ref{eq:EinsteinFieldEquations2}), for which we need to calculate the trace-reversed tensor $S_{\mu \nu} = T_{\mu \nu} - \frac{1}{2} g_{\mu \nu} T $. According to the expansion of the Ricci tensor in (\ref{eq:1PNGaugedRicciComponents}), the trace-reversed energy-momentum tensor shall be calculated up to the following orders\footnote{Remember that the trace reversed tensor $S_{\mu \nu}$ is accompanied by the constant $\frac{8\pi G}{c^4}$, which affects the order of these terms in the field equations.}
+\begin{subequations}
+\begin{align}
+S_{00} &= \leftidx{ ^{(0)}} S_{00} + \leftidx{ ^{(2)}} S_{00} + \mathcal{O} \left( \epsilon^4 \right) \\
+S_{0j} &= \leftidx{ ^{(1)}} S_{0j}  + \mathcal{O} \left( \epsilon^3 \right) \\
+S_{ij} &= \leftidx{ ^{(0)}} S_{ij} + \mathcal{O} \left( \epsilon^2 \right).
+\end{align}
+\end{subequations}
+
+Using the trace 
+\begin{equation}
+ T = -\leftidx{^{(0)}} T^{00} -\leftidx{^{(2)}} T^{00} + \leftidx{^{(2)}} h_{00} \leftidx{^{(0)}} T^{00} + \delta_{ij} \leftidx{^{(2)}} T^{ij} + \mathcal{O} \left( \epsilon^4 \right)
+ \end{equation} 
+we obtain the relevant components of $S_{\mu \nu}$ in the 1PN approximation as
+\begin{subequations} \label{eq:1PNEnergyMomentum}
+\begin{align}
+\leftidx{ ^{(0)}} S_{00}  &= \frac{1}{2} \leftidx{ ^{(0)}} T^{00} \\
+\leftidx{ ^{(2)}} S_{00}  &= \frac{1}{2} \left[ \leftidx{ ^{(2)}} T^{00} - 2 \leftidx{ ^{(2)}} h_{00} \leftidx{ ^{(0)}} T^{00} + \delta_{ij} \leftidx{ ^{(2)}} T^{ij} \right] \\
+\leftidx{ ^{(1)}} S_{0j} &=- \leftidx{ ^{(1)}} T^{0j} \\
+\leftidx{ ^{(0)}} S_{ij} &= \frac{1}{2} \delta_{ij} \leftidx{ ^{(0)}} T^{00}.
+\end{align}
+\end{subequations}
+
+All the previous results let us write the 1PN approximation of the field equations as
+\begin{subequations}
+\begin{align}
+\leftidx{^{(2)}}R_{00} &= \frac{8\pi G}{c^4} \leftidx{^{(0)}}S_{00}  \label{eq:secondorder01} \\
+\leftidx{^{(4)}}R_{00} &= \frac{8\pi G}{c^4} \leftidx{^{(2)}}S_{00}  \label{eq:fourthorder} \\
+\leftidx{^{(3)}}R_{0i} &= \frac{8\pi G}{c^4} \leftidx{^{(1)}}S_{0i}  \label{eq:thirdorder} \\
+\leftidx{^{(2)}}R_{ij} &= \frac{8\pi G}{c^4} \leftidx{^{(0)}}S_{ij}. \label{eq:secondorder02}
+\end{align}
+\end{subequations}
+
+These field equations can be re-written defining some potential functions. Using the Ricci tensor components (\ref{eq:1PNGaugedRicciComponents}) and equation (\ref{eq:1PNEnergyMomentum}) in the second order equation (\ref{eq:secondorder01}) gives
+\begin{equation}
+\nabla^2 \left[ \leftidx{^{(2)}} h_{00} \right] = - \frac{8\pi G}{c^4} \leftidx{^{(0)}}T^{00} .
+\end{equation}
+
+Writing the corresponding metric component as
+\begin{equation}
+\leftidx{^{(2)}} h_{00} = -\frac{2}{c^2} \phi ,
+\end{equation}
+we obtain the potential
+\begin{equation}
+\phi (x) = - \frac{G}{c^2} \int \frac{\leftidx{^{(0)}}T^{00} (t,  \textbf{x}')}{\left|  \textbf{x} - \textbf{x}' \right|} d^3 x'. \label{eq:NewtonianPotential}
+\end{equation}
+
+Note that this component is exactly the same as the one obtained in equation (\ref{eq:00ComponentNewtonian}), corresponding to the Newtonian potential contribution. Similarly, the second order equation (\ref{eq:secondorder02}) gives
+\begin{equation}
+\nabla^2 \left[ \leftidx{^{(2)}} h_{ij} \right] = - \frac{8\pi G}{c^4} \delta_{ij} \leftidx{^{(0)}}T^{00} ,
+\end{equation}
+from which we obtain the metric component
+\begin{equation}
+\leftidx{^{(2)}} h_{ij} = -\frac{2}{c^2} \delta_{ij} \phi
+\end{equation}
+with the same potential $\phi$ as in equation  (\ref{eq:NewtonianPotential}). This result is the same contribution obtained in equation (\ref{eq:jkComponentNewtonian}).
+ 
+Now, we lead our attention to the fourth order equation (\ref{eq:fourthorder}). Note that the relevant component of the Ricci tensor, using the above results, is 
+\begin{equation}
+\leftidx{ ^{(4)}}R_{00} = - \frac{1}{2} \nabla^2 \left[ \leftidx{ ^{(4)}} h_{00} \right] + \frac{2}{c^4} \phi \nabla^2 \phi - \frac{2}{c^4} \bnabla \phi \cdot \bnabla \phi. 
+\end{equation}
+
+Similarly, the corresponding component of the trace-reversed energy-momentum tensor is
+\begin{equation}
+\leftidx{ ^{(2)}} S_{00}  = \frac{1}{2} \left[ \leftidx{ ^{(2)}} T^{00} - \frac{4\phi }{c^2} \leftidx{ ^{(0)}} T^{00} + \leftidx{ ^{(2)}} T^{jj} \right].
+\end{equation}
+
+Using these relations and the vector identity $\bnabla \phi \cdot \bnabla \phi = \frac{1}{2} \nabla^2 \left( \phi^2 \right) - \phi \nabla^2 \phi$, the field equation (\ref{eq:fourthorder} ) is written as
+\begin{equation}
+ \nabla^2 \left[ \leftidx{ ^{(4)}} h_{00} + \frac{2}{c^4} \phi^2  \right] = - \frac{8\pi G }{c^4}  \left( \leftidx{ ^{(2)}} T^{00}  + \leftidx{ ^{(2)}} T^{jj} \right) .
+\end{equation}
+
+We introduce a gravitational potential $\psi$ to write the metric component $\leftidx{ ^{(4)}} h_{00} $ as
+\begin{equation}
+\leftidx{ ^{(4)}} h_{00}  = -\frac{2}{c^2} \left(\frac{\phi^2}{c^2} + \psi \right)
+\end{equation}
+where $\phi$ is given by equation (\ref{eq:NewtonianPotential}). The resulting equation gives
+\begin{equation}
+\psi (x) = - \frac{G}{c^2}  \int  \left[ \leftidx{ ^{(2)}} T^{00}  (t, \textbf{x}')+ \leftidx{ ^{(2)}} T^{jj}  (t,  \textbf{x}') \right] \frac{d^3 x'}{\left| \textbf{x} - \textbf{x}'\right|}.
+\end{equation}
+
+Finally, considering the third order equation (\ref{eq:thirdorder}), we use the above results to obtain the equation
+\begin{equation}
+\nabla^2 \left[ \leftidx{^{(3)}} h_{0i} \right] =  \frac{16\pi G}{c^4}  \leftidx{^{(1)}}T^{0i} + \frac{1}{c^2} \partial_0 \partial_i \phi .
+\end{equation}
+
+Here we will introduce two gravitational potentials, $\zeta_i$ and $\chi$, such that
+\begin{equation}
+\nabla^2 \zeta_i = \frac{4\pi G}{c}  \leftidx{^{(1)}}T^{0i} \label{eq:PNzetaPotentialEq}
+\end{equation}
+and 
+\begin{equation}
+\nabla^2 \chi = \frac{\phi}{c^2}, \label{eq:PNSuperpotentialEq}
+\end{equation}
+and hence, the component $\leftidx{^{(3)}} h_{0i}$ is given by
+\begin{equation}
+\leftidx{^{(3)}} h_{0i} = \frac{4}{c^3} \zeta_i + \partial_0 \partial_i \chi .
+\end{equation}
+
+\begin{exercise}[Potential $\zeta_i$]
+\textbf{Potential $\zeta_i$}\\
+Show that integration of the equation (\ref{eq:PNzetaPotentialEq}) gives the potential
+\begin{equation}
+\zeta_i (x)= - \frac{G}{c} \int \frac{\leftidx{^{(1)}}T^{0i}(t, \textbf{x}') }{\left|  \textbf{x} - \textbf{x}' \right|} d^3 x' ,
+\end{equation}
+which is the same term obtained in equation (\ref{eq:0jComponentNewtonian}) as a first post-Newtonian contribution. 
+\end{exercise}
+
+\begin{exercise}[Superpotential]
+\textbf{Superpotential $\chi$}\\
+The function $\chi$ is called a \textit{superpotential} because it is defined in terms of the potential $\phi$ through the relation (\ref{eq:PNSuperpotentialEq}). Show that integration of this differential equation gives
+\begin{equation}
+\chi (x)= -\frac{G}{2c^4} \int \left|  \textbf{x} - \textbf{x}' \right| \leftidx{^{(0)}}T^{00} (t,  \textbf{x}') d^3 x' .
+\end{equation}
+\end{exercise}
+
+
+\subsection{Summary of Results in terms of the Post-Newtonian Potentials}
+
+The main results of this chapter are the post-Newtonian components of the metric, given by
+\begin{subequations}\label{eq:PNMetricTensor}
+\begin{align}
+g_{00} &= -1 - \frac{2}{c^2} \phi - \frac{2}{c^2} \left(\frac{\phi^2}{c^2} + \psi \right) + \mathcal{O} \left( \epsilon^6 \right) \\
+g_{0j} &= \frac{4}{c^3} \zeta_j + \partial_0 \partial_i \chi +  \mathcal{O} \left( \epsilon^5 \right) \\
+g_{ij} &= \delta_{ij} \left( 1 - \frac{2}{c^2} \phi \right) + \mathcal{O} \left( \epsilon^4 \right)
+\end{align}
+\end{subequations}
+where the gravitational post-Newtonian potentials satisfy the equations
+\begin{subequations}\label{eq:PoissonEquations}
+\begin{align}
+\nabla^2 \phi &= \frac{4\pi G}{c^2} \leftidx{^{(0)}} T^{00} \\
+\nabla^2 \psi &= \frac{4\pi G}{c^2} \left[ \leftidx{^{(2)}} T^{00} + \leftidx{^{(2)}} T^{jj} \right]  \\
+\nabla^2 \zeta_i &= \frac{4\pi G}{c}  \leftidx{^{(1)}}T^{0i} \\
+\nabla^2 \chi &= \frac{\phi}{c^2}
+\end{align}
+\end{subequations}
+and therefore
+\begin{subequations}\label{eq:postNewtonianPotentials}
+\begin{align}
+\phi (x) &= - \frac{G}{c^2} \int \frac{\leftidx{^{(0)}}T^{00} (t,  \textbf{x}')}{\left|  \textbf{x} - \textbf{x}' \right|} d^3 x' \\
+\psi (x) &= -  \frac{G}{c^2} \int \left[ \leftidx{ ^{(2)}} T^{00} (t,  \textbf{x}') + \leftidx{ ^{(2)}} T^{jj}(t,  \textbf{x}') \right]  \frac{d^3 x'}{\left| \textbf{x} - \textbf{x}'\right|} \\
+\zeta_i (x) &= - \frac{G}{c} \int \frac{\leftidx{^{(1)}}T^{0i}(t, \textbf{x}') }{\left|  \textbf{x} - \textbf{x}' \right|} d^3 x' \\
+\chi (x) &= -\frac{G}{2c^4} \int \left|  \textbf{x} - \textbf{x}' \right| \leftidx{^{(0)}}T^{00} (t,  \textbf{x}') d^3 x'.
+\end{align}
+\end{subequations}
+
+For future convenience  we also write here the connection components (\ref{eq:PNConnectionsComponents}) in terms of the post-Newtonian potentials,
+\begin{subequations} 
+\begin{align}
+\leftidx{^{(3)}}\Gamma ^0_{00} &=  \frac{1}{c^2} \partial _0 \phi\\
+\leftidx{^{(2)}}\Gamma ^0_{0j} &=  \frac{1}{c^2} \partial _j \phi \\
+\leftidx{^{(3)}}\Gamma ^0_{jk} &=  -\frac{1}{c^2} \left[ \frac{2}{c}\left( \partial _j \zeta_k + \partial _k \zeta_j \right) + c^2 \partial_0 \partial_j \partial_k \chi + \delta_{jk} \partial _0 \phi \right] \\
+\leftidx{^{(2)}}\Gamma ^i_{00} &=  \frac{1}{c^2} \partial _i \phi \\
+\leftidx{^{(4)}}\Gamma ^i_{00} &=  \frac{4}{c^4} \phi \partial _i \phi + \frac{4}{c^3} \partial _0 \zeta_i + \frac{1}{c^2} \partial _i \psi + \partial_0 \partial_0 \partial_i \chi \\
+\leftidx{^{(3)}}\Gamma ^i_{0j} &= - \frac{1}{c^2} \left[ \frac{2}{c}\left( \partial _i \zeta_j - \partial _j \zeta_i \right) + \delta_{ij} \partial _0 \phi \right]\\
+\leftidx{^{(2)}}\Gamma ^i_{jk} &= - \frac{1}{c^2} \left[ \delta_{ij}\partial _k \phi  + \delta_{ik} \partial _j \phi - \delta_{jk}  \partial _i \phi \right].
+\end{align}
+\end{subequations}
+
+\section{The Gauge Condition and the Conservation of the Energy-Momentum Tensor}
+
+Now, we will find a relation between the standard post-Newtonian gauge conditions (\ref{eq:StandardGaugeCondition}) and the lower order approximation of the equation of conservation for the energy-momentum tensor.  Replacing the metric terms with the post-Newtonian potentials in equation (\ref{eq:GaugeOrder3}), gives
+\begin{equation}
+ c \partial_0 \phi + \partial_j \zeta_j  = 0\label{eq:GaugeinPotentials}
+ \end{equation} 
+while equation (\ref{eq:GaugeOrder2}) becomes an identity. On the other hand, the conservation law for the energy-momentum tensor, 
+\begin{equation}
+\nabla_\nu T^{\mu \nu} = \partial_\nu T^{\mu \nu} + \Gamma^\mu _{\nu \sigma} T^{\sigma \nu} + \Gamma^\nu _{\nu \sigma} T^{\mu \sigma } = 0, \label{eq:ConservationofT}
+\end{equation}
+is not immediately assured in this construction because the metric tensor given in equations (\ref{eq:PNMetricTensor}) was obtained using a particular gauge. Considering the $\mu=0$ component of this equation, the lower order of approximation gives the condition 
+\begin{equation}
+\partial_0 \leftidx{^{(0)}} T^{00} + \partial_j \leftidx{^{(1)}} T^{0j} = 0 +\mathcal{O}(\epsilon^2)
+\end{equation}
+and, using the equations (\ref{eq:PoissonEquations}), this relation becomes
+\begin{equation}
+\nabla^2 \left[  c \partial_0 \phi + \partial_j \zeta_j  \right] = 0.
+\end{equation}
+
+Since both potentials, $\phi$ and $\zeta_i$, vanish at infinity; the solution of this equation corresponds to the gauge condition (\ref{eq:GaugeinPotentials}).
+
+Considering now the $\mu=i$ component of the conservation equation (\ref{eq:ConservationofT}), the lowest order of approximation gives
+\begin{equation}
+\partial_0 \leftidx{^{(1)}} T^{0i} + \partial_j \leftidx{^{(2)}} T^{ij} = -\frac{1}{c^2}  \leftidx{^{(0)}} T^{00} \partial_i \phi , 
+\end{equation}
+which corresponds to momentum conservation, as will be shown in a following chapter.

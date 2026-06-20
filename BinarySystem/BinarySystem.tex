@@ -1,0 +1,315 @@
+In this chapter, we will simplify the equations describing a system of $N$ particles to the simple case of a binary system. This consists of a body with proper mass $m_1$ and position $\textbf{x}_1$ together with another body of proper mass $m_2$ and position $\textbf{x}_2$. The Lagrangian describing the binary system is obtained by considering $N=2$ in the equation (\ref{eq:NBodySystemLagrangian}), giving 
+\begin{align}
+L = &\frac{1}{2} m_1 \dot{\textbf{x}}_1^2 + \frac{1}{2} m_2 \dot{\textbf{x}}_2^2 + \frac{G m_1 m_2}{r} + \frac{1}{8} m_1 \frac{(\dot{\textbf{x}}_1^2)^2}{c^2} + \frac{1}{8} m_2 \frac{(\dot{\textbf{x}}_2^2)^2}{c^2} - \frac{1}{2} \frac{G^2}{c^2} \frac{m_1 m _2}{r^2} (m_1 + m_2) \notag \\
+& + \frac{1}{2} \frac{G}{c^2} \frac{m_1 m_2}{r} \left[ 3 (\dot{\textbf{x}}_1^2+ \dot{\textbf{x}}_2^2) - 7 \dot{\textbf{x}}_1 \cdot \dot{\textbf{x}}_2 - \frac{(\textbf{x} \cdot \dot{\textbf{x}}_1) (\textbf{x} \cdot \dot{\textbf{x}}_2)}{r^2} \right]  + \Ordof \left( \epsilon^6 \right), \label{eq:PN2BodyLagrangian1}
+\end{align}
+where we introduce the relative separation vector 
+\begin{equation}
+\textbf{x} := \textbf{x}_1 - \textbf{x}_2 \label{eq:PN2BodyRelativePosition}
+\end{equation}
+and its magnitude $r := \left| \textbf{x} \right| = \left| \textbf{x}_1 - \textbf{x}_2 \right|  $.
+
+As usual, we will separate this Lagrangian into two parts, one describing the baricenter and other describing the relative motion. First, we introduce the Tolman mass for each particle as
+\begin{align}
+\tilde{m}_1 = & m_1 + \frac{1}{2} m_1 \frac{\dot{\textbf{x}}_1^2}{c^2} - \frac{G}{2c^2} \frac{m_1 m_2}{r} \\
+\tilde{m}_2 = & m_2 + \frac{1}{2} m_2 \frac{\dot{\textbf{x}}_2^2}{c^2} - \frac{G}{2c^2} \frac{m_1 m_2}{r} 
+\end{align}
+to define the baricenter position,
+\begin{equation}
+\textbf{X} = \frac{\tilde{m}_1 \textbf{x}_1 + \tilde{m}_2 \textbf{x}_2}{\tilde{m}_1 + \tilde{m}_2}. \label{eq:PN2BodyBaricenter}
+\end{equation}
+
+From these definitions, the acceleration of the baricenter is shown to satisfy
+\begin{equation}
+(\tilde{m}_1 + \tilde{m}_2) \ddot{\textbf{X}} = \tilde{m}_1 \ddot{\textbf{x}}_1 + \tilde{m}_2 \ddot{\textbf{x}}_2 + \Ordof \left( \epsilon^4 \right).
+\end{equation}
+
+Using the Einstein-Infeld-Hoffmann equations to replace the accelerations $\ddot{\textbf{x}}_1$ and $\ddot{\textbf{x}}_2$, it is straightforward to show that the baricenter is not accelerated,
+\begin{equation}
+\frac{d^2 \textbf{X}}{dt^2} = 0 + \Ordof \left( \epsilon^4 \right),
+\end{equation}
+and therefore it is possible to describe the dynamics of the binary system with an inertial system attached to the barycenter, in which  $\textbf{X} = 0$. This assumption, together with equations \ref{eq:PN2BodyRelativePosition} and \ref{eq:PN2BodyBaricenter}, let us solve for $\textbf{r}_1$ and $\textbf{r}_2$ in terms of the relative separation,
+\begin{align}
+\textbf{x}_1 = & \left[ \frac{m_2}{m} + \frac{\mu \Delta m}{2m^2 c^2} \left( \dot{\textbf{x}}^2 - \frac{Gm}{r} \right) \right] \textbf{x} + \Ordof \left( \epsilon^4 \right) \\
+\textbf{x}_2 = & \left[ -\frac{m_1}{m}  + \frac{\mu \Delta m}{2m^2 c^2} \left( \dot{\textbf{x}}^2 - \frac{Gm}{r} \right) \right] \textbf{x} + \Ordof \left( \epsilon^4 \right),
+\end{align}
+where we introduce $m=m_1 + m_2$, $\mu = {m_1 + m_2}{m}$ and $\Delta m= m_1 - m_2 $. The corresponding velocities satisfy the relations
+\begin{align}
+\dot{\textbf{x}}_1 = & \frac{m_2}{m} \dot{\textbf{x}} + \Ordof \left( \epsilon^2 \right) \\
+\dot{\textbf{x}}_2 = & - \frac{m_1}{m} \dot{\textbf{x}} + \Ordof \left( \epsilon^2 \right) .
+\end{align}
+
+In the baricenter frame, the Lagrangian (\ref{eq:PN2BodyLagrangian1}) describes the relative motion of the particles in the binary system, and takes the form
+\begin{align}
+L = &\frac{1}{2} \mu \dot{\textbf{x}}^2 + \frac{G \mu m}{r} + \frac{1}{8} \mu \left( 1 - \frac{3\mu}{m} \right) \frac{(\dot{\textbf{x}}^2)^2}{c^2} - \frac{1}{2} \frac{G^2}{c^2} \frac{\mu m^2}{r^2} \notag \\
+& + \frac{1}{2} \frac{G}{c^2} \frac{\mu m}{r} \left[ \left( 3 + \frac{\mu }{m}\right) \dot{\textbf{x}}^2 + \frac{\mu }{m} \left( \frac{\textbf{x} \cdot \dot{\textbf{x}}}{r} \right)^2 \right]  + \Ordof \left( \epsilon^6 \right) . \label{eq:PNBinaryLagrangian}
+\end{align}
+
+Note that the first two terms in this Lagrangian correspond to the Newtonian contribution while the remaining terms are post-Newtonian corrections. 
+
+\begin{exercise}
+\textbf{Conserved Quantities}
+
+Introduce spherical coordinates in the Lagrangian (\ref{eq:PNBinaryLagrangian}) to obtain the two conserved quantities: the specific angular momentum,
+\begin{equation}
+\boldsymbol{\ell} = \left\lbrace 1 + \frac{1}{c^2} \left[ \frac{1}{2} \left(1-\frac{3\mu}{m} \right) \dot{\textbf{x}} ^2 + \left( 3 + \frac{\mu}{m} \right) \frac{Gm}{r} \right] \right\rbrace \left( \textbf{x} \times \dot{\textbf{x}}\right) + \Ordof \left( \epsilon^6 \right), \label{eq:PNBinaryConservedAngMomentum}
+\end{equation}
+and the Hamiltonian (or specific energy),
+\begin{footnotesize}
+\begin{align}
+\varepsilon = &\frac{1}{2} \dot{\textbf{x}} - \frac{Gm}{r} \notag \\
+& + \frac{1}{c^2} \left\lbrace \frac{3}{8} \left( 1- \frac{3\mu}{m} \right) \left( \dot{\textbf{x}} ^2 \right)^2 + \frac{Gm}{2r} \left[ \left( 3 + \frac{\mu}{m} \right) \dot{\textbf{x}}^2 + \frac{\mu}{m} \dot{r}^2 + \frac{Gm}{r} \right] \right\rbrace + \Ordof \left( \epsilon^6 \right).   \label{eq:PNBinaryConservedEnergy}
+\end{align}
+\end{footnotesize}
+\end{exercise}
+
+Equation (\ref{eq:PNBinaryConservedAngMomentum}) corresponds to the  post-Newtonian angular momentum and it is interesting to note that, although the whole quantity $\boldsymbol{\ell}$ is conserved (magnitude and direction), the vector $\textbf{x} \times \dot{\textbf{x}}$ has not a constant magnitude.
+
+The Euler-Lagrange equations associated to the Lagrangian (\ref{eq:PNBinaryLagrangian}) are
+\begin{align}
+\ddot{x} ^k = &-\frac{Gm}{r^3} x^k + \frac{Gm}{c^2 r^3} \left[  \frac{2Gm}{r} \left( 2 + \frac{\mu }{m} \right) - \left( 1 + \frac{3\mu }{m} \right) (\dot{\textbf{x}}^2)^2 + \frac{3}{2} \frac{\mu }{m} \left( \frac{\textbf{x} \cdot \dot{\textbf{x}}}{r} \right)^2   \right] x^k \notag \\
+& + \frac{2Gm}{c^2 r^3} (\textbf{x} \cdot \dot{\textbf{x}}) \left( 2 - \frac{\mu }{m} \right) \dot{x}^k  + \Ordof \left( \epsilon^6 \right), 
+\end{align}
+or, in vector notation, 
+\begin{align}
+\ddot{\textbf{x}} = &-\frac{Gm}{r^3} \textbf{x} + \frac{Gm}{c^2 r^3} \left[  \frac{2Gm}{r} \left( 2 + \frac{\mu }{m} \right) - \left( 1 + \frac{3\mu }{m} \right) (\dot{\textbf{x}}^2)^2 + \frac{3}{2} \frac{\mu }{m} \left( \frac{\textbf{x} \cdot \dot{\textbf{x}}}{r} \right)^2   \right] \textbf{x} \notag \\
+& + \frac{2Gm}{c^2 r^3} (\textbf{x} \cdot \dot{\textbf{x}}) \left( 2 - \frac{\mu }{m} \right) \dot{\textbf{x}} + \Ordof \left( \epsilon^6 \right). \label{eq:PNBinaryRelativeAcc}
+\end{align}
+
+\section{Bound Orbits for the Binary System}
+
+Because of the conservation of the angular momentum $\boldsymbol{\ell}$, the orbital motion of the binary system lies in a fixed plane, which can be chosen to be the $x-y$ plane. Hence, it is possible to introduce a time dependent basis in the form of equation (\ref{eq:2BodyTimeDependentBasis}) and therefore, the relative position, velocity and acceleration will be given by equations (\ref{2BodyPositionVelocityAcceleration}). Using this basis, the equations of motion (\ref{eq:PNBinaryRelativeAcc}) are written as
+\begin{footnotesize}
+\begin{subequations}\label{eq:PNBinaryEoM}
+\begin{align}
+\ddot{r} &= r \dot{\varphi}^2 - \frac{Gm}{r^2} + \frac{Gm}{c^2r^2} \left[ \frac{1}{2} \left( 6 - \frac{7\mu}{m} \right) \dot{r}^2 - \left( 1 + \frac{3\mu}{m}\right) r^2 \dot{\varphi}^2 + 2\left(2 + \frac{\mu}{m} \right) \frac{Gm}{r} \right] + \Ordof \left( \epsilon^6 \right) \label{eq:PNBinaryEoMr}\\
+\frac{d}{dt} \left( r^2 \dot{\varphi}\right) &= 2\left( 2 - \frac{\mu}{m}\right) \frac{Gm}{c^2} \dot{r} \dot{\varphi} +\Ordof \left( \epsilon^6 \right) .\label{eq:PNBinaryEoMvarphi}
+\end{align}
+\end{subequations}
+\end{footnotesize}
+
+\subsection{Circular Orbits}
+The post-Newtonian equations of motion for the binary system admit circular orbits. In fact, setting $r=\textrm{constant}$ (i.e. $\dot{r} = \ddot{r} = 0$) in equations (\ref{eq:PNBinaryEoM}) shows that the orbital angular velocity is a constant
+\begin{equation}
+\dot{\varphi}^2 = \dot{\varphi}^2_c = \frac{Gm}{r^3} \left[ 1- \left(3-\frac{\mu}{m}\right) \frac{Gm}{c^2 r}\right] + \Ordof \left( \epsilon^6 \right).
+\end{equation}
+
+Note that the first term in the right hand side corresponds to the Keplerian orbital angular velocity. Using this relation in equations (\ref{eq:PNBinaryConservedAngMomentum}) and (\ref{eq:PNBinaryConservedEnergy}), we obtain the corresponding post-Newtonian values of the angular momentum and energy for the circular orbit,
+\begin{subequations} 
+\begin{align}
+\ell = & \sqrt{Gmr} \left[ 1 + 2\frac{Gm}{c^2 r}\right] + \Ordof \left( \epsilon^6 \right) \\
+\varepsilon = & -\frac{Gm}{2r} \left[ 1 - \frac{1}{4} \left( 7 - \frac{\mu}{m} \right) \frac{Gm}{c^2 r} \right] + \Ordof \left( \epsilon^6 \right) .
+\end{align}
+\end{subequations}
+
+\subsection{Elliptic Orbits} 
+As can be seen from the Lagrangian (\ref{eq:PNBinaryLagrangian}) or the equations of motion (\ref{eq:PNBinaryEoM}), the zeroth order motion of the binary system corresponds to Keplerian orbits, which can be written as the conics
+\begin{equation}
+\textbf{x} = r \cos f \textbf{e}_x + r \sin f \textbf{e}_y , \label{eq:PNBinaryRelativePosition}
+\end{equation}
+where
+\begin{equation}
+r = \frac{p}{1+e \cos f}, \label{eq:PNBinaryRadius}
+\end{equation}
+$p$ and $e$ are the Keplerian semi-latus rectum and eccentricity, respectively,  and $f=\varphi - \omega$ is the true anomaly. In order to obtain a post-Newtonian corrected solution, we will use the perturbation approach given in Section \ref{sec:PerturbationMethod}. Hence, the correction to the Keplerian orbit will be given by the extra terms in equations (\ref{eq:PNBinaryEoM}), which will be interpreted as a perturbing force in the time dependent basis $(\textbf{n}, \boldsymbol{\lambda}, \textbf{k})$. Its components are
+ \begin{equation} 
+\begin{cases}
+\mathcal{R} &= \frac{Gm}{c^2r^2} \left[ \frac{1}{2} \left( 6 - \frac{7\mu}{m} \right) \dot{r}^2 - \left( 1 + \frac{3\mu}{m}\right) r^2 \dot{\varphi}^2 + 2\left(2 + \frac{\mu}{m} \right) \frac{Gm}{r} \right] \\
+\mathcal{T} &= 2\left( 2 - \frac{\mu}{m}\right) \frac{Gm}{c^2} \dot{r} \dot{\varphi} \\
+\mathcal{W} &= 0 .
+\end{cases} 
+\end{equation}
+
+Then, the osculating elements (\ref{eq:OsculatingOrbitalElements}) become
+\begin{subequations}\label{eq:PNBinaryOsculatingElementsint}
+\begin{align}
+\frac{da}{dt} = &\frac{2}{n \sqrt{1-e^2}} \frac{G^2m^2}{c^2 p^3} (1+e \cos f)^2 e \sin f \left[ \left( 7 - \frac{3\mu}{m} \right) + \frac{1}{2} \left( 6 - \frac{7\mu}{m} \right) e^2 \right. \notag \\
+& \left. + 2 \left( 5 - \frac{4\mu}{m} \right) e \cos f - \frac{3\mu}{2m} e^2 \cos ^2 f \right] \\
+\frac{de}{dt} = &\frac{\sqrt{1-e^2}}{na}  \frac{G^2m^2}{c^2 p^3} (1+e \cos f)^2  \sin f  \left[ \left( 3 - \frac{\mu}{m} \right) + \frac{1}{2} \left( 14 - \frac{11\mu}{m} \right) e^2 \right. \notag \\
+& \left. + 2 \left( 5 - \frac{4\mu}{m} \right) e \cos f - \frac{3\mu}{2m} e^2 \cos ^2 f \right] \\
+\frac{d \iota}{dt} = & 0 \\
+\frac{d \Omega}{dt} = & 0 \\
+\frac{d\omega}{dt} =& \frac{\sqrt{1-e^2}}{nae}  \frac{G^2m^2}{c^2 p^3} (1+e \cos f)^2  \left[ 4\left( 2 - \frac{\mu}{m} \right)e + \left( 3 - \frac{\mu}{m} \right) \cos f \right. \notag \\
+& \left. + \left( 1 + \frac{3\mu}{2m} \right) e^2 \cos f -2 \left( 5 - \frac{4\mu}{m} \right) e \cos^2 f + \frac{3\mu}{2m} e^2 \cos ^3 f \right] \\
+\frac{dl_0}{dt} = &-\sqrt{1-e^2} \left[ \frac{d\omega}{dt} - \frac{2p}{na^2 (1+e \cos f)} \mathcal{T} \right] ,
+\end{align}
+\end{subequations}
+where $n = \sqrt{\frac{GM}{a^3}}$ is the mean motion.  It can also be included the differential equation for the semi-latus rectum,
+\begin{equation}
+\frac{dp}{dt} = \frac{4}{n}\frac{G^2m^2}{c^2 p^3} (1-e^2)^{3/2} \left( 2- \frac{\mu}{m} \right) (1+e \cos f)e \sin f.
+\end{equation}
+
+However, in order to integrate these equations it is usual to write them in terms of the true anomaly as independent variable, as in equation (\ref{eq:OsculatingOrbitalElementsinf}),
+\begin{subequations}\label{eq:PNBinaryOsculatingElementsinf}
+\begin{align}
+\frac{da}{df} = &\frac{2(1-e^2)}{n} \frac{G^2m^2}{c^2 p^3} e \sin f \left[ \left( 7 - \frac{3\mu}{m} \right) + \frac{1}{2} \left( 6 - \frac{7\mu}{m} \right) e^2 \right. \notag \\
+& \left. + 2 \left( 5 - \frac{4\mu}{m} \right) e \cos f - \frac{3\mu}{2m} e^2 \cos ^2 f \right] \\
+\frac{de}{df} = &  \frac{Gm}{c^2 p}  \sin f  \left[ \left( 3 - \frac{\mu}{m} \right) + \frac{1}{2} \left( 14 - \frac{11\mu}{m} \right) e^2 \right. \notag \\
+& \left. + 2 \left( 5 - \frac{4\mu}{m} \right) e \cos f - \frac{3\mu}{2m} e^2 \cos ^2 f \right] \\
+\frac{d\omega}{df} =& \frac{1}{e}  \frac{Gm}{c^2 p} \left[ 4\left( 2 - \frac{\mu}{m} \right)e + \left( 3 - \frac{\mu}{m} \right) \cos f + \left( 1 + \frac{3\mu}{2m} \right) e^2 \cos f \right. \notag \\
+& \left.  -2 \left( 5 - \frac{4\mu}{m} \right) e \cos^2 f + \frac{3\mu}{2m} e^2 \cos ^3 f \right] \\
+\frac{dl_0}{df} = & -\sqrt{1-e^2} \left( \frac{d\omega}{df} + \cos \iota \frac{d\Omega}{df} \right) + \frac{2 (1-e^2)^3}{n^2 a (1+e \cos f)^3} \mathcal{T}  ,
+\end{align}
+\end{subequations}
+together with the corresponding equation for the semi-latus rectum,
+\begin{equation}
+\frac{dp}{df} = \frac{4Gm}{c^2} \left( 2 - \frac{\mu}{m} \right)  e \sin f.
+\end{equation}
+
+\subsection{Secular Changes in the Orbital Parameters. Pericenter Shift.}
+
+In order to obtain the secular changes in the orbital parameters of the binary system, we integrate equations (\ref{eq:PNBinaryOsculatingElementsint}) over one orbital period as in equation (\ref{eq:OsculatingSecularint}) or integration equations (\ref{eq:PNBinaryOsculatingElementsinf}) from $f=0$ to $f=2\pi$ as in equation (\ref{eq:OsculatingSecularinf}). This gives no secular changes in the semi-latus rectum, semi-major axis and eccentricity, i.e. $\Delta p = \Delta a = \Delta e = 0$, but it gives a secular shift in the pericenter of
+\begin{equation}
+\Delta \omega =  \frac{6 \pi Gm}{c^2 p} \label{eq:BinarySystemPerihelionAdvance}
+\end{equation} 
+per orbit. This result is a generalization of Schwarzschild's shift with just one difference: the mass $M$, appearing in equation (\ref{eq:SchwarzschildPerihelionAdvance}), corresponds to the central object while the mass $m$, appearing in (\ref{eq:BinarySystemPerihelionAdvance}), is the sum of the masses of the two bodies in the binary system.
+
+\section{Post-Newtonian Motion of the Binary System}
+
+The angular momentum and energy equations, (\ref{eq:PNBinaryConservedAngMomentum}) and (\ref{eq:PNBinaryConservedEnergy}), can be used to write $\dot{r}$ and $\dot{\varphi}$ in terms of the conserved quantities as
+\begin{subequations}
+\begin{align}
+\dot{r}^2 = & 2\varepsilon \left[ 1 - \frac{3}{2} \left( 1 - \frac{3\mu}{m} \right) \frac{\varepsilon}{c^2} \right] + \frac{2Gm}{r} \left[ 1 - \left( 6 - \frac{7\mu}{m} \right) \frac{\varepsilon}{c^2} \right] - \frac{\ell^2}{r^2}\left[ 1 - 2 \left( 1 - \frac{3\mu}{m} \right) \frac{\varepsilon}{c^2} \right] \notag \\
+& - 5 \left( 2 - \frac{\mu}{m} \right) \frac{G^2 m^2}{c^2 r^2} + \left( 8 - \frac{3\mu}{m} \right) \frac{Gm}{c^2r^3} \ell^2 + \Ordof \left( \epsilon^4 \right) \label{eq:PNBinaryrdot} \\
+\dot{\varphi} = &\frac{\ell}{r^2} \left[ 1 - \left( 1 - \frac{3\mu}{m} \right) \frac{\varepsilon}{c^2} \right] - 2 \left( 2 - \frac{\mu}{m} \right) \frac{Gm}{c^2 r^3} \ell .
+\end{align}
+\end{subequations}
+
+An interesting approach to integrate the post-Newtonian equations of motionthis equations describing the binary system was presented in 1985 by Damour and Deruelle \cite{Damour1985}. 
+
+\begin{exercise}
+\textbf{Damour-Dereulle Equation of Motion I}
+
+Show that the change of variable 
+\begin{equation}
+r_D = r + \frac{1}{2} \left( 8-\frac{3\mu}{m} \right) \frac{Gm}{c^2} + \Ordof \left( \epsilon^4 \right)
+\end{equation}
+reduces equation (\ref{eq:PNBinaryrdot}) to a Newtonian-like form
+\begin{equation}
+\dot{r}_D^2 = 2\varepsilon_D + 2 \frac{Gm_D}{r_D} - \frac{\ell_D^2}{r_D^2} \label{eq:PNBinaryDamourEoM}
+\end{equation}
+where
+\begin{subequations}
+\begin{align}
+\varepsilon_D = &\varepsilon \left[ 1 - \frac{3}{2} \left( 1 - \frac{3\mu}{m} \right) \frac{\varepsilon}{c^2} + \Ordof \left( \epsilon^4 \right) \right] \\
+m_D = &m \left[ 1 - \left( 6 - \frac{7\mu}{m} \right) \frac{\varepsilon}{c^2} + \Ordof \left( \epsilon^4 \right) \right] \\
+\ell_D^2 = & \ell^2 \left[ 1 - 2 \left( 1 - \frac{3\mu}{m} \right) \frac{\varepsilon}{c^2} + 2 \left( 1 - \frac{\mu}{m} \right) \frac{G^2 m^2}{c^2 \ell^2}  + \Ordof \left( \epsilon^4 \right) \right] 
+\end{align}
+\end{subequations}
+\end{exercise}
+
+Since the equation of motion in the Damour radial coordinate is equal to the Newtonian equation (\ref{eq:2BodyEnergy}), its solution can be written by introducing the eccentric anomaly $E$, just as in equations (\ref{eq:2BodyEquationswithE}). They are
+\begin{equation}
+r_D = a_D(1-e_D \cos E)
+\end{equation}
+with the time dependence through the relation
+\begin{equation}
+l = \sqrt{\frac{Gm_D}{a_D^3}} \left( t-t_p \right) =  \left( E - e_D \sin E \right),
+\end{equation}
+where the semi-major axis and the eccentricity are given by
+\begin{equation}
+\varepsilon_D = - \frac{Gm_D}{2a_D}
+\end{equation}
+and
+\begin{equation}
+\ell_D^2 = Gm_D a_D \left( 1- e_D^2 \right).
+\end{equation}
+
+\begin{exercise}
+\textbf{Damour-Dereulle Equation of Motion II}
+
+Apply the inverse transformation
+\begin{equation}
+r = r_D - \frac{1}{2} \left( 8-\frac{3\mu}{m} \right) \frac{Gm}{c^2} + \Ordof \left( \epsilon^4 \right)
+\end{equation}
+to obtain the post-Newtonian equation
+\begin{equation}
+r = a \left( 1 - e \cos E \right) 
+\end{equation}
+where the post-Newtonian orbital parameters are
+\begin{align}
+a = &a_D \left[ 1 - \frac{1}{2} \left( 8 - \frac{8\mu}{m} \right) \frac{Gm}{c^2 a_D} \right] \\
+e = & e_D \left[ 1+ \frac{1}{2} \left( 8 - \frac{8\mu}{m} \right) \frac{Gm}{c^2 a_D} \right] \\
+\varepsilon = &-\frac{Gm}{2a} \left[ 1- \frac{1}{4} \left( 7 - \frac{\mu}{m} \right) \frac{Gm}{c^2 a} + \Ordof \left( \epsilon^4 \right) \right] \\
+\ell ^2 = & Gma (1-e^2) \left[ 1+ \frac{4 + \left( 2 - \frac{\mu}{m} \right)e^2}{1-e^2} \frac{Gm}{c^2 a} + \Ordof \left( \epsilon^4 \right) \right].
+\end{align}
+
+\end{exercise}
+
+
+
+
+
+
+
+
+
+
+
+
+
+Now we set, without losing generality, the initial argument of the pericenter as $\omega_0 =0$. The zeroth order solution has a conserved angular momentum that gives the relation
+\begin{equation}
+r^2 \frac{d\varphi}{dt} = \sqrt{Gmp}.
+\end{equation}
+
+In order to introduce the post-Newtonian contributions to the motion of the binary system, we will introduce a small correction term, $\delta \ell \sim \epsilon \ll 1$, to the angular momentum equation
+\begin{equation}
+r^2 \frac{d\varphi}{dt} = \sqrt{Gmp} (1 + \delta \ell), \label{eq:PNBinaryCorrectedAngMom}
+\end{equation}
+and a small correction, $\frac{\delta \dot{\textbf{x}}}{c} \sim \epsilon \ll 1$, to the velocity
+\begin{equation}
+\dot{\textbf{x}} = \frac{d \textbf{x}}{dt}  = \sqrt{\frac{Gm}{p}} \left[ -\sin \varphi \textbf{e}_x + (e+\cos \varphi)\textbf{e}_y \right] + \delta \dot{\textbf{x}}. \label{eq:PNBinaryCorrectedVel}
+\end{equation}
+
+Replacing (\ref{eq:PNBinaryCorrectedAngMom}) into the angular momentum definition $r^2 \frac{d\varphi}{dt}  = \left| \textbf{x} \times \dot{\textbf{x}}\right|$, we obtain a differential equation for the correction $\delta \ell$,
+\begin{equation}
+\frac{d}{dt} \left( \delta \ell \right) = \frac{1}{\sqrt{Gmp}} \left| \textbf{x} \times \ddot{\textbf{x}}\right|.
+\end{equation}
+
+Using equations (\ref{eq:PNBinaryRelativeAcc}) for the relative acceleration and (\ref{eq:PNBinaryCorrectedVel}) for the velocity, we obtain 
+\begin{equation}
+\frac{d}{dt} \left( \delta \ell \right) = - \frac{2Gm}{c^2 p} e \left( 2 - \frac{\mu}{m} \right) \frac{d \cos \varphi}{dt},
+\end{equation}
+which gives immediately the correction to the angular momentum as
+ \begin{equation}
+ \delta \ell  = - \frac{2Gm}{c^2 p} e \left( 2 - \frac{\mu}{m} \right) \cos \varphi . \label{eq:PNBinaryCorrectiontoAngMom}
+\end{equation}
+
+Replacing these results into equation (\ref{eq:PNBinaryRelativeAcc}) and integrating, we find the relative velocity in binary system as
+\begin{equation}
+ \dot{\textbf{x}} = v_x \textbf{e}_x + v_y \textbf{e}_y
+ \end{equation} 
+ with
+ \begin{subequations}\label{eq:PNBinaryVelocityComponents}
+ \begin{align}
+ v_x = &-\sqrt{\frac{Gm}{p}} \sin \varphi
+ - \frac{1}{c^2} \left( \frac{Gm}{p} \right)^{3/2}  \left[ 3e\varphi - \left( 3 - \frac{\mu}{m} \right)\sin \varphi + \left( 1 + \frac{21\mu}{8m} \right) e^2 \sin \varphi \right. \notag \\  
+ & \left. -\frac{1}{2} \left( 1 - \frac{2\mu}{m} \right)e \sin 2 \varphi + \frac{\mu}{8m} e^2 \sin 3 \varphi\right] + \Ordofee \\
+ v_y = &-\sqrt{\frac{Gm}{p}} \left( e + \cos \varphi \right ) - \frac{1}{c^2} \left( \frac{Gm}{p} \right)^{3/2} \left[  \left( 3 - \frac{\mu}{m} \right)\cos \varphi + \left( 3 - \frac{31\mu}{8m} \right) e^2 \cos \varphi  \right .  \notag \\
+ & \left. + \frac{1}{2} \left( 1 - \frac{2\mu}{m} \right)e \cos 2 \varphi - \frac{\mu}{8m} e^2 \cos 3 \varphi\right] + \Ordofee
+ \end{align}
+ \end{subequations}
+ 
+\subsection{Pericenter Shift}
+
+\begin{exercise}
+\textbf{Post-Newtonian Correction to the Orbit of the Binary System}
+
+Use equations (\ref{eq:PNBinaryRelativePosition}),(\ref{eq:PNBinaryCorrectedAngMom}), (\ref{eq:PNBinaryCorrectiontoAngMom}) and (\ref{eq:PNBinaryVelocityComponents}), together with the relation
+\begin{equation}
+\frac{d}{d\varphi} \left( \frac{1}{r} \right) = - \left( r^2 \frac{d\varphi}{dt} \right)^{-1} \frac{\textbf{x} \cdot \dot{\textbf{x}}}{r},
+\end{equation}
+to obtain the post-Newtonian corrected orbit of the binary system,
+\begin{align}
+r = p & \left[ 1 + e \cos \varphi + \frac{Gm}{c^2 p}  \left[  -\frac{1}{2} \left( 7 - \frac{2\mu}{m} \right) e  + \frac{\mu}{4m} e^2 + 3 e \varphi \sin \varphi \right. \right. \notag \\
+& \left. \left. + \frac{1}{2} \left(7 - \frac{2\mu}{m} \right) e \cos \varphi - \frac{\mu}{4m} e^2 \cos 2\varphi   \right] + \Ordofee \right]^{-1} , \label{eq:PNBinaryCorrectedConic}
+\end{align}
+which replaces the conic equation (\ref{eq:PNBinaryRadius}).
+\end{exercise}
+
+In order to obtain an estimate for the motion of the pericenter of a binary system, it is necessary to analyze the post-Newtonian contributions in equation (\ref{eq:PNBinaryCorrectedConic}) which are very similar to those obtained for the motion of a particle in Schwarzschild's background in equation (\ref{eq:FirstOrderApproxGeneralOrbit}). Just as studied in Section \ref{sec:PerihelionSchwarzschild}, it is clear that the secular contribution to the pericenter motion is given by the third correction term, $ 3 \frac{Gm}{c^2 p} e \varphi \sin \varphi $, and it gives a shift of
+\begin{equation}
+\Delta \omega =  \frac{6 \pi Gm}{c^2 p} \label{eq:BinarySystemPerihelionAdvance}
+\end{equation} 
+per orbit. This result looks exactly as Schwarzschild's shift, with just one difference: the mass $M$, appearing in equation (\ref{eq:SchwarzschildPerihelionAdvance}), corresponds to the central object while the mass $m$, appearing in (\ref{eq:BinarySystemPerihelionAdvance}), is the sum of the masses of the two bodies in the binary system.

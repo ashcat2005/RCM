@@ -1,0 +1,330 @@
+Almost all of the gravitational systems in nature are weak, including the Solar system, binaries and other planetary systems including stars, galaxies and star clusters, etc\footnote{The relativistic description of strong gravitational fields is only important when modeling systems including neutron stars and/or black holes}. In this chapter, we will study the first and simplest approximation of the equations of General Relativity theory, which corresponds to a linearized theory describing the behavior of a weak gravitational field that can be directly compared with the Newtonian gravity. \\
+For physical systems bound by gravitational forces, the adimensional Newtonian gravitational potential ( $\frac{\phi}{c^2} = \frac{GM}{c^2 R}$ with $R$ a typical separation distance between the particles in the system)  is related with the typical internal speeds of the particles $v$ via the Virial theorem,
+\begin{equation}
+\frac{v^2}{c^2} \sim \frac{\phi}{c^2}. \label{eq:VirialTheorem}
+\end{equation}
+
+We will said that a system is \textit{non-relativistic} when its components have slow velocities, $v\ll c$, and weak gravitational fields $\frac{\phi}{c^2}\ll 1$. For example, in scenarios such as the Solar system, we have that the order of the adimensional potential is
+\begin{equation}
+\frac{\left| \phi \right|}{c^2} \lesssim \frac{G M_{\odot }}{c^2 R_{\odot }} \sim 10^{-6}. \label{eq:SolarSystemPotentialOrder}
+\end{equation}
+
+Table \ref{tab:NewtonianPotentialSolarSystem} contains some typical values of the adimensional potential for astrophysical objects. Note that this parameter can be considered as small in all scenarios except for the neutron star and black hole cases. 
+
+\begin{table}[h]
+\centering
+\footnotesize
+\begin{tabular}{|c|c|}
+\hline
+Astrophysical object & $\frac{\phi}{c^2}$\\
+\hline
+Earth & $\sim 10^{-9}$ \\
+Sun & $\sim 10^{-6}$ \\
+White dwarf	 & $\sim 10^{-4}$ \\
+Neutron star	& $\sim 10^{-1}$ \\
+Black Hole & $\sim 1$ \\
+\hline
+\end{tabular}
+\caption{Typical values of the adimensional Newtonian gravitational potential on the surface of some astrophysical objects. Note the very small values, except for the neutron star and black hole cases.}
+\label{tab:NewtonianPotentialSolarSystem}
+\end{table}
+
+Following these considerations and due to equation (\ref{eq:VirialTheorem}), we will introduce a small parameter $\epsilon$ which will help us to keep track of the small quantities in the approximation,
+\begin{equation}
+\epsilon \sim \frac{v}{c} \sim \left( \frac{\phi}{c^2}\right)^{1/2}. \label{eq:EpsilonDefinition}
+\end{equation}
+
+It is also true that in many weakly interacting gravitational systems, the source is weakly stressed. This condition is written in terms of the components of the energy-momentum tensor as
+\begin{equation}
+\frac{\left| T^{ij} \right|}{T^{00}} \sim \mathcal{O} (\epsilon^2). \label{eq:EnergyMomentumCondition}
+\end{equation}
+
+For example, for a perfect fluid characterized by a density $\rho$ and a pressure $p$ this condition states that $\frac{p}{\rho} \sim \mathcal{O} (\epsilon ^2)$. More about these conditions will be presented below.
+
+\section{Nearly Flat Spacetimes and the Newtonian Limit}
+
+In a region where the gravitational field is sufficiently weak, the spacetime will be nearly flat. Hence, there will exist a coordinate system\footnote{From now on, we will assume that we are using quasi-galilean or cartesian coordinates, such that the flat spacetime metric will be given by the Minkowski tensor $\eta_{\mu \nu} = \text{diag} (-1, +1, +1, +1) $} for which the metric tensor can be decomposed as
+\begin{equation}
+g_{\mu \nu} = \eta_{\mu \nu} + h_{\mu \nu} \label{eq:PerturbedMetricTensor}
+\end{equation}
+where the symmetric tensor $h_{\mu \nu} = h_{\nu \mu}$ represents a collection of ten small independent fields satisfying $\left| h_{\mu \nu} \right| \sim \textrm{h} \ll 1$. Along this chapter, we will present a linearized theory of gravity, in which we will expand all the equations up to first order in $h$. 
+
+Our first calculation will be the inverse metric, defined by the relation $g^{\mu \sigma} g_{\sigma \nu} = \delta^\mu _\nu$. Hence, neglecting terms of order $\mathcal{O} ( \textrm{h}^2 )$ and higher, this is
+\begin{equation}
+g^{\mu \nu} = \eta^{\mu \nu} - h^{\mu \nu} + \mathcal{O} ( \textrm{h}^2 )
+\end{equation}
+where $h^{\mu \nu} = \eta^{\mu \alpha} \eta^{\nu \beta} h_{\alpha \beta} $. With the same approximation, the connections are expanded as
+\begin{equation}
+\Gamma ^{\alpha}_{\mu \nu} = \frac{1}{2} \eta^{\alpha \sigma} \left[ \partial _\mu h_{\sigma \nu} + \partial _\nu h_{\mu \sigma} - \partial _\sigma h_{\mu \nu}\right] + \mathcal{O} ( \textrm{h}^2 ).\label{eq:LinearizedConnections}
+\end{equation}
+
+\subsection{Equations of Motion for a Slowly Moving Particle}
+
+Consider a slowly moving particle, i.e. with a velocity $\left| \dot{\textbf{x}}\right| \ll c$. From the geodesic equations (\ref{eq:GeneralGeodesicEquations}) describing its motion, it is possible to conclude that its proper time $\tau$ satisfies
+\begin{equation}
+ \frac{dt}{d\tau} \approx 1,
+ \end{equation} 
+ and that the equations of motion are approximated to 
+\begin{equation}
+\frac{d^2 x^j}{dt^2} \approx \frac{d^2 x^j}{d\tau^2} \approx - c^2 \Gamma^j_{00} .
+\end{equation}
+
+Using the linear approximation of the connections (\ref{eq:LinearizedConnections}), this gives
+\begin{equation}
+\frac{d^2 x^j}{dt^2} = \frac{1}{2} c^2 \left( \partial_j h_{00} - 2 \partial_0 h_{0j} \right)+ \mathcal{O}(\textrm{h}^2).
+\end{equation}
+
+If we additionally consider that the gravitational field is quasi-stationary, the second term in the connection can be neglected, $\partial_0 h_{0j}$, and therefore
+\begin{equation}
+\frac{d^2 x^j}{dt^2} = \frac{1}{2} c^2\partial_j h_{00}  + \mathcal{O}(\textrm{h}^2).
+\end{equation}
+
+Comparison with the Newtonian equation of motion of a particle under the influence of a gravitational potential $\phi$ as in equation (\ref{eq:2BodyEoM}),
+\begin{equation}
+\ddot{\textbf{r}} = - \bnabla \phi (r),
+\end{equation}
+implies the identification of the metric component $h_{00}$ with the potential,
+\begin{equation}
+h_{00} = -\frac{2\phi}{c^2}.
+\end{equation}
+
+Although this result is very interesting, it is not complete. In fact, the linear approximation of general relativity implies the existence of other metric contributions that will be obtained by writing the linearized field equations.
+
+\subsection{Linearized Curvature Tensors}
+
+Using the linearized connections (\ref{eq:LinearizedConnections}), we calculate the Riemann tensor, defined in (\ref{eq:RiemannTensor}), as
+\begin{equation}
+R_{\alpha \mu \beta \nu} = \frac{1}{2} \left[ \partial_\mu \partial_\beta h_{\alpha \nu} + \partial_\alpha \partial_\nu h_{\mu \beta}  - \partial_\mu \partial_\nu h_{\alpha \beta}  - \partial_\alpha \partial_\beta h_{\mu \nu}   \right] + \mathcal{O} ( \textrm{h}^2 ). \label{eq:LinearizedRiemann}
+\end{equation}
+The Ricci tensor of curvature is obtained contracting Riemann,
+\begin{equation}
+R_{\mu \nu} = \frac{1}{2} \left[ \partial _\sigma \partial _\mu h ^\sigma _\nu + \partial _\sigma \partial _\nu h ^\sigma _\mu - \partial _\mu \partial _\nu h - \square h_{\mu \nu} \right] + \mathcal{O} ( \textrm{h}^2 ) , \label{eq:LinearRicci}
+\end{equation}
+where $h = h^\sigma _\sigma = \eta^{\sigma \rho} h_{\sigma \rho}$ and the D'Alambert operator is defined as $\square = \eta ^{\alpha \beta}\partial _\alpha \partial _\beta $. Contraction of this tensor gives the curvature scalar
+\begin{equation}
+R =   \partial _\mu \partial _\nu h^{\mu \nu} - \square h + \mathcal{O} ( \textrm{h}^2 ) . \label{eq:LinearizedRicciScalar}
+\end{equation}
+
+Finally, using the above expressions we write the linearized Einstein tensor as
+\begin{equation}
+G_{\mu \nu} = \frac{1}{2} \left[ \partial _\sigma \partial _\mu h ^\sigma _\nu + \partial _\sigma \partial _\nu h ^\sigma _\mu - \partial _\mu \partial _\nu h - \square h_{\mu \nu} \right] + \frac{1}{2} \eta_{\mu \nu} \left[ \partial _\mu \partial _\nu h^{\mu \nu} - \square h  \right] + \mathcal{O} ( \textrm{h}^2 ) \label{eq:LinearizedEinstein}
+\end{equation}
+
+\section{The Energy Momentum Tensor} \label{sec:EnergyMomentumTensor}
+
+In order to have a consistent picture of a nearly flat spacetime, we must consider that the energy-momentum contribution of the source is small and that the characteristic velocities of the matter distribution are small compared with the speed of light, as in equations (\ref{eq:EpsilonDefinition}) and (\ref{eq:EnergyMomentumCondition}). This assumptions let us neglect the pressure contribution of a matter distribution such an ideal gas. Therefore, in situations such as the description of the Solar system, we may consider the energy-momentum tensor of an incoherent matter source (\ref{eq:DustEnergyMomentum}),
+\begin{equation}
+T^{\mu \nu} = \frac{\varepsilon}{c^2} u^\mu u^\nu. \label{eq:DustEnergyMomentum}
+\end{equation}
+
+The assumption of small velocities, $\frac{v}{c} \sim \mathcal{O} (\varepsilon) $, gives the approximation
+\begin{equation}
+\gamma = \left( 1- \frac{v^2}{c^2} \right)^{-1/2} = 1 + \mathcal{O}(\epsilon^2 ),\label{eq:gammaApproximation}
+\end{equation}
+and therefore, the energy-momentum tensor components for an incoherent matter source satisfy 
+\begin{subequations}\label{eq:ApproximationT01}
+\begin{align}
+T^{00} &= \frac{\varepsilon}{c^2} u^0 u^0 = \varepsilon + \mathcal{O}(\epsilon^2 ) \\
+T^{0j} &= \frac{\varepsilon}{c^2}  u^0 u^j = \varepsilon \frac{v^j}{c} + \mathcal{O}(\epsilon^3 ) \\
+T^{jk} &= \frac{\varepsilon}{c^2}  u^j u^k = \mathcal{O}(\epsilon^2 ).
+\end{align}
+\end{subequations}
+
+We must note that for non-relativistic velocities $v$, space and time derivatives are of order
+\begin{align}
+\partial_0 &\sim  \frac{1}{R} \frac{v}{c} \sim \frac{\epsilon}{R} \\
+\partial_j &\sim  \frac{1}{R}
+\end{align}
+where $R$ is a typical separation distance between the particles in the system. This expression are summarized in the relation
+\begin{equation}
+\partial_0 = \mathcal{O}(\varepsilon ) \, \partial_j . \label{eq:PartialDerivativesOrder}
+\end{equation}
+
+Hence, the conservation of energy $\nabla_n T^{\mu \nu} =0$, will be linearized as
+\begin{equation}
+\partial_\nu T^{\mu \nu} = 0 + \mathcal{O} (\epsilon^2 ). \label{eq:LinearizedTconservation}
+\end{equation}
+
+The presence of a partial derivative, and not a covariant one, in this equation implies that the gravitational field generated by the tensor $T^{\mu \nu}$ doesn't react back on the source, allowing the exchange of energy and momentum between the matter fields but not with the gravitational field. As a result of this fact, for the incoherent matter source described in equation (\ref{eq:DustEnergyMomentum}), we can use the continuity equation $\partial_\nu \left( \rho u^\nu \right) =0$ and (\ref{eq:LinearizedTconservation}) to obtain the condition $u^\nu \partial_\nu u^\mu = \frac{du^\mu}{d\tau} = 0$, implying that the integral lines of the velocity are straight lines.
+
+\section{The Linearized Field Equations}
+Under the above considerations concerning the small velocities and weak field approximations, Einstein's field equations,
+\begin{equation}
+G_{\mu \nu} = \frac{8\pi G}{c^4}  T_{\mu \nu} ,
+\end{equation}
+are linearized using equation (\ref{eq:LinearizedEinstein}) for Einstein's tensor and assuming conditions (\ref{eq:ApproximationT01}) for the energy-momentum tensor,
+\begin{equation}
+\frac{1}{2} \left[ \partial _\sigma \partial _\mu h ^\sigma _\nu + \partial _\sigma \partial _\nu h ^\sigma _\mu - \partial _\mu \partial _\nu h - \square h_{\mu \nu} \right] + \frac{1}{2} \eta_{\mu \nu} \left[ \partial _\alpha \partial _\beta h^{\alpha \beta} - \square h  \right] + \mathcal{O} ( \textrm{h}^2 )= \frac{8\pi G}{c^4} T_{\mu \nu}  . \label{eq:LinearizedFieldEquations}
+\end{equation}
+
+In the linear approximation, and similarly to what happens with equation (\ref{eq:LinearizedTconservation}), the Binachi identities (\ref{eq:BianchiIdentitiesG}) are written using partial derivatives
+\begin{equation}
+\partial_\nu G^{\mu \nu} = 0 + \mathcal{O} (h^2 ).
+\end{equation}
+
+\section{Gauge Transformations}
+Although General Relativity permits any coordinate transformation, the particular choice of the metric tensor (\ref{eq:PerturbedMetricTensor}) restricts the coordinate freedom to those that preserve the desired decomposition. Thus, the allowed transformations in the linearized theory include \textit{Lorentz boosts}, \textit{spatial rotations} (because both of them doesn't change the Minkowskian metric and transform $h_{\mu \nu}$ as a Minkowskian tensor) and \textit{infinitesimal transformations} such as
+\begin{equation}
+x'^\mu = x^\mu + \xi^\mu ( x ), \label{eq:InfinitesimalTransformation}
+\end{equation}
+where $\xi^\mu \sim \mathcal{O} ( \textrm{h} ) $. The inverse transformation, neglecting orders $\mathcal{O} ( \textrm{h}^2 )$ and higher, is 
+\begin{equation}
+x^\mu = x'^\mu - \xi^\mu ( x ).
+\end{equation}
+
+The transformation law for the metric tensor gives
+\begin{equation}
+g'_{\mu \nu} = \eta_{\mu \nu} + h'_{\mu \nu} + \mathcal{O} ( \textrm{h}^2 ), 
+\end{equation}
+where
+\begin{equation}
+h'_{\mu \nu} =  h_{\mu \nu} -\partial_\mu \xi_\nu - \partial_\nu \xi_\mu  \label{eq:GaugeTransformation}
+\end{equation}
+and $\xi_\mu = \eta_{\mu \sigma} \xi^\sigma$. Because of the resemblance of this equation with the gauge transformations of the electromagnetic potential in electrodynamics, equation (\ref{eq:GaugeTransformation}) is called the \textit{gauge transformation} generated by the vector field $\xi^\mu$ \footnote{It is important to note that this gauge transformation freedom is just the usual general covariance of General Relativity applied to the linearized theory and doesn't represent a new symmetry.}.
+
+\begin{exercise}[Connections and Curvature under Gauge Transformations]
+\textbf{Connections and Curvature under Gauge Transformations}\\
+
+Show that, under the gauge transformation (\ref{eq:GaugeTransformation}), the linearized connections (\ref{eq:LinearizedConnections}) change with terms involving $\partial_\alpha \partial_\beta \xi^\mu$, while the Riemann and Ricci tensors, as well as the curvature scalar in equations (\ref{eq:LinearizedRiemann}), (\ref{eq:LinearRicci}) and (\ref{eq:LinearizedRicciScalar}) are invariant. 
+
+This result implies that the complete information about the gravitational field is contained in the curvature tensors and not in the connections.
+\end{exercise}
+
+The gauge freedom may be used to simplify the form of the field equations. First, we change $h_{\mu \nu}$ in equation (\ref{eq:LinearizedFieldEquations}) by the \textit{trace-reversed} function
+\begin{equation}
+\bar{h}_{\mu \nu} := h_{\mu \nu} - \frac{1}{2} \eta_{\mu \nu} h,
+\end{equation}
+which satisfies $\bar{h} = -h$. It is easy to show that the inverse relation is 
+\begin{equation}
+h_{\mu \nu} = \bar{h}_{\mu \nu} - \frac{1}{2} \eta_{\mu \nu} \bar{h}. \label{eq:TracedInverse02}
+\end{equation} 
+
+The field equations in terms of the trace-reversed function is 
+\begin{equation}
+-\frac{1}{2} \left[ \square \bar{h}_{\mu \nu} - \partial _\mu \partial _\sigma \bar{h}^\sigma _\nu - \partial _\sigma \partial _\nu \bar{h}^\sigma _\mu - \eta_{\mu \nu} \partial _\sigma \partial _\rho \bar{h}^{\sigma \rho}  \right] + \mathcal{O} ( \textrm{h}^2 ) = \frac{8\pi G}{c^4} T_{\mu \nu} . \label{eq:LinearizedFieldEquations2}
+\end{equation}
+
+The gauge freedom is used now by imposing the \textit{Lorenz-Hilbert gauge} condition,
+\begin{equation}
+\partial_\nu \bar{h}^{\mu \nu} = 0, \label{eq:LorenzGauge}
+\end{equation}
+which reduces the field equations to the simple, linearized  expression
+\begin{equation}
+\square \bar{h}_{\mu \nu}  = - \frac{16 \pi G}{c^4} T_{\mu \nu} . \label{eq:LinearizedWaveFieldEquations}
+\end{equation}
+
+\begin{exercise}[Lorenz Gauge Generating Field]
+\textbf{Generating Field for the Lorenz Gauge}\\
+
+In this exercise, it will be shown that the Lorentz-Hilbert gauge may be generated by a infinitesimal coordinate transformation. \\
+
+Consider a perturbation $h^{\mu \nu}$ and apply to it an infinitesimal transformation with the form (\ref{eq:InfinitesimalTransformation}) to obtain the new perturbation $h'^{\mu \nu}$. Now, define the corresponding trace-reversed function to obtain a perturbation $\bar{h}'^{\mu \nu}$ in terms of $h'_{\mu \nu}$ and the derivatives of the field $\xi^\mu$.  Show that, although  $h'^{\mu \nu}$  doesn't satisfy Lorenz condition, i.e. $\partial_\nu h'^{\mu \nu}\neq 0$,   we can make that $\partial_\nu \bar{h}'^{\mu \nu}= 0$ by imposing that the vector field $\xi^\mu$ satisfies the condition $\square \xi^\mu = \partial_\nu \tilde{h}^{\mu \nu}$.
+\end{exercise}
+
+\subsection{Solution of the Wave Equation}
+The wave equation (\ref{eq:LinearizedWaveFieldEquations}) is solved by using the retarded Green's function $\mathcal{G} (x,x')$, which is a solution of the equation
+\begin{equation}
+\square \mathcal{G} (x,x') = - 4\pi \delta (x-x') = -4\pi \delta (ct-ct') \delta (\textbf{x} - \textbf{x}').
+\end{equation}
+As is shown in Appendix \ref{A:GreenFunctionWave}, the retarded Green function is
+\begin{equation}
+\mathcal{G}_R (x,x') = 2 \Theta \left( ct - ct' \right) \delta \left( ( ct - ct' )^2 - \left| \textbf{x} - \textbf{x}' \right| ^2 \right) ,
+\end{equation}
+where 
+\begin{equation}
+\Theta(z) = 
+\begin{cases} 
+1 \text{ if } z>0 \\
+0 \text{ if } z<0
+\end{cases}
+\end{equation}
+is the Heaviside step function. Equivalently, the retarded Green function can be written as
+\begin{equation}
+\mathcal{G}_R (x,x') = \frac{\delta \left( ct - ct' - \left| \textbf{x} - \textbf{x}' \right| \right)}{\left| \textbf{x} - \textbf{x}' \right| } .
+\end{equation}
+
+In terms of this function, the general solution of equation (\ref{eq:LinearizedWaveFieldEquations}) is
+\begin{equation}
+\bar{h}_{\mu \nu} (x) = \frac{4G}{c^4} \int \mathcal{G}_R (x,x') T_{\mu \nu} (x') d^4 x' = \frac{4G}{c^4} \int \frac{\delta \left( ct - ct' - \left| \textbf{x} - \textbf{x}' \right| \right)}{\left| \textbf{x} - \textbf{x}' \right| } T_{\mu \nu} (x') d^4 x' ,
+\end{equation}
+which, after integration, gives
+\begin{equation}
+\bar{h}_{\mu \nu} (x) = \frac{4G}{c^4} \int \frac{T_{\mu \nu} \left( ct  - \left| \textbf{x} - \textbf{x}' \right| , \textbf{x}' \right)}{\left| \textbf{x} - \textbf{x}' \right| }  d^3 x' . \label{eq:WavEquationSolution}
+\end{equation}
+
+Note that the energy-momentum tensor in the integrand is evaluated at the retarded time $ct_{ret} = ct  - \left| \textbf{x} - \textbf{x}' \right|$.
+
+\section{The Nearly Newtonian Limit Metric}\label{sec:NearlyNewtonianLimit}
+
+From the order of the partial derivative operators in the small velocities approximation, given in equation (\ref{eq:PartialDerivativesOrder}), we can approximate the D'Alambertian operator as
+\begin{equation}
+\square = - \frac{1}{c^2} \frac{\partial^2}{\partial t^2} + \nabla^2 = \left[ 1 + \mathcal{O}(\epsilon^2 ) \right] \nabla^2,
+\end{equation}
+so that it reduces to the Laplacian operator when neglecting orders $\mathcal{O} (\epsilon^2 )$ an higher. Hence, the wave equation (\ref{eq:LinearizedWaveFieldEquations}) reduces to Poisson equation,
+\begin{equation}
+\nabla^2 \bar{h}_{\mu \nu}  = - \frac{16 \pi G}{c^4} T_{\mu \nu},
+\end{equation}
+and the solution of this equation can be expressed in components as
+\begin{subequations}
+\begin{align}
+\bar{h}^{00} (x) &= -\frac{4}{c^2} \phi + \mathcal{O} \left( \epsilon^2 \right)\\
+\bar{h}^{0j} (x) &=  - \frac{4}{c^3} \zeta^j + \mathcal{O} \left( \epsilon^2 \right)  \\
+\bar{h}^{jk} (x) &= \mathcal{O} \left( \epsilon^2 \right) ,
+\end{align}
+\end{subequations}
+where
+\begin{equation}
+\phi (x) = -\frac{G}{c^2} \int \frac{T^{00} (x')}{\left| \textbf{x} - \textbf{x}' \right|} d^3 x' = -G \int \frac{\rho (x')}{\left| \textbf{x} - \textbf{x}' \right|} d^3 x'  
+\end{equation}
+is the Newtonian gravitational potential, satisfying the Poisson equation
+\begin{equation}
+\nabla^2 \phi = 4\pi G \rho,
+\end{equation}
+while the potential $\zeta^j$ is given by
+\begin{equation}
+\zeta^j (x) = -\frac{G}{c} \int \frac{T^{0j} (x')}{\left| \textbf{x} - \textbf{x}' \right|} d^3 x' = -G \int \frac{\rho (x') v^j }{\left| \textbf{x} - \textbf{x}' \right|} d^3 x'  
+\end{equation}
+and satisfies the differential equation
+\begin{equation}
+\nabla^2 \zeta^j = 4\pi G \rho v^j.
+\end{equation}
+
+Given these functions, we obtain the trace of the perturbation as
+\begin{equation}
+\bar{h} =  \frac{4}{c^2} \phi + \mathcal{O} \left( \epsilon^4 \right)
+\end{equation}
+and using the equation (\ref{eq:TracedInverse02}) we get back the coefficients for the original perturbation,
+\begin{subequations}
+\begin{align}
+h^{00} (x) &= -\frac{2}{c^2} \phi + \mathcal{O} \left( \epsilon^4 \right)\\
+h^{0j} (x) &=  -\frac{4}{c^3} \zeta^j + \mathcal{O} \left( \epsilon^5 \right)  \\
+h^{jk} (x) &= -\frac{2}{c^2} \phi \delta^{jk} + \mathcal{O} \left( \epsilon^4 \right).
+\end{align}
+\end{subequations}
+
+Lowering the indices  with $\eta_{\mu \nu}$, we obtain the components 
+\begin{subequations}
+\begin{align}
+h_{00} (x) &= -\frac{2}{c^2} \phi + \mathcal{O} \left( \epsilon^4 \right) \label{eq:00ComponentNewtonian} \\
+h_{0j} (x) &=  \frac{4}{c^3} \zeta_j + \mathcal{O} \left( \epsilon^5 \right) \label{eq:0jComponentNewtonian}  \\ 
+h_{jk} (x) &= -\frac{2}{c^2} \phi \delta_{jk} + \mathcal{O} \left( \epsilon^4 \right). \label{eq:jkComponentNewtonian}
+\end{align}
+\end{subequations}
+and therefore the complete metric tensor is recovered as
+\begin{subequations}\label{eq:NewtonianMetric}
+\begin{align}
+g_{00} (x) &= -1 -\frac{2}{c^2} \phi + \mathcal{O} \left( \epsilon^4 \right) \label{eq:NewtonianMetric1}\\
+g_{0j} (x) &=   \frac{4}{c^3} \zeta_j + \mathcal{O} \left( \epsilon^5 \right) \label{eq:NewtonianMetric2}  \\
+g_{jk} (x) &=  \left(1 - \frac{2}{c^2} \phi \right) \delta_{jk}  + \mathcal{O} \left( \epsilon^4 \right)\label{eq:NewtonianMetric3}.
+\end{align}
+\end{subequations}
+
+The results in this chapter show that the Newtonian gravitational potential appear in the metric coefficients and that the linear approximation makes sense because the functions $h_{\mu \nu}$ are small. Indeed, the order of the perturbations in the metric can be related with the order $\epsilon$ defined at the beginning of this chapter,
+\begin{equation}
+\left| h_{\mu \nu} \right| \sim \mathcal{O} \left( \textrm{h} \right) \sim \frac{\left| \phi \right|}{c^2} \sim \mathcal{O} (\epsilon^2). \label{eq:NewtonianPotentialOrder}
+\end{equation}
+
+Therefore, from now on, we will use only the infinitesimal quantity $\epsilon$ to keep track of the order of the expansions.  Finally, it is important to note that the term appearing in the coefficient $g_{0j}$, in equation (\ref{eq:NewtonianMetric2}), is not exactly a Newtonian contribution. In fact, while the terms proportional to  $\frac{\left| \phi \right|}{c^2}$ are of order $\mathcal{O} ( \textrm{h} ) \sim \mathcal{O}(\epsilon^2)$, we have that $ \frac{\left| \zeta_j \right|}{c^2} \sim \mathcal{O} ( \epsilon^{3} )$. However, we include it here because it appears in a natural way and because we have decided to neglect orders $\mathcal{O} ( \textrm{h}^2 ) \sim \mathcal{O}(\epsilon^4)$ in all equations consistently, and this term is not of that order. Thus, we must emphasize that this term corresponds to the first contribution beyond the Newtonian approximation appearing in the expansions. In the next chapter, we will continue the series expansion, including high order terms in the so-called \textit{post-Newtonian approximation}.
+
+
+

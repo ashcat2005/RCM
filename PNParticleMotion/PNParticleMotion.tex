@@ -1,0 +1,124 @@
+The equations of motion for massive and massless particles in a relativistic spacetime under the post-Newtonian approximation will be found using a variational approach. In this chapter, we define the Lagrangian describing a test particle to obtain the general expression for its equations of motion in terms of the PN potentials.
+
+\section{Equations of Motion for a Massive Test Particle}
+The action describing a test particle of proper mass $m_0$ is
+\begin{equation}
+S = -m_0 c^2 \int_{\tau_1} ^{\tau_2} d\tau = -m_0 c^2 \int_{t_1} ^{t_2}  \frac{d\tau}{dt} dt ,
+\end{equation}
+where $\tau$ represents the proper time of the test particle and $t$ is the coordinate time, which will be used as the parameter to describe the motion. From the line element $ds^2 = - c^2 d\tau^2 = g_{\mu \nu} dx^\mu dx^\nu$ and denoting $\dot{x}^\mu = \frac{dx^\mu }{dt}$, we have
+\begin{equation}
+\left( \frac{d\tau}{dt} \right)^2 = - g_{\mu \nu} \frac{\dot{x}^\mu \dot{x}^\nu}{c^2}.
+\end{equation}
+
+Using the post-Newtonian metric (\ref{eq:PNMetricInitial}), this relation leads to  
+\begin{equation}
+\left( \frac{d\tau}{dt} \right)^2 = 1 - \frac{\dot{\textbf{x}}^2}{c^2}  - \leftidx{^{(2)}}h_{00} - \leftidx{^{(4)}}h_{00} - 2 \leftidx{^{(3)}}h_{0j} \frac{\dot{x}^j}{c} - \leftidx{^{(2)}}h_{ij} \frac{\dot{x}^i \dot{x}^j}{c^2} + \mathcal{O} ( \epsilon^6 ).  
+\end{equation}
+
+We will use the In order to describe the motion of a test particle with proper mass $m_0$, we will use the lagrangian 
+\begin{equation}
+L=-m_0 c^2 \left( \frac{d\tau}{dt} - 1\right), \label{eq:PNLagrangianDefinition}
+\end{equation}
+which, in the post-Newtonian approximation, gives
+\begin{align}
+L = &\frac{1}{2} m_0 \dot{\textbf{x}} ^2 + \frac{1}{2} m_0 c^2 \leftidx{^{(2)}}h_{00} + \frac{1}{8} m_0 \frac{\left( \dot{\textbf{x}} ^2 \right)^2}{c^2}  + \frac{1}{2} m_0 c^2 \leftidx{^{(4)}}h_{00} + m_0 c \leftidx{^{(3)}}h_{0j} \dot{x}^j  \notag \\
+&+ \frac{1}{2} m_0 \leftidx{^{(2)}}h_{ij} \dot{x}^i \dot{x}^j + \frac{1}{8} m_0 c^2 \left( \leftidx{^{(2)}}h_{00} \right)^2 + \frac{1}{4} m_0 \leftidx{^{(2)}}h_{00} \dot{\textbf{x}} ^2 + \mathcal{O} ( \epsilon^6 )  \label{eq:LagrangianMassiveParticle}.
+\end{align}
+
+Using equation (\ref{eq:PNMetricTensor}) to write the metric components in terms of the post-Newtonian potentials, the Lagrangian becomes
+\begin{align}
+L = &\frac{1}{2} m_0 \dot{\textbf{x}} ^2 - m_0 \phi + \frac{1}{8} m_0 \frac{\left( \dot{\textbf{x}} ^2 \right)^2}{c^2} - \frac{1}{2} m_0 \frac{\phi^2}{c^2} - m_0 \psi -  \frac{3}{2} m_0 \phi \frac{\dot{\textbf{x}} ^2 }{c^2} \notag \\
+&+ 4 m_0 \frac{ \zeta_j \dot{x}^j }{c^2} + m_0 c \dot{x}^j \partial_0 \partial_j \chi + \mathcal{O} ( \epsilon^6 ).  \label{eq:LagrangianMassiveParticlePotentials}
+\end{align}
+
+From this expression, it is clear that the first two terms correspond to the Newtonian lagrangian, while the rest terms are all 1PN approximation corrections.  
+
+\begin{exercise}[Equation of Motion for a Massive Particle]
+\textbf{Equation of Motion for a Massive Particle}
+
+Show that Euler-Lagrange equations,
+\begin{equation}
+\frac{d}{dt}\left(\ \frac{\partial L}{\partial \dot{x}^j} \right) =   \frac{\partial L}{\partial x^j} 
+\end{equation}
+applied to lagrangian (\ref{eq:LagrangianMassiveParticle}) yields the equations of motion
+\begin{align}
+\ddot{x}^j = &\frac{1}{2} c^2 \partial_j \leftidx{^{(2)}} h_{00} + \frac{1}{2} c^2 \partial_j \leftidx{^{(4)}} h_{00} - \frac{1}{2} c^2 \leftidx{^{(2)}} h_{jk} \partial_k \leftidx{^{(2)}} h_{00}  - c^2 \partial_0 \leftidx{^{(3)}} h_{0j} \notag \\ 
+&- \frac{1}{2} c \dot{x}^j \partial_0 \leftidx{^{(2)}} h_{00}  - c \dot{x}^k \partial_0 \leftidx{^{(2)}} h_{jk}  - c \left( \partial_k \leftidx{^{(3)}} h_{0j} - \partial_j \leftidx{^{(3)}} h_{0k}   \right)\dot{x}^k \notag \\
+&- \dot{x}^j \dot{x}^k \partial_k \leftidx{^{(2)}} h_{00}  - \left( \partial_k \leftidx{^{(2)}} h_{jl} - \frac{1}{2} \partial_j \leftidx{^{(2)}} h_{kl} \right) \dot{x}^k \dot{x}^l + \mathcal{O} ( \epsilon^6 )
+\end{align} \label{eq:EoMMassiveParticle}.
+\end{exercise}
+
+Using the post-Newtonian potentials, the equations of motion for a massive test particle become
+\begin{align}
+\ddot{x}^j = &- \partial_j  \phi - \frac{4}{c^2} \phi \partial_j \phi - \partial_j \psi - \frac{4}{c} \partial_0 \zeta_j - c^2 \partial_0 \partial_0 \partial_j \chi + 3 \frac{\dot{x}^j}{c} \partial_0 \phi  -4 \frac{\dot{x}^k}{c^2} \left( \partial_k \zeta_j - \partial_j \zeta_k \right) \notag \\
+& + 4 \frac{\dot{x}^j \dot{x}^k}{c^2} \partial_k \phi  -  \frac{\dot{\textbf{x}}^2}{c^2} \partial_j \phi + \mathcal{O} ( \epsilon^6 ),
+\end{align}
+or in vector notation,
+\begin{align}
+\ddot{\textbf{x}} = & - \bnabla \phi - \bnabla \psi - \frac{2}{c^2} \bnabla \phi^2 - \frac{4}{c} \partial_0 \boldsymbol{\zeta} - c^2 \partial_0 \partial_0 \bnabla \chi + \frac{3}{c} \dot{\textbf{x}} \partial_0 \phi \notag \\
+& - \frac{4}{c^2} \dot{\textbf{x}} \times \left( \bnabla \times \boldsymbol{\zeta} \right) + \frac{4}{c^2} \dot{\textbf{x}} \left( \dot{\textbf{x}} \cdot \bnabla \phi \right) - \frac{\dot{\textbf{x}}^2}{c^2} \bnabla \phi + \mathcal{O} ( \epsilon^6 ).
+\end{align}
+
+Note that the leading term in the right hand side of this equation corresponds to the Newtonian contribution $\ddot{\textbf{x}} =  - \bnabla \phi $. 
+
+\section{Equations of motion for a Massless Particle}
+The equations of motion describing a massless particles (e.g. a photon), will be obtained following a different scheme. First, we use the null condition for a massless particle $g_{\mu \nu} \dot{x}^\mu \dot{x}^\nu = 0$ and the post-Newtonian metric (\ref{eq:PNMetricInitial}) to obtain, after differentiation with respect to time\footnote{In order to obtain the order of approximation in this equation, it is important to note that for massless particles, $\dot{\textbf{x}}^i \frac{dx^i}{dt} \sim \mathcal{O} (c)$ and $\ddot{\textbf{x}}^i \frac{d^2x^i}{dt^2} \sim \mathcal{O} (1)$. Therefore we consider just the terms with these orders of approximation, neglecting $\mathcal{O}(\epsilon)$ and smaller.}, 
+\begin{footnotesize}
+\begin{align}
+2\ddot{x}^k \dot{x}^k = &- c^3 \partial_0 \leftidx{^{(2)}} h_{00} - c^2 \dot{x}^k \partial_k \leftidx{^{(2)}} h_{00} -c \left( 2\partial_j \leftidx{^{(3)}} h_{0k} + \partial_0 \leftidx{^{(2)}} h_{jk} \right) \dot{x}^j  \dot{x}^k - \dot{x}^j  \dot{x}^k \dot{x}^l \partial_j \leftidx{^{(2)}} h_{kl} + \mathcal{O}(\epsilon) . \label{eq:MasslessGeodesicAux1}
+\end{align}
+\end{footnotesize}
+
+From the general geodesic equation for a massless particle,
+\begin{equation}
+\frac{d^2 x^\alpha}{d\lambda ^2} + \Gamma^\alpha _{\mu \nu} \frac{dx^\mu}{d\lambda} \frac{dx^\nu}{d\lambda} = 0
+\end{equation}
+with $\lambda$ an adequate affine parameter, we obtain the 3-dimensional equations of motion in terms of the coordinate time $t$,
+\begin{equation}
+\ddot{x}^i + \Gamma^i _{\mu \nu} \dot{x}^\mu \dot{x}^\nu = - \frac{d^2 t}{d\lambda^2} \left( \frac{dt}{d\lambda} \right)^{-2} \dot{x}^i .
+\end{equation}
+
+Using the post-Newtonian metric (\ref{eq:PNMetricInitial}) and the connections (\ref{eq:PNConnectionsComponents}), this equation becomes
+ \begin{align}
+ \ddot{x}^i  - \frac{c^2}{2} \partial_i \leftidx{^{(2)}} h_{00} + c \left( \partial_0 \leftidx{^{(2)}} h_{ij} + \partial_j \leftidx{^{(3)}} h_{0i} - \partial_i \leftidx{^{(3)}} h_{0j} \right) \dot{x}^j & \notag \\
+ + \left( \partial_j \leftidx{^{(2)}} h_{ik} - \frac{1}{2} \partial_i \leftidx{^{(2)}} h_{jk} \right) \dot{x}^j \dot{x}^k + \mathcal{O}(\epsilon^2) &= - \frac{d^2 t}{d\lambda^2} \left( \frac{dt}{d\lambda} \right)^{-2} \dot{x}^i. \label{eq:MasslessGeodesicAux2}
+ \end{align}
+
+Multiplying this equation by $\dot{x}^i$ and using the condition $\textbf{x}^2 = \dot{x}^k \dot{x}^k = c^2$ (valid for massless particles), we obtain
+\begin{equation}
+- \frac{d^2 t}{d\lambda^2} \left( \frac{dt}{d\lambda} \right)^{-2} c^2 =  \ddot{x}^k \dot{x}^k - \frac{c^2}{2} \dot{x}^k \partial_k \leftidx{^{(2)}} h_{00} + c \dot{x}^j \dot{x}^k \partial_0 \leftidx{^{(2)}} h_{jk}  + \frac{1}{2} \dot{x}^j \dot{x}^k \dot{x}^l \partial_j \leftidx{^{(2)}} h_{kl} + \mathcal{O}(\epsilon^2) .
+\end{equation}
+
+Replacing equation (\ref{eq:MasslessGeodesicAux1}) in the first term of this relation, gives
+\begin{equation}
+- \frac{d^2 t}{d\lambda^2} \left( \frac{dt}{d\lambda} \right)^{-2}  =  - \frac{c}{2}  \partial_0 \leftidx{^{(2)}} h_{00} - \dot{x}^k \partial_k \leftidx{^{(2)}} h_{00}  - \frac{1}{c} \left( \partial_j \leftidx{^{(3)}} h_{0k} - \frac{1}{2} \partial_0 \leftidx{^{(2)}} h_{jk}  \right) \dot{x}^j \dot{x}^k  + \\mathcal{O}(\epsilon^3) .
+\end{equation}
+
+Finally, using this equation in (\ref{eq:MasslessGeodesicAux2}) gives the equation of motion for the massless particle in the 1PN approximation,
+\begin{align}
+\ddot{x}^i = &\frac{c^2}{2} \partial_i \leftidx{^{(2)}} h_{00}  - \dot{x}^i \dot{x}^k \partial_k \leftidx{^{(2)}} h_{00} - \left( \partial_j \leftidx{^{(2)}} h_{ik} - \frac{1}{2} \partial_i \leftidx{^{(2)}} h_{jk} \right) \dot{x}^j \dot{x}^k - \frac{c}{2} \dot{x}^i \partial_0 \leftidx{^{(2)}} h_{00} \notag \\
+& -c\left( \partial_0 \leftidx{^{(2)}} h_{ij} + \partial_j \leftidx{^{(3)}} h_{0i} - \partial_i \leftidx{^{(3)}} h_{0j}    \right) \dot{x}^j - \frac{1}{c} \left( \partial_j \leftidx{^{(3)}} h_{0k} -\frac{1}{2} \partial_0 \leftidx{^{(2)}} h_{jk}   \right) \dot{x}^i \dot{x}^j \dot{x}^k + \mathcal{O}(\epsilon^2) . \label{eq:masslessParticlePNEoM}
+\end{align}
+
+In terms of the post-Newtonian potentials (\ref{eq:postNewtonianPotentials}), the motion equation reads
+\begin{align}
+\ddot{x}^i = &-\partial_i \phi + \frac{4}{c^2} \dot{x}^i \dot{x}^k \partial_k \phi + \frac{3}{c} \dot{x}^i \partial_0 \phi + \frac{4}{c^2} \left( \partial_i \zeta_j - \partial_j \zeta_i \right) \dot{x}^j \notag \\
+&- \frac{4}{c^4} \dot{x}^i \dot{x}^j \dot{x}^k \partial_j \zeta_k + \frac{1}{c^3} \dot{\textbf{x}}^2 \dot{x}^i \partial_0 \phi - \frac{1}{c^2} \dot{\textbf{x}}^2 \partial_i \phi +\mathcal{O}(\epsilon^2) .
+\end{align}
+
+\begin{exercise}[Lagrangian for a Massless Particle in the PN Approximation]
+\textbf{Lagrangian for a Massless Particle in the PN Approximation}
+
+Show that the lagrangian function
+\begin{equation}
+L = -\frac{1}{2} \dot{\textbf{x}}^2 - \frac{1}{2} \leftidx{^{(2)}} h_{00} \dot{\textbf{x}}^2 - \frac{1}{2} \leftidx{^{(2)}} h_{jk} \dot{x}^j \dot{x}^k - \frac{1}{2}c \leftidx{^{(3)}} h_{0j} \dot{x}^j - \frac{1}{2c} \leftidx{^{(3)}} h_{0j} \dot{x}^j\dot{\textbf{x}}^2 + \mathcal{O} (\epsilon^2)
+\label{eq:MasslessParticlePNLagrangian}
+\end{equation}
+produces the equations of motion (\ref{eq:masslessParticlePNEoM}) when the metric tensor does not depends explicitly on time.
+\end{exercise}
+
+
+
+
+
+
