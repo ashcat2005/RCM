@@ -1,82 +1,80 @@
-The solution of the linearized field equations (\ref{eq:LinearizedWaveFieldEquations}),
+The solution of the Poisson equation (\ref{eq:PoissonEquation}),
 \begin{equation}
-\square \bar{h}_{\mu \nu}  = - \frac{16 \pi G}{c^4} T_{\mu \nu} + \Ordof \left( \epsilon^4 \right) , \label{eq:WaveEquationAppendix}
+\nabla^2 \phi (t, \textbf{x})= 4\pi G \rho (t, \textbf{x}),
 \end{equation}
-can be written formally in terms of a Green function. We consider the auxiliary equation
-\begin{equation}
-\square \mathcal{G} (x,x') = - 4\pi \delta (x-x') = -4\pi \delta (ct-ct') \delta (\textbf{x} - \textbf{x}') \label{eq:GreenEquationAppendix}
-\end{equation}
-and propose that its solution has the form
-\begin{equation}
- \mathcal{G} (x,x') = \frac{1}{2\pi} \int \mathcal{K} (\textbf{x},\textbf{x}';k) e^{-ik(x^0 - x'^0)}  dk. \label{eq:GreenFunction01Appendix}
- \end{equation} 
- 
-Replacing this transform into the wave equation (\ref{eq:GreenEquationAppendix}) gives
-\begin{eqnarray}
-\frac{1}{2\pi} \int \square \left[ \mathcal{K} (\textbf{x},\textbf{x}';k) e^{-ik(x^0 - x'^0)} \right] dk &=& -4\pi \delta (ct-ct') \delta (\textbf{x} - \textbf{x}')\notag \\
- \frac{1}{2\pi} \int \left[k^2 +\nabla^2  \right] \mathcal{K} (\textbf{x},\textbf{x}';k) e^{-ik(x^0 - x'^0)}  dk &=&-4\pi \delta (ct-ct') \delta (\textbf{x} - \textbf{x}') \notag .
-\end{eqnarray} 
+can be written formally in terms of a Green function. 
 
-Using the integral representation of the Dirac delta function,
+The standard mathematical definition of the Green's function for a linear differential operator $\hat{L}$ is the solution to $\hat{L}\mathcal{G} = \delta$, where $\delta$ represents the Dirac delta function for all relevant coordinates. For the gravitational system, the coordinates are time $t$ and space $\textbf{x}$. Therefore, our defining equation is
+\begin{eqnarray}
+    \nabla^2 \mathcal{G}(t, \textbf{x}; t', \textbf{x}') = \delta(t - t') \delta^{(3)}(\textbf{x} - \textbf{x}').
+\end{eqnarray}
+
+However, it is important to note that  the differential operator $\nabla^2$ contains only spatial derivatives, so it does not act on the time coordinate (remember that in Newtonian mechanics, gravitational influence propagates instantaneously). Because time acts merely as a parameter rather than a dynamic variable in this operator, the Green's function separates completely into a temporal part and a spatial part
 \begin{equation}
-\delta (x^0 - x'^0)=\frac{1}{2\pi} \int  e^{-ik(x^0 - x'^0)}  dk,
+    \mathcal{G}(t, \textbf{x}; t', \textbf{x}') = \delta(t - t') \mathcal{G}_s(\textbf{x}, \textbf{x}').
 \end{equation}
-the right hand side becomes
- \begin{equation}
-  \frac{1}{2\pi} \int \left[k^2 +\nabla^2  \right] \mathcal{K} (\textbf{x},\textbf{x}';k) e^{-ik(x^0 - x'^0)}  dk =-4\pi \frac{1}{2\pi} \int  e^{-ik(x^0 - x'^0)}   \delta (\textbf{x} - \textbf{x}')  dk
- \end{equation}
-and we conclude that
-  \begin{equation}
-  \left[k^2 +\nabla^2  \right] \mathcal{K} (\textbf{x},\textbf{x}';k)  =-4\pi  \delta (\textbf{x} - \textbf{x}'). \label{eq:aux01Appendix}
- \end{equation}
- 
- The form of this equation let us write that the function $\mathcal{K}$ is
- \begin{equation}
- \mathcal{K}(\textbf{x},\textbf{x}';k) =
- \begin{cases}
- \frac{1}{\left| \textbf{x} - \textbf{x}' \right|} \text{ if } k=0 \\
-  \frac{ \bar{\mathcal{K}}\left(\left| \textbf{x} - \textbf{x}' \right|; k \right)}{\left| \textbf{x} - \textbf{x}' \right|} \text{ if } k\neq 0
- \end{cases}
- \end{equation}
- where $\mathcal{K}\left(\left| \textbf{x} - \textbf{x}' \right|; k \right)$ must be a function with a regular behavior when $R = \left| \textbf{x} - \textbf{x}' \right| \rightarrow 0$. Replacing the $k \neq 0$ case in equation (\ref{eq:aux01Appendix}) gives
- \begin{equation}
-\left[k^2 +\nabla^2  \right] \left[ \frac{ \bar{\mathcal{K}}\left(\left| \textbf{x} - \textbf{x}' \right|; k \right)}{\left| \textbf{x} - \textbf{x}' \right|} \right]  =-4\pi  \delta (\textbf{x} - \textbf{x}'). \label{eq:aux02Appendix}
- \end{equation}
- 
- For $R \neq 0$ we have $\delta (\textbf{x} - \textbf{x}')=0$ and the Laplacian becomes
- \begin{eqnarray}
- \nabla^2 \left[ \frac{ \bar{\mathcal{K}}\left(\left| \textbf{x} - \textbf{x}' \right|; k \right)}{\left| \textbf{x} - \textbf{x}' \right|} \right] &=&  \frac{1}{R^2} \frac{d}{dR}\left[ R^2 \frac{d}{dR}\left( \frac{ \bar{\mathcal{K}}\left(R; k \right)}{R} \right) \right] \notag \\
- &=& \frac{1}{R^2} \frac{d}{dR}\left[ R^2 \left(\frac{ 1}{R} \frac{d\bar{\mathcal{K}}\left(R; k \right)}{dR} - \frac{ \bar{\mathcal{K}}\left(R; k \right)}{R^2} \right) \right] \notag \\
- &=& \frac{1}{R^2} \frac{d}{dR}\left[ R \frac{d\bar{\mathcal{K}}\left(R; k \right)}{dR} - \bar{\mathcal{K}}\left(R; k \right)  \right] \notag \\
- &=& \frac{1}{R^2} \left[  \frac{d\bar{\mathcal{K}}\left(R; k \right)}{dR} + R \frac{d^2 \bar{\mathcal{K}}\left(R; k \right)}{dR^2} - \frac{d\bar{\mathcal{K}}\left(R; k \right)}{dR}  \right] \notag \\
- &=& \frac{1}{R}  \frac{d^2\bar{\mathcal{K}}\left(R; k \right)}{dR^2} .
- \end{eqnarray}
- 
- Then, equation (\ref{eq:aux02Appendix}) becomes
-  \begin{equation}
-\frac{d^2\bar{\mathcal{K}}\left(R; k \right)}{dR^2} + k^2 \bar{\mathcal{K}}\left(R; k \right)   = 0
- \end{equation}
- and its solution is
- \begin{equation}
- \bar{\mathcal{K}}_\pm \left(R; k \right) = e^{\pm ik R}.
- \end{equation}
- 
- The Green functions are obtained by replacing this results back  in (\ref{eq:GreenEquationAppendix}),
- \begin{equation}
-  \mathcal{G}_\pm (x,x') = \frac{1}{2\pi} \int \frac{e^{\pm ik \left| \textbf{x} - \textbf{x}' \right|}}{\left| \textbf{x} - \textbf{x}' \right|}  e^{-ik(x^0 - x'^0)}  dk =  \frac{1}{2\pi \left| \textbf{x} - \textbf{x}' \right|} \int  e^{-ik(x^0 - x'^0 \mp \left| \textbf{x} - \textbf{x}' \right| )}  dk.
- \end{equation}
- 
-Using the definition of the Dirac delta function let us write 
+Substituting this back into the definition, yields the spatial Green's function equation
 \begin{equation}
-\mathcal{G}_\pm (x,x') = \frac{\delta \left( x^0 - x'^0 \mp \left| \textbf{x} - \textbf{x}' \right| \right)}{\left| \textbf{x} - \textbf{x}' \right| }
- \end{equation}
- or using $x^0 = ct$,
- \begin{equation}
-\mathcal{G}_\pm (x,x') = \frac{\delta \left( ct - ct' \mp \left| \textbf{x} - \textbf{x}' \right| \right)}{\left| \textbf{x} - \textbf{x}' \right| }.
- \end{equation}
- 
-Due to causality relations, we are interested in the solution which is non-zero when  $ct-ct' = \left| \textbf{x} - \textbf{x}' \right| $, corresponding to $\mathcal{G}_\pm (x,x') = \mathcal{G}_R (x,x')$ and which is known as the \textit{retarded Green function},
-\begin{equation}
-\mathcal{G}_R (x,x') = \frac{\delta \left( ct - ct' - \left| \textbf{x} - \textbf{x}' \right| \right)}{\left| \textbf{x} - \textbf{x}' \right| }.
+    \nabla^2 \mathcal{G}_s(\textbf{x}, \textbf{x}') = \delta^{(3)}(\textbf{x} - \textbf{x}').
 \end{equation}
+Due to translation invariance of free space, $\mathcal{G}_s$ depends only on the relative distance $\textbf{R} = \textbf{x} - \textbf{x}'$, so the equation can be written as 
+\begin{equation}
+    \nabla^2 \mathcal{G}_s(\textbf{R}) = \delta^{(3)}(\textbf{R}).
+\end{equation}
+
+While this can be solved using Fourier transforms, a highly elegant and rigorous physical method is to use Gauss's Divergence Theorem. Thus, we integrate both sides of the spatial equation over a spherical volume $V$ of radius $R=|\textbf{R}|$ centered at the origin,
+\begin{equation}
+    \int_V \nabla^2 \mathcal{G}_s(\textbf{R}) \, d^3R = \int_V \delta^{(3)}(\textbf{R}) \, d^3R.
+\end{equation}
+
+From the definition of the 3D Dirac delta function, the volume integral over a space containing the origin is exactly $\int_V \delta^{(3)}(\textbf{R}) \, d^3R=1$. Then,
+\begin{equation}
+    \int_V \boldsymbol{\nabla} \cdot (\boldsymbol{\nabla} \mathcal{G}_s(\textbf{R})) \, d^3R = 1.
+\end{equation}
+
+Applying the Divergence Theorem ($\int_V \boldsymbol{\nabla} \cdot \textbf{A} \, dV = \oint_{\partial V} \textbf{A} \cdot \textbf{da}$), the volume integral becomes a surface integral over the sphere's boundary $\partial V$, 
+\begin{equation}
+    \oint_{\partial V} \boldsymbol{\nabla} \mathcal{G}_s(\textbf{R}) \cdot \textbf{da} = 1.
+\end{equation}
+
+Because the source $\delta^{(3)}(\textbf{R})$ is symmetric, the solution $\mathcal{G}_s(\textbf{R})$ must depend only on the radial distance $R$ and therefore, the gradient $\boldsymbol{\nabla} \mathcal{G}_s(\textbf{R})$ points purely in the radial direction $\hat{\textbf{R}}$,
+\begin{equation}
+    \boldsymbol{\nabla} \mathcal{G}_s(\textbf{R}) = \frac{d\mathcal{G}_s}{dR} \hat{\textbf{R}}.
+\end{equation}
+The differential area vector on the sphere's surface is $\textbf{da} = \hat{\textbf{R}} R^2 d\Omega$ (where $d\Omega$ is the solid angle). The integral becomes
+\begin{align}
+    \oint_{\partial V} \left( \frac{d\mathcal{G}_s}{dR} \hat{\textbf{R}} \right) \cdot \left( \hat{\textbf{R}} R^2 d\Omega \right) = &1 \\
+    \frac{d\mathcal{G}_s}{dR} R^2 \oint_{\partial V} d\Omega = &1.
+\end{align}
+Integrating the solid angle gives the total surface area of a sphere, i.e.  $4\pi$, and hence we obtain
+\begin{equation}
+    \frac{d\mathcal{G}_s}{dR} (4\pi R^2) = 1 \implies \frac{d\mathcal{G}_s}{dR} = \frac{1}{4\pi R^2}.
+\end{equation}
+Finally, we integrate with respect to $R$,
+\begin{equation}
+    \mathcal{G}_s(\textbf{R}) = \int \frac{1}{4\pi R^2} dR = -\frac{1}{4\pi R} + C.
+\end{equation}
+For an unbounded domain, we demand that the potential vanishes at infinity, i.e. $\lim_{R \to \infty} \mathcal{G}_s(\textbf{R}) = 0$, so the constant of integration is $C = 0$. Replacing $R = |\textbf{x} - \textbf{x}'|$, we get
+\begin{equation}
+    \mathcal{G}_s(\textbf{x}, \textbf{x}') = -\frac{1}{4\pi |\textbf{x} - \textbf{x}'|}
+\end{equation}
+and recombining the spatial and temporal parts, the explicit spatio-temporal Green's function is finally
+\begin{equation}
+    \mathcal{G}(t, \textbf{x}; t', \textbf{x}') = -\frac{\delta(t - t')}{4\pi |\textbf{x} - \textbf{x}'|}. \label{eq:AppendixGreenFunction}
+\end{equation}
+
+
+In order to prove this deduction, we will apply it to find the solution $\phi(t, \textbf{x})$ for the original equation (\ref{eq:PoissonEquation}). The general solution via Green's functions is the integral of the Green's function multiplied by the entire right-hand side source term, i.e. 
+\begin{equation}
+    \phi(t, \textbf{x}) = \int dt' \int d^3x' \, \mathcal{G}(t, \textbf{x}; t', \textbf{x}') \Big[ 4\pi G \rho(t', \textbf{x}') \Big].
+\end{equation}
+Substitution of the Green function (\ref{eq:AppendixGreenFunction}) gives 
+\begin{equation}
+    \phi(t, \textbf{x}) = \int dt' \int d^3x' \left( -\frac{\delta(t - t')}{4\pi |\textbf{x} - \textbf{x}'|} \right) 4\pi G \rho(t', \textbf{x}').
+\end{equation}
+It is clear that the $4\pi$ terms cancel out and evaluating the time integral over $t'$ (which collapses via the $\delta(t-t')$ function) gives the desired result,
+\begin{equation}
+    \phi(t, \textbf{x}) = -G \int \frac{\rho(t, \textbf{x}')}{|\textbf{x} - \textbf{x}'|} d^3x'. \label{eq:AppendixPotential}
+\end{equation}
+This final formula is precisely the standard form of Newton's Law of Universal Gravitation in continuous integral form, successfully verifying the derived Green's function.
  
