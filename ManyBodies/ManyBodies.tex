@@ -1,0 +1,224 @@
+ \section{The General 3-Body Problem}
+The system of three bodies interacting gravitationally has no exact analytic solutions, except for some very special situations. Now, we will describe a general system consisting of three bodies with masses $m_1, m_2$ and $m_3$ with position vectors $\textbf{x}_1, \textbf{x}_2$ and $\textbf{x}_3$, respectively. Beginning with the Lagrangian function 
+\begin{equation}
+L=\frac{1}{2}m_{1}\dot{\textbf{x}}_{1}^{2} + \frac{1}{2}m_{2}\dot{\textbf{x}}_2^{2} + \frac{1}{2}m_{3}\dot{\textbf{x}}_2^{3} + \frac{Gm_1m_2}{r_{12}} + \frac{Gm_1m_3}{r_{13}} + \frac{Gm_2m_3}{r_{23}},\label{eq:3BodyLagrangian}
+\end{equation}
+where $r_{ij}=\vert{}\textbf{x}_{ij}\vert{}=\vert{}\textbf{x}_i-\textbf{x}_j\vert{}$ represents the separation distance between the bodies $i$ and $j$.
+
+This system possesses several conserved quantities. The canonical momenta are defined as $\vec{p}_i = \frac{\partial L}{\partial \dot{\vec{x}}_i} = m_i \dot{\vec{x}}_i$ and the total linear momentum of the system is conserved,
+\begin{equation}    \textbf{P}=\textbf{p}_{1}+\textbf{p}_{2}+\textbf{p}_{3}=m_{1}\dot{\textbf{x}}_{1}+m_{2}\dot{\textbf{x}}_{2}+m_{3}\dot{\textbf{x}}_{3}=\text{const.}
+\end{equation}
+
+Additionally, the total orbital angular momentum $\boldsymbol{\ell}$ is conserved,
+\begin{equation}
+\boldsymbol{\ell}=\boldsymbol{\ell}_{1}+\boldsymbol{\ell}_{2}+\boldsymbol{\ell}_{3}=m_{1}\textbf{x}_{1}\times\dot{\textbf{x}}_{1}+m_{2}\textbf{x}_{2}\times\dot{\textbf{x}}_{2}+m_{3}\textbf{x}_{3}\times\dot{\textbf{x}}_{3}.
+\end{equation}
+
+Because the system is conservative, the Hamiltonian is equivalent to the total energy $E$, which is also a conserved quantity,
+\begin{equation}
+    H=E=\frac{1}{2}m_{1}\dot{\textbf{x}}_{1}^{2}+\frac{1}{2}m_{2}\dot{\textbf{x}}_{2}^{2}+\frac{1}{2}m_{3}\dot{\textbf{x}}_{3}^{2}-G\frac{m_{1}m_{2}}{r_{12}}-G\frac{m_{1}m_{3}}{r_{13}}-G\frac{m_{2}m_{3}}{r_{23}}
+\end{equation}
+
+Due to the conservation of linear momentum, the barycenter of the system, defined as 
+\begin{equation}
+    \textbf{X} = \frac{1}{M}(m_1\textbf{x}_1 + m_2\textbf{x}_2 + m_3\textbf{x}_3)
+\end{equation}
+ where $M = m_1 + m_2 + m_3$, moves uniformly and its trajectory is given by
+ \begin{equation}
+     \textbf{X}(t) = \textbf{X}(0) + \frac{\textbf{P}}{M}t.
+ \end{equation}
+
+The general equations of motion for each mass are obtained from the Lagrangian (\ref{eq:3BodyLagrangian} and for each particle includes the gravitational interactions with the other two bodies,
+\begin{subequations}
+    \begin{align}
+    \ddot{\textbf{x}}_1 = &-Gm_2\frac{\textbf{x}_{12}}{r_{12}^3} - Gm_3\frac{\textbf{x}_{13}}{r_{13}^3}\\
+    \ddot{\textbf{x}}_2 = &Gm_1\frac{\textbf{x}_{12}}{r_{12}^3} - Gm_3\frac{\textbf{x}_{23}}{r_{23}^3}\\
+    \ddot{\textbf{x}}_3 = &Gm_1\frac{\textbf{x}_{13}}{r_{13}^3} + Gm_2\frac{\textbf{x}_{23}}{r_{23}^3}.
+\end{align} \label{eq:EoM3BodySystem}
+\end{subequations}
+
+\begin{exercise}[3-Body System: Numerical Solution]
+ \textbf{3-Body System: Numerical Solution}
+ 
+ Using the barycentric frame and the cartesian coordinates $\textbf{x}_i = (x^1_i, x^2_i, x^3_i)$, write a code that solves the equations of motion (\ref{eq:EoM3BodySystem}) using an adaptive step Runge-Kutta 4/5 integrator. Include a function that verifies that the conserved quantities (energy and angular momentum) remain constant along the integration domain. Also include a function that plots the obtained orbits in 3-dimensional space.
+
+ As a particular example, show the results when integrating the motion of a system of three equal masses located in the vertices of a equilateral triangle and moving in the plane that contains the triangle.
+
+Hint: Use a units system such that mass is measured in Solar Masses, time is measured in years and distance is measured in Astronomical Units. Using this system, the gravitational constant is simply $G=4\pi^2$
+\end{exercise}
+
+
+
+\subsection{Reduction Using Jacobi Variables}
+
+To simplify the 3-body problem, we can reduce it to an effective 2-body problem by defining the partial mass sum $m = m_1 + m_2$ and introducing Jacobi variables:
+
+$\textbf{x} = \textbf{x}_1 - \textbf{x}_2$: The separation vector between the two bodies $m_1$ and $m_2$.
+
+$\boldsymbol{\varrho} = \textbf{x}_3 - \frac{m_1}{m}\textbf{x}_1 - \frac{m_2}{m}\textbf{x}_2$: The separation vector between $m_3$ and the barycenter of the $m_1-m_2$ sub-system.
+
+
+Operating within the total barycenter frame of reference, we set $\textbf{X} = 0$ and solve for the individual position vectors to obtain
+\begin{subequations}
+    \begin{align}
+        \textbf{x}_{1} = &\frac{m_{2}}{m}\textbf{x}-\frac{m_{3}}{M}\boldsymbol{\varrho}\\
+        \textbf{x}_{2} = &-\frac{m_{1}}{m}\textbf{x}-\frac{m_{3}}{M}\boldsymbol{\varrho}\\
+        \textbf{x}_{3} = &\frac{m}{M}\boldsymbol{\varrho}.
+    \end{align} \label{eq:Coordinates3BodyJacobi}
+\end{subequations}
+Similarly, the separation vector between each pair of particles are written as
+\begin{subequations}
+    \begin{align}
+        \textbf{x}_{12} =& \textbf{x}_1 - \textbf{x}_2 = \textbf{x}\\
+        \textbf{x}_{13} =& \textbf{x}_1 - \textbf{x}_3 = -\left( \boldsymbol{\varrho} - \frac{m_2}{m} \textbf{x} \right)\\
+        \textbf{x}_{23} =& \textbf{x}_2 - \textbf{x}_3 = -\left( \boldsymbol{\varrho} + \frac{m_1}{m} \textbf{x} \right).
+    \end{align}
+\end{subequations}
+
+The dynamics of the Jacobi variables is given by the differential equations
+\begin{subequations}
+    \begin{align}
+        \ddot{\textbf{x}} =& -Gm\frac{\textbf{x}}{r^3} - Gm_3 \left[ \frac{\boldsymbol{\varrho} + \frac{m_1}{m}\textbf{x}}{\vert{} \boldsymbol{\varrho} + \frac{m_1}{m}\textbf{x}\vert{}^3} - \frac{\boldsymbol{\varrho} - \frac{m_2}{m}\textbf{x}}{\vert{} \boldsymbol{\varrho} - \frac{m_2}{m}\textbf{x}\vert{}^3}\right]\\
+        \ddot{\boldsymbol{\varrho}} = &- \frac{GM}{m} \left[ m_1 \frac{\boldsymbol{\varrho} - \frac{m_2}{m}\textbf{x}}{\vert{} \boldsymbol{\varrho} - \frac{m_2}{m}\textbf{x}\vert{}^3} + m_2 \frac{\boldsymbol{\varrho} + \frac{m_1}{m}\textbf{x}}{\vert{} \boldsymbol{\varrho} + \frac{m_1}{m}\textbf{x}\vert{}^3} \right].
+    \end{align} \label{eq:EoM3BodiesJacobi}
+\end{subequations}
+
+Regarding the conserved quantities, the total angular momentum in Jacobi coordinates simplifies to
+\begin{equation}
+    \boldsymbol{\ell}=\frac{m_{1}m_{2}}{m}\textbf{x}\times\dot{\textbf{x}}+\frac{mm_{3}}{M}\boldsymbol{\varrho}\times\dot{\boldsymbol{\varrho}},
+\end{equation}
+while the total energy of the system can be rewritten as
+\begin{equation}
+    E=\frac{1}{2}\frac{m_{1}m_{2}}{m}\dot{\textbf{x}}^{2}+\frac{1}{2}\frac{mm_{3}}{M}\dot{\boldsymbol{\varrho}}^{2}-G\frac{m_{1}m_{2}}{r}-G\frac{m_{1}m_{3}}{\left\vert{}\boldsymbol{\varrho}-\frac{m_{2}}{m}\textbf{x}\right\vert{}}-G\frac{m_{2}m_{3}}{\left\vert{}\boldsymbol{\varrho}+\frac{m_{1}}{m}\textbf{x}\right\vert{}}.
+\end{equation}
+
+\begin{exercise}[3-Body System: Jacobi Variables]
+ \textbf{3-Body System: Jacobi Variables}
+ 
+ Using the barycentric frame and the Jacobi variables, write a code that solves the equations of motion (\ref{eq:EoM3BodiesJacobi}) using an adaptive step Runge-Kutta 4/5 integrator. Include a function that verifies that the conserved quantities (energy and angular momentum) remain constant along the integration domain. Also include a function that plots the obtained orbits in 3-dimensional space.
+
+ Show again the results when integrating the motion of a system of three equal masses located in the vertices of a equilateral triangle and moving in the plane that contains the triangle.
+
+Hint: Use a units system such that mass is measured in Solar Masses, time is measured in years and distance is measured in Astronomical Units. Using this system, the gravitational constant is simply $G=4\pi^2$
+\end{exercise}
+
+\subsection{The Restricted 3-Body Problem}
+
+The restricted 3-body problem arises when the mass of the third body is considered negligible compared to the primary bodies, i.e. $m_3 \ll m_1$ and $m_3 \ll m_2$. Under this approximation, the total mass is simply $M \approx m = m_1 + m_2$ and the position vectors simplify to 
+\begin{subequations}
+    \begin{align}
+        \textbf{x}_1 \approx &\frac{m_2}{m}\textbf{x}\\
+        \textbf{x}_2 \approx &-\frac{m_1}{m}\textbf{x}\\
+        \textbf{x}_3 \approx &\boldsymbol{\varrho}
+    \end{align}
+\end{subequations}
+Similarly, the equations of motion in Jacobi's variables become
+\begin{subequations}
+    \begin{align}
+        \ddot{\textbf{x}} \approx & -Gm\frac{\textbf{x}}{r^3}\\
+        \ddot{\boldsymbol{\varrho}} \approx &- G m_1 \frac{\boldsymbol{\varrho} - \frac{m_2}{m}\textbf{x}}{\vert{} \boldsymbol{\varrho} - \frac{m_2}{m}\textbf{x}\vert{}^3} + Gm_2 \frac{\boldsymbol{\varrho} + \frac{m_1}{m}\textbf{x}}{\vert{} \boldsymbol{\varrho} + \frac{m_1}{m}\textbf{x}\vert{}^3} .
+    \end{align} \label{eq:EoM3BodiesRestricted}
+\end{subequations}
+
+A particular example of this kind of restricted system considers that the two primary masses are in a circular orbit with a separation vector given by
+\begin{equation}
+    \textbf{x} = r \cos \Omega t \,\, \hat{\textbf{e}}_x + r \sin \Omega t \,\, \hat{\textbf{e}}_y,
+\end{equation}
+where the orbital angular velocity is $\Omega = \sqrt{\frac{GM}{r^3}}$. It implies that the separation between the bodies is a constant, $\vert{} \textbf{x} \vert{} = r = \text{ constant}$. Hence, it is possible to transform from the inertial, non-rotating, frame $(x,y,z)$ to a co-rotating frame $(\bar{x},\bar{y},\bar{z})$ using the transformation
+\begin{equation}
+    \begin{cases}
+        x = & \bar{x} \cos \Omega t - \bar{y} \sin \Omega t\\
+        y = & \bar{x} \sin \Omega t - \bar{y} \cos \Omega t\\
+        z = & \bar{z} 
+    \end{cases}.
+\end{equation}
+
+In this rotating frame, the separation vector between the particles $m_1$ and $m_2$ is $\bar{\textbf{x}} = r \,\, \bar{\textbf{e}}_x $ and the equation of motion for the third particle becomes
+\begin{equation}
+    \frac{d^2\bar{\boldsymbol{\varrho}}}{dt^2} + 2\bar{\boldsymbol{\Omega}}\times\frac{d\bar{\boldsymbol{\varrho}}}{dt} = - \bar{\boldsymbol{\nabla}}\Phi \label{eq:EoMRotatingFrame}
+\end{equation}
+where $\bar{\boldsymbol{\Omega}} = \Omega \, \, \bar{\textbf{e}}_z$ and 
+\begin{equation}
+    \Phi=-\frac{Gm_{1}}{\left\vert{}\bar{\boldsymbol{\varrho}}-\frac{m_{2}}{m}\bar{\textbf{x}}\right\vert{}}-\frac{Gm_{2}}{\left\vert{}\bar{\boldsymbol{\varrho}}+\frac{m_{1}}{m}\bar{\textbf{x}}\right\vert{}}-\frac{1}{2}\Omega^{2}\left[\vert{}\bar{\boldsymbol{\varrho}}\vert{}^{2}-(\bar{\boldsymbol{\varrho}}\cdot\bar{\textbf{e}}_{z})^{2}\right].\label{eq:EffectivePotRotatingFrame}
+\end{equation}
+
+The second term in the left hand side of equation (\ref{eq:EoMRotatingFrame}), $2\boldsymbol{\Omega}\times\frac{d\bar{\boldsymbol{\varrho}}}{dt}$, represents the Coriolis acceleration, while the last term in the potential (\ref{eq:EffectivePotRotatingFrame}) gives the centripetal acceleration.
+
+\subsubsection{The Jacobi Constant}
+
+By dot-multiplying the equation of motion by $\dot{\textbf{y}}$, the Coriolis term evaluates to zero since $\dot{\textbf{y}}\cdot(\boldsymbol{\Omega}\times\dot{\textbf{y}}) = 0$, while the other terms can be integrated ot obtain a conserved quantity for the restricted problem, known as the \textbf{Jacobi Constant},
+\begin{equation}
+    C = \frac{1}{2}\dot{\bar{\boldsymbol{\varrho}}}^{2}+\Phi=\text{constant}.
+\end{equation}
+
+\begin{exercise}[3-Body System: Restricted Problem]
+ \textbf{3-Body System: Restricted Problem}
+ 
+ Using the rotating frame, write a code that solves the equations of motion (\ref{eq:EoMRotatingFrame}) using an adaptive step Runge-Kutta 4/5 integrator. Include a function that verifies that the conservation of energy and the Jacobi constant along the integration domain. Also include a function that plots the obtained orbits in 3-dimensional space.
+
+Hint: Use a units system such that mass is measured in Solar Masses, time is measured in years and distance is measured in Astronomical Units. Using this system, the gravitational constant is simply $G=4\pi^2$
+\end{exercise}
+
+
+
+\subsection{Equilibrium Points in the Restricted Problem}
+
+By constraining the system such that all three bodies move in the same plane ($x-y$ plane), we can identify a set of equilibrium points for the third particle. We will define the unit of length such that $r=1$ and the unit of mass such that $m = m_1 + m_2 = 1$. This also sets the value $\Omega = \sqrt{G}$. Now, let the mass ratio be $q = \frac{m_2}{m_1} \le 1$ (i.e. $m_2 \leq m_1$). From this definition, the individual masses can then be written as $m_1 = \frac{1}{1+q}$ and $m_2 = \frac{q}{1+q}$.
+
+The position of the third body will be written as $\bar{\boldsymbol{\varrho}} = (\bar{\varrho}_x, \bar{\varrho}_y,0)$ and then, the separation distances will be
+
+\begin{subequations}
+    \begin{align}
+        r_1 = r_{13} = &\left\vert{}\bar{\boldsymbol{\varrho}}-\frac{m_{2}}{m}\bar{\textbf{x}}\right\vert{} = \sqrt{(\bar{\varrho}_x - m_2)^2 + \bar{\varrho}_y^2}\\
+        r_2 = r_{23} = &\left\vert{}\bar{\boldsymbol{\varrho}}+\frac{m_{1}}{m}\bar{\textbf{x}}\right\vert{} = \sqrt{(\bar{\varrho}_x + m_1)^2 + \bar{\varrho}_y^2}.
+    \end{align}
+\end{subequations}
+
+Under all these  conditions, the potential becomes
+\begin{equation}
+    \Phi=-\frac{Gm_{1}}{r_{1}}-\frac{Gm_{2}}{r_{2}}-\frac{1}{2}G(\bar{\varrho}_{x}^{2}+\bar{\varrho}_{y}^{2}).
+\end{equation}
+
+
+
+The equilibrium points must satisfy the stationary condition $\bar{\boldsymbol{\nabla}}\Phi = 0$. This results in a system of two equations dictating the spatial positions $(\bar{\varrho}_x, \bar{\varrho}_y)$ of the equilibrium points,
+\begin{equation}
+    \begin{cases}
+        m_{1}(\bar{\varrho}_{x}-m_{2})r_{2}^{3}+m_{2}(\bar{\varrho}_{x}+m_{1})r_{1}^{3}-\bar{\varrho}_{x}r_{1}^{3}r_{2}^{3}=0 \\ 
+        \bar{\varrho}_{y}(m_{1}r_{2}^{3}+m_{2}r_{1}^{3}-r_{1}^{3}r_{2}^{3})=0
+    \end{cases}.\label{eq:EquilibriumPointsEquations}
+\end{equation}
+
+\begin{exercise}[3-Body System: Equilibrium Points]
+ \textbf{3-Body System: Equilibrium Points}
+ 
+ Write a code that numerically solves equations (\ref{eq:EquilibriumPointsEquations}) to find Lagrange equilibrium points.
+\end{exercise}
+
+\section{The N-Body Problem}
+
+Scaling the theoretical framework to $N$ gravitationally interacting bodies requires extending the Lagrangian and Hamiltonian formulations. For $N$ bodies, the Lagrangian is given by
+\begin{equation}
+    L=\frac{1}{2}\sum_{j=1}^{N}m_{j}\dot{\textbf{x}}_{j}^{2}+\sum_{j=1}^{N}\sum_{k=j+1}^{N}\frac{Gm_{j}m_{k}}{r_{jk}}.
+\end{equation}
+
+From this Lagrangian, the generalized equations of motion are
+\begin{equation}
+    \ddot{\textbf{x}}_{j}=-\sum_{k\ne j}Gm_{k}\frac{\textbf{x}_{jk}}{r_{jk}^{3}}\label{eq:EoMNBodies}
+\end{equation}
+where $\textbf{x}_{jk} = \textbf{x}_j - \textbf{x}_k$ and $r_{jk} = \vert{}\textbf{x}_{jk}\vert{}$. Just as in the 3-body problem, the $N$-body system maintains the following conservation laws:
+\begin{itemize}
+    \item Total Momentum: $\vec{P}=\sum_{j=1}^{N}m_{j}\dot{\textbf{x}}_{j}$
+    \item Total Energy: $H=E=\frac{1}{2}\sum_{j=1}^{N}m_{j}\dot{\textbf{x}}_{j}^{2}-\sum_{j=1}^{N}\sum_{k=j+1}^{N}\frac{Gm_{j}m_{k}}{r_{jk}}$
+    \item Total Angular Momentum: $\vec{L}=\sum_{j=1}^{N}m_{j}\textbf{x}_{j}\times\dot{\textbf{x}}_{j}$
+\end{itemize}
+
+\begin{exercise}[N-Body System: Numerical Solution]
+ \textbf{N-Body System: Numerical Solution}
+ 
+ Using the barycentric frame and the cartesian coordinates $\textbf{x}_i = (x^1_i, x^2_i, x^3_i)$, write a code that solves the equations of motion (\ref{eq:EoMNBodies}) using an adaptive step Runge-Kutta 4/5 integrator. Include a function that verifies that the conserved quantities (energy and angular momentum) remain constant along the integration domain. Also include a function that plots the obtained orbits in 3-dimensional space.
+
+ As a particular example, implement the case of a 4-bodies system.
+
+Hint: Use a units system such that mass is measured in Solar Masses, time is measured in years and distance is measured in Astronomical Units. Using this system, the gravitational constant is simply $G=4\pi^2$
+\end{exercise}

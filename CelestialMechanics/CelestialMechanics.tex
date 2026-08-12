@@ -2,7 +2,7 @@ The starting point to study the relativistic celestial mechanics is to review th
 \begin{equation}
 \nabla^2 \phi (t, \textbf{x})= 4\pi G \rho (t, \textbf{x}), \label{eq:PoissonEquation}
 \end{equation}
-where $\phi(t, \textbf{x})$ represents the \textit{gravitational potential} depending on time and space coordinates $\textbf{x} = (x,y,z)$, $G = 6.67 \times 10^{-11} \textrm{ N m}^2\textrm{/kg}^2$ is the Newtonian gravitational constant and $\rho(t, \textbf{x})$ is the matter density. As is shown in Appendix B, a general solution of this equation can be written in terms of the corresponding Green function as
+where $\phi(t, \textbf{x})$ represents the \textit{gravitational potential} depending on time and space coordinates $\textbf{x} = (x,y,z)$, $G = 6.67 \times 10^{-11} \textrm{ N m}^2\textrm{/kg}^2$ is the Newtonian gravitational constant and $\rho(t, \textbf{x})$ is the matter density. As is shown in Appendix \ref{A:GreenFunctionPoisson}, a general solution of this equation can be written in terms of the corresponding Green function as
 \begin{equation}
 \phi (t, \textbf{x}) = -G\int \frac{\rho (t, \textbf{x}')}{\left| \textbf{x} - \textbf{x}' \right|} d^3 x'.
 \end{equation}
@@ -69,37 +69,33 @@ with $j=1,2,3$ yields the equations of motion for the two-body system as
 \ddot{\textbf{x}} = - \bnabla \phi (r) = - \frac{GM}{r^3} \textbf{x}. \label{eq:2BodyEoM}
 \end{equation}
  \end{exercise}
- 
+
  \subsection{Conserved Quantities in the Two-body Problem}
 
-In order to obtain the conserved quantities in the two-body system description, we will consider the usual spherical coordinates $\textbf{x} = (r, \theta, \varphi )$. Hence, the Lagrangian (\ref{eq:2BodyLagrangian}) becomes
+In order to obtain the conserved quantities in the two-body system description, we will consider the usual spherical coordinates $\textbf{x} = (r, \theta, \varphi )$, in which the Lagrangian (\ref{eq:2BodyLagrangian}) takes the form
 \begin{equation}
  L = \frac{1}{2} \mu \left[ \dot{r}^2 + r^2 \dot{\theta}^2  + r^2 \sin^2 \theta \dot{\varphi}^2 \right] + \frac{GM\mu }{r}.
  \end{equation} 
 
 The canonical conjugated momenta are defined as $p_j = \frac{\partial L}{\partial \dot{x}^j}$. From the above Lagrangian it is clear that the $\varphi$ component of the momentum is conserved,
 \begin{equation}
-p_\varphi = \frac{\partial L}{\partial \dot{\varphi}} = \mu r^2 \sin^2 \theta \dot{\varphi},
+p_\varphi = \frac{\partial L}{\partial \dot{\varphi}} = \mu r^2 \sin^2 \theta \dot{\varphi} \equiv \mu \ell _z, \label{eq:conservedMomentum1}
 \end{equation}
 and it is identified with the azimuthal component of the total angular momentum. 
-It is also easy to see that the Hamiltonian 
+Similarly, it is also easy to see that the Hamiltonian 
 \begin{equation}
 H = \sum_{j=1} ^3 p_j \dot{x}^j - L  = \frac{1}{2} \mu \dot{\textbf{x}}^2 - \frac{GM\mu }{r} \label{eq:2BodyHamiltonian}
 \end{equation}
-is conserved and that it corresponds to the total energy of the system.
+is also conserved and that it corresponds to the total energy of the system.
 
 
-The total angular momentum of the two-body system, assuming that the particles have no spin, is given by $\textbf{L} = m_1 \textbf{x}_1 \times \dot{ \textbf{x} }_1 + m_2 \textbf{x}_2 \times \dot{ \textbf{x} }_2 = \mu \textbf{x} \times \dot{ \textbf{x} }$ and it is also a constant of motion, i.e. $\frac{d\textbf{L}}{dt}=0$, due to the fact that the acceleration lies in the radial direction (\ref{eq:2BodyEoM}). 
+The total angular momentum of the two-body system, assuming that the particles have no spin, is given by $\mu \boldsymbol{\ell} = m_1 \textbf{x}_1 \times \dot{ \textbf{x} }_1 + m_2 \textbf{x}_2 \times \dot{ \textbf{x} }_2 = \mu \textbf{x} \times \dot{ \textbf{x} }$. The quantity $\boldsymbol{\ell} = \textbf{x} \times \dot{\textbf{x}}$ is known as the specific angular momentum (i.e. angular momentum per unit mass) and it is also a constant of motion, i.e. $\frac{d\boldsymbol{\ell}}{dt}=0$, due to the fact that the acceleration lies in the direction $\textbf{x}$, as shown in equation (\ref{eq:2BodyEoM}). 
 
-Since $\textbf{L}$ is constant and orthogonal to both position and velocity vectors, $\textbf{L}\cdot \textbf{x}  = \textbf{L} \cdot \dot{\textbf{x}} = 0$, the motion of the system lies in a fixed plane that is always perpendicular to the total angular momentum. Introducing a coordinate system with unit vectors $\{ \textbf{i}, \textbf{j}, \textbf{k} \}$  in which the orbit lies in the $XY$ plane, we take $\textbf{L}$ along the $Z$-axis to write
-\begin{equation}
-\textbf{L} = \mu \boldsymbol{\ell}
-\end{equation}
-where
+Since $\boldsymbol{\ell}$ is constant and orthogonal to both position and velocity vectors, $\boldsymbol{\ell}\cdot \textbf{x}  = \boldsymbol{\ell} \cdot \dot{\textbf{x}} = 0$, the motion of the system lies in a fixed plane that is always perpendicular to the total angular momentum. Introducing a coordinate system with unit vectors $\{ \textbf{i}, \textbf{j}, \textbf{k} \}$  in which the orbit lies in the $XY$ plane, we take $\boldsymbol{\ell}$ along the $Z$-axis,
 \begin{equation}
 \boldsymbol{\ell} = \textbf{x} \times \dot{ \textbf{x}} = \ell \textbf{k}, \label{eq:2BodyAngularMomentum}
 \end{equation}
-$\ell = \left| \boldsymbol{\ell} \right| = \left| \textbf{x} \times \dot{\textbf{x}} \right|$ and $\textbf{k}$ is a unit vector in the $Z$-direction. The motion in this plane can be described by taking $\theta=\frac{\pi}{2}$ and using only the polar coordinates $r$ and $\varphi$. Hence, the position vector has components $\textbf{x} = (r \cos \varphi , r \sin \varphi , 0)$, where we are measuring the angle $\varphi$ with respect to the $X$-axis, as usual. 
+$\ell = \left| \boldsymbol{\ell} \right| = \left| \textbf{x} \times \dot{\textbf{x}} \right|$ and $\textbf{k}$ is the unit vector in the $Z$-direction. The motion in this plane can be described by taking $\theta=\frac{\pi}{2}$ and using only the polar coordinates $r$ and $\varphi$. Hence, the position vector has components $\textbf{x} = (r \cos \varphi , r \sin \varphi , 0)$, where we are measuring the angle $\varphi$ with respect to the $X$-axis, as usual. 
 
 However, it is usual to introduce a time dependent basis to describe the motion in which the first vector points from particle $1$ to particle $2$, the second vector lies in the orbital plane and is orthogonal to the first one and the third vector points in the $Z$-direction,
 \begin{equation}
@@ -111,12 +107,12 @@ However, it is usual to introduce a time dependent basis to describe the motion 
 \end{equation}
 
 It is easy to show that these vectors satisfy the relations
-\begin{subequations}
-\begin{align}
+\begin{equation}
+\begin{cases}
 \frac{d \textbf{n}}{d \varphi} =& \boldsymbol{\lambda} \\
 \frac{d \boldsymbol{\lambda}}{d \varphi} = & -\textbf{n}.
-\end{align}
-\end{subequations}
+\end{cases}
+\end{equation}
 
 \begin{exercise}[Position,Velocity and Acceleration]
 \textbf{Position,Velocity and Acceleration Vectors.}
@@ -130,18 +126,16 @@ Show that the position, velocity and acceleration vectors in the time-dependent 
 \end{align}
 \end{subequations}
 \end{exercise}
-
 Comparison of the acceleration in equation (\ref{eq:2BodyAcceleration1}) with the equation (\ref{eq:2BodyEoM}) yields to the conclusion that the factor $r^2 \dot{\varphi}$ is a constant of motion due to the radial behavior of the gravitational interaction. This conserved quantity corresponds to the angular momentum magnitude,
 \begin{equation}
-\ell = r^2 \dot{\varphi}. \label{eq:2BodyAngularMomentum}
+\ell = r^2 \dot{\varphi}, \label{eq:2BodyAngularMomentum}
 \end{equation}
-
-Another conserved quantity is the \textit{Laplace-Runge-Lenz vector} (also called the \textit{eccentricity vector} for reasons that we will show below), defined as 
+as can be proben from equation (\ref{eq:conservedMomentum1}. Another conserved quantity is the \textit{Laplace-Runge-Lenz vector} (also called the \textit{eccentricity vector} for reasons that we will show below), defined as 
 \begin{equation}
 \textbf{e} = \frac{\dot{\textbf{x}} \times \boldsymbol{\ell}}{GM} - \textbf{n}. \label{eq:2BodyLaplaceVector}
 \end{equation}
 
-Due to its construction, it is clear that 
+Due to its definition, it is clear that 
 \begin{equation}
 \boldsymbol{\ell} \cdot \textbf{e} = 0,
 \end{equation}
@@ -156,25 +150,25 @@ Show explicitly that
 \end{equation}
 \end{exercise}
 
-\subsection{Equations of Motion}
+\subsection{Equation of the Trajectory}
 The radial equation of motion is easily obtained from the Hamiltonian (\ref{eq:2BodyHamiltonian}) and (\ref{eq:2BodyVelocity1}) together with (\ref{eq:2BodyAngularMomentum}), giving the first order differential equation
 \begin{equation}
 \frac{1}{2} \dot{r}^2 + \frac{\ell^2}{2r^2}  - \frac{GM}{r} = \mathcal{E},\label{eq:2BodyEnergy}
 \end{equation}
-where we've defined the total energy per unit mass $\mathcal{E} = \frac{H}{\mu}$. Introducing an effective potential energy,
+where we have defined the total energy per unit mass $\mathcal{E} = \frac{H}{\mu}$. Introducing an effective potential energy,
 \begin{equation}
-V_{eff} (r) = \frac{\ell^2}{2r^2}  - \frac{GM}{r}
+V_{\text{eff}} (r) = \frac{\ell^2}{2r^2}  - \frac{GM}{r},
 \end{equation}
 the radial equation can be written as 
 \begin{equation}
-\frac{1}{2} \dot{r}^2 = \mathcal{E} - V_{eff} (r). \label{eq:2BodyEoM1}
+\frac{1}{2} \dot{r}^2 = \mathcal{E} - V_{\text{eff}} (r). \label{eq:2BodyEoM1}
 \end{equation}
 
-Plenty of information about the possible trajectories can be obtained by studying  the function $V_{eff} (r)$. For example, from the plot in Figure \ref{fig:2BodyEffectivePotential} it is possible to note that there exist circular orbits, determined by the condition
+It is possible to obtain information about the trajectories by studying  the function $V_{\text{eff}} (r)$. For example, from the plot in Figure \ref{fig:2BodyEffectivePotential} one can note that there exist circular orbits, determined by the condition
 \begin{equation}
-\left. \frac{dV_{eff}}{dr} \right|_{r=r_c} = 0,
+\left. \frac{dV_{\text{eff}}}{dr} \right|_{r=r_c} = 0.
 \end{equation}
-which gives the value of the orbit radius as $r_c = \frac{\ell^2}{GM}$. By replacing this value in equation (\ref{eq:2BodyEnergy}), we obtain the energy of the particle at the circular orbit,
+By solving this relation for a given value of $\ell$, we obtain the radius of the circular orbit as $r_c = \frac{\ell^2}{GM}$. Replacing this radius in equation (\ref{eq:2BodyEnergy}), we obtain the energy of the particle moving in the circular orbit,
 \begin{equation}
 \mathcal{E}_c = -\frac{GM}{2r_c} = -\frac{G^2 M^2}{2\ell^2}. 
 \end{equation}
@@ -186,12 +180,12 @@ which gives the value of the orbit radius as $r_c = \frac{\ell^2}{GM}$. By repla
 {\label{fig:2BodyEffectivePotential} Typical behavior of the effective potential for the 2-Body system as function of the separation distance $r$ with $\ell \neq 0$. The horizontal doted lines indicate constant values of the total energy per unit mass $\mathcal{E}$. The motion is allowed only in regions in which $\mathcal{E} \geq V_{eff}$ and thus, intersection of the dotted lines with the effective potential curve correspond to return points in the trajectory. The values $\mathcal{E}_1$ and  $\mathcal{E}_2$ correspond to open trajectories (hyperbolic and parabolic motion). The value $\mathcal{E}_3 < 0$ corresponds to elliptic motion and shows two return points: the pericenter $r_p$ (minimum distance) and the apocenter $r_a$ (maximum distance). The particular value of energy $\mathcal{E}_4 = V_{eff}^{min} $ corresponding to the minimum of the effective potential energy, describes a circular orbit with radius $r_c$. }
 \end{figure}
 
-The analytic form of the trajectories can be found by using $\varphi$ as the independent variable instead of the time, i.e. considering $r=r(\varphi)$. It is also usual to introduce a new variable, $u(\varphi)=\frac{1}{r(\varphi)}$. 
+In order to describe more general orbits, the analytic form of the trajectories can be found by considering $\varphi$ as the independent variable (instead of the time) and writing $r=r(\varphi)$.  
 
 \begin{exercise}[Differential Equation of the Trajectory]
 \textbf{Differential Equation of the Trajectory}
 
-Show that the second order differential equation of the trajectory obtained from equation (\ref{eq:2BodyEoM1}) and the new variable $u(\varphi)$ is
+Introduce a new auxiliar variable, $u(\varphi)=\frac{1}{r(\varphi)}$. Show that the second order differential equation of the trajectory given in equation (\ref{eq:2BodyEoM1}), is writen in terms of $u(\varphi)$ as
 \begin{equation}
 u'' + u = \frac{GM}{\ell^2},\label{eq:2BodyTrayectoryEquation}
 \end{equation}
@@ -206,11 +200,11 @@ where
 \begin{equation}
 p = \frac{\ell ^2}{GM} 
 \end{equation}
-is known as the \textit{semi-latus rectum} of the orbit\footnote{The name \textit{semi-latus rectum} comes from the latin words \textit{semi} (half), \textit{latus} (side) and \textit{rectum} (straight). Geometrically, the \textit{latus rectum} is defined as the length of a chord passing through one focus and perpendicular to the major axis. Therefore, the \textit{semi-latus rectum} is one half of this length.} and $e$ and $\omega$ are constants of integration.The constant $e$ defines to the eccentricity of the trajectory and, since we are interested only in elliptic orbits, we will assume that $0\leq e < 1$. On the other hand, the constant $\omega$ defines the angle $\varphi$ at which $r$ achieves a minimum, and therefore it is called the \textit{longitude of the pericenter}. In fact, when $\varphi = \omega$ we obtain the pericenter radius
+is known as the \textit{semi-latus rectum} of the orbit\footnote{The name \textit{semi-latus rectum} comes from the latin words \textit{semi} (half), \textit{latus} (side) and \textit{rectum} (straight). Geometrically, the \textit{latus rectum} is defined as the length of a chord passing through one focus and perpendicular to the major axis. Therefore, the \textit{semi-latus rectum} is one half of this length.} and $e$ and $\omega$ are constants of integration. The constant $e$ defines to the eccentricity of the trajectory and, since we are interested only in elliptic orbits, we will assume that $0\leq e < 1$. On the other hand, the constant $\omega$ defines the angle $\varphi$ at which $r$ achieves a minimum, and therefore it is called the \textit{longitude of the pericenter}. In fact, when $\varphi = \omega$ we obtain the pericenter radius
 \begin{equation}
 r_{p} = \frac{p}{1+e}
 \end{equation}
-while $\varphi=\omega + \pi$ gives the maximum value of the radius or \textit{apocenter},
+while $\varphi=\omega + \pi$ gives the maximum value of the radius (\textit{apocenter}),
 \begin{equation}
  r_{a} = \frac{p}{1-e}.
  \end{equation} 
@@ -226,9 +220,9 @@ Using equations (\ref{eq:2BodyConicEquation}) and (\ref{eq:2BodyAngularMomentum}
 \end{align}
 and replacing this expression in equation (\ref{eq:2BodyEnergy}) gives the energy per unit mass for the elliptic motion as
 \begin{equation}
-\mathcal{E} = -\frac{GM (1-e^2)}{2p} = -\frac{GM}{2a}.
+\mathcal{E} = -\frac{GM (1-e^2)}{2p} = -\frac{GM}{2a},
 \end{equation}
-Similarly, the angular momentum vector per unit mass in equation (\ref{eq:2BodyAngularMomentum}) can be written as
+where the minus sign in the value of the energy denotes that the motion is bound. Similarly, the angular momentum vector per unit mass in equation (\ref{eq:2BodyAngularMomentum}) can be written as
 \begin{equation}
  \boldsymbol{\ell} = \sqrt{GMp} \textbf{k}.
  \end{equation} 
@@ -237,12 +231,25 @@ Similarly, the angular momentum vector per unit mass in equation (\ref{eq:2BodyA
 \begin{exercise}[Magnitude of the Laplace-Runge-Lenz vector]
 \textbf{Magnitude of the Laplace-Runge-Lenz vector}
 
-Show that the Laplace-Runge-Lenz vector for elliptic trajectories can be written as
+Show that the Laplace-Runge-Lenz vector (\ref{eq:2BodyLaplaceVector}), for elliptic trajectories, can be written as
 \begin{equation}
 \textbf{e} = e \left[ \cos (\varphi - \omega) \textbf{n} - \sin (\varphi - \omega) \boldsymbol{\lambda} \right] \label{eq:2BodyLaplaceVector2}
 \end{equation}
 and therefore, this vector always points in the direction of the pericenter of the orbit and its magnitude is equal to the eccentricity of the orbit, $\left| \textbf{e} \right| = e$.
 \end{exercise}
+
+\begin{exercise}[Two Body System: Numerical Solution]
+ \textbf{Two Body System: Numerical Solution}
+ 
+ Using the barycentric frame and the cartesian coordinates $\textbf{x} = (x^1, x^2, x^3)$, write a code that solves the equations of motion (\ref{eq:2BodyEoM}) using an adaptive step Runge-Kutta 4/5 integrator. Include a function that verifies that the conserved quantities (energy and angular momentum) remain constant along the integration domain. Also include a function that plots the obtained orbit in 3-dimensional space.
+
+ As a particular example, integrate the motion of Earth around the Sun using the astronomical data available in Appendix \ref{A:AstronomicalData}.
+
+Hint: Use a units system such that mass is measured in Solar Masses, time is measured in years and distance is measured in Astronomical Units. Using this system, the gravitational constant is simply $G=4\pi^2$
+\end{exercise}
+
+
+
 
 
 \subsection{Time Dependence}\label{sec:TimeDependenceCM}
@@ -250,7 +257,7 @@ A formal integration of the energy equation (\ref{eq:2BodyEoM1}) solves the radi
 \begin{equation}
 \int_{r_p}^r \frac{dr}{\sqrt{2[\mathcal{E} - V_{eff} (r)]}} = t - t_p,
 \end{equation}
-where $t_p$ corresponds to the \textit{time of pericenter passage}. Similarly, using equation (\ref{eq:2BodyAngularMomentum}), it is possible to write the angular velocity as
+where $t_p$ corresponds to the \textit{time of pericenter passage}. Meanwhile, using equation (\ref{eq:2BodyAngularMomentum}), it is possible to write the angular velocity as
  \begin{align}
 \dot{\varphi} &= \sqrt{\frac{GM}{p^3}} \left[ 1+ e \cos (\varphi - \omega) \right]^2 \label{eq:2BodyAngularVelocity}
 \end{align}
@@ -262,25 +269,20 @@ Note that the lower limit in the integral corresponds again to the passage throu
 
 \subsubsection{Kepler's Equation}
 
-We begin this approach by defining two new variables, the \textit{true anomaly} $f = \varphi - \omega$ and the \textit{eccentric anomaly} $E$. Figure \ref{fig:ReferenceCircleandOrbit} illustrates these angular variables and from the geometry of the plot, it is possible to show that these variables are related through the relations
+We begin this approach by defining two new variables, the \textit{true anomaly} $f = \varphi - \omega$ and the \textit{eccentric anomaly} $E$. Figure \ref{fig:ReferenceCircleandOrbit} illustrates these angular variables and, based on the geometry of the plot, it is possible to show that these variables are related through the relations
  \begin{subequations}\label{eq:2BodyEandfRelations1}
  \begin{align}
  \cos E &= \frac{\cos f + e}{1+ e \cos f}\\
  \sin E &= \frac{\sqrt{1-e^2} \sin f}{1+e \cos f}.
  \end{align}
  \end{subequations}
- Equivalently, these expressions can be written as
+These expressions give the relation
  \begin{equation}
  \tan \frac{f}{2} = \sqrt{\frac{1+e}{1-e}} \tan \frac{E}{2} \label{eq:2BodyfandErelation}
  \end{equation}
  which clearly states that at the pericenter, $f=0$, the eccentric anomaly is $E=0$. Also note that $e=0$ implies that $f=E$ for circular motion.
  
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.7\linewidth]{ReferenceCircleandOrbit}
-\caption[Elliptic Orbit in the 2-Body System and the Reference Circle.]
-{\label{fig:ReferenceCircleandOrbit} Elliptic orbit in the 2-body problem. The plot indicates some of the geometrical quantities such as the semi-major axis $a$, the relative distance vector $\textbf{r}$ and the true anomaly $f$. It is also shown the \textit{reference circle}, which coincides with the elliptic orbit both at the pericenter and at the apocenter, and the \textit{Eccentric Anomaly}, $E$.}
-\end{figure} 
+
 
  \begin{exercise}[Eccentric and True Anomalies]
  \textbf{Eccentric and True Anomalies}
@@ -300,8 +302,15 @@ We begin this approach by defining two new variables, the \textit{true anomaly} 
  \end{align}
  \end{subequations}
  \end{exercise}
- 
-In terms of the eccentric anomaly, we can write an alternatives set of equations describing the orbit.In particular, equations (\ref{eq:2BodyConicEquation}), \ref{eq:2BodyTrayectoryEquation}) and (\ref{eq:2BodyAngularMomentum}) become
+
+ \begin{figure}[h]
+\centering
+\includegraphics[width=0.7\linewidth]{ReferenceCircleandOrbit}
+\caption[Elliptic Orbit in the 2-Body System and the Reference Circle.]
+{\label{fig:ReferenceCircleandOrbit} Elliptic orbit in the 2-body problem. The plot indicates some of the geometrical quantities such as the semi-major axis $a$, the relative distance vector $\textbf{r}$ and the true anomaly $f$. It is also shown the \textit{reference circle}, which coincides with the elliptic orbit both at the pericenter and at the apocenter, and the \textit{Eccentric Anomaly}, $E$.}
+\end{figure} 
+
+In terms of the eccentric anomaly, we can write an alternatives set of equations describing the orbit .In particular, equations (\ref{eq:2BodyConicEquation}), \ref{eq:2BodyTrayectoryEquation}) and (\ref{eq:2BodyAngularMomentum}) become
  \begin{subequations}\label{eq:2BodyEquationswithE}
  \begin{align}
  r &= a(1-e\cos E)\\ \label{eq:2BodyPositionwithE}
@@ -314,9 +323,9 @@ In terms of the eccentric anomaly, we can write an alternatives set of equations
  \begin{equation}
 l = \sqrt{\frac{GM}{a^3}} \left( t-t_p \right) =  \left( E - e \sin E \right), \label{eq:2BodyKeplerEquation}
  \end{equation}
-where we defined  the \textit{mean anomaly}, $l$. Using this equation we can obtain the position at each time as follows: 
+where we introduced the \textit{mean anomaly}, $l$. Using this equation, we can obtain the position at each time as follows: 
 \begin{enumerate}
-\item Given a time $t$, we invert Kepler's equation to obtain the eccentric anomaly $E(t)$.
+\item Given a time $t$, we invert Kepler's equation (\ref{eq:2BodyKeplerEquation}) to obtain the eccentric anomaly $E(t)$.
 
 \item Then, we use equation (\ref{eq:2BodyfandErelation}) to obtain the true anomaly $f$ which immediately gives the angular position $\varphi(t)$.
 
@@ -352,10 +361,10 @@ where $l_0$ is the mean anomaly at the epoch. Note that these expressions imply 
 {\label{fig:OrbitalElements} Elliptic Orbit in the 2-body problem shown in 3-dimensional space. The orbital elements $\iota$, $\Omega$ and $\omega$ are shown.}
 \end{figure}
 
-Until now, we've  been working in the orbit plane and we've defined two basis. The first one corresponds to a barycentric inertial frame with basis vectors $\{\textbf{i}, \textbf{j}, \textbf{k}\}$ while the second uses a time-dependent basis given by the vectors $\{ \textbf{n}, \boldsymbol{\lambda} ,\textbf{k} \}$. Now we will consider a more general coordinate system $(x,y,z)$ in which the orbit is no longer in the $xy$ plane (which will be called now the \textit{fundamental plane}) and we will denote the basis for this new system as $\{\textbf{e}_x, \textbf{e}_y, \textbf{e}_z \}$. 
+Until now, we have  been working in the orbital plane using two frames: The first one corresponds to a barycentric inertial frame with basis vectors $\{\textbf{i}, \textbf{j}, \textbf{k}\}$ while the second uses a time-dependent basis given by the vectors $\{ \textbf{n}, \boldsymbol{\lambda} ,\textbf{k} \}$. Now we will consider a more general coordinate system $(x,y,z)$ in which the orbit is no longer in the $xy$ plane (which will be called now the \textit{fundamental plane}) and we will denote the basis for this new system as $\{\textbf{e}_x, \textbf{e}_y, \textbf{e}_z \}$. 
 It is clear that, we will need additional information to completely define the orbit in three-dimensional space. As shown in Figure \ref{fig:OrbitalElements}, we will introduce the \textit{inclination angle}, $\iota$, as the angle between the orbital plane and the fundamental plane\footnote{The inclination can also be defined as the angle between the $z$ axis and the $\textbf{k}$ vector defined before.}.  The line of intersection between the orbital plane and the fundamental plane is called the \textit{line of nodes} and the point along this line in which the trajectory cuts the fundamental plane from below is called the \textit{ascending node}. Also in Figure \ref{fig:OrbitalElements}, it can be seen the angle between the $x$ axis and the line of nodes, which is called the \textit{longitude of the ascending node}, $\Omega$. 
 
-Thus, there are six \textit{orbital elements} or parameters that define completely the orbit,
+Thus, there are six \textit{orbital elements} or parameters that define completely the orbit in 3-dimensional space,
 \begin{itemize}
 \item Principal Elements:
 \begin{enumerate}
@@ -466,10 +475,9 @@ Another interesting transformation is to obtain the components of the eccentrici
  \sin \iota \sin \omega &= \frac{\textbf{e} \cdot \textbf{e}_z}{e} .
  \end{align}
  \end{subequations}
+
  
- \iffalse
- \section{Problems}
- 
+ \begin{exercise}[Sun-Jupiter System]
  \textbf{Sun-Jupiter System}
  
  In this problem, we will consider only the two-body system Sun-Jupiter, ignoring other interactions and corrections.
@@ -492,11 +500,13 @@ Another interesting transformation is to obtain the components of the eccentrici
  \item Obtain the values of the eccentric anomaly and the mean anomaly at this point.
  \end{enumerate}
  \end{enumerate}
- 
+ \end{exercise}
+
+\begin{exercise}[Earth-Moon System]
  \textbf{Earth-Moon System}
  
  In this problem we will consider only the two-body system Earth-Moon, ignoring other interactions and corrections.
- \begin{enumerate}
  \item The mass of the Moon is $m_{Moon} = 0.012300 M_{Earth}$. Find the location of the center of mass of the system as measured from the center of the Earth.
- \end{enumerate}
- \fi
+ \end{exercise}
+
+

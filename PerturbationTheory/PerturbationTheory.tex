@@ -15,18 +15,18 @@ where the Newtonian vectors satisfy the  equations of motion
 \end{subequations}
 where $M=m_1 + m_2$ is the total mass of the system.
 
-In this chapter, we will  introduce a perturbing force per unit mass $\delta \textbf{A}= \frac{\textbf{F}}{\mu}$ which will account for small external influences on the 2-body system.  Using the time dependent basis $(\textbf{n}, \boldsymbol{\lambda}, \textbf{k})$, introduced in (\ref{eq:2BodyTimeDependentBasis}), we write the equation of motion, including the perturbing force, as
+In this chapter, we will  introduce a perturbing force per unit mass $\delta \textbf{A}= \frac{\delta \textbf{F}}{\mu}$ which will account for small external influences on the 2-body system.  Using the time dependent basis $(\textbf{n}, \boldsymbol{\lambda}, \textbf{k})$, introduced in (\ref{eq:2BodyTimeDependentBasis}), we write the equation of motion, including the perturbing force, as
 \begin{equation}
 \ddot{\textbf{x}} = -\frac{GM}{r^2} \textbf{n} + \delta \textbf{A} ,
 \end{equation}
 where $\textbf{n} = \frac{\textbf{x}}{r}$ is the unit vector in the relative radial direction and the components of $\delta \textbf{A}$ are written as
 \begin{equation}
-\delta \textbf{A} = \mathcal{R} \textbf{n} + \mathcal{T} \boldsymbol{\lambda} + \mathcal{W} \textbf{k} \label{eq:PerturbingForce}
+\delta \textbf{A} = \mathcal{S} \textbf{n} + \mathcal{T} \boldsymbol{\lambda} + \mathcal{W} \textbf{k} \label{eq:PerturbingForce}
 \end{equation}
-or
+with the components
 \begin{equation} 
 \begin{cases}
-\mathcal{R} &= \delta \textbf{A} \cdot \textbf{n} \\
+\mathcal{S} &= \delta \textbf{A} \cdot \textbf{n} \\
 \mathcal{T} &=  \delta \textbf{A}  \cdot \boldsymbol{\lambda} \\
 \mathcal{W} &=  \delta \textbf{A}  \cdot \textbf{k} .
 \end{cases} \label{eq:PerturbingForceComponents}
@@ -88,16 +88,15 @@ Consider the eccentricity vector given in equations (\ref{eq:2BodyLaplaceVector}
 Show that its time derivative is 
 \begin{align}
 \frac{d \textbf{e}}{dt} = &\frac{1}{GM}\left[ \delta \textbf{A} \times \boldsymbol{\ell} + \dot{\textbf{x}} \times (\textbf{x} \times \delta \textbf{A}) \right] \notag \\
-= &\frac{1}{GM}\left[ 2\ell \mathcal{T} \textbf{n} - (\ell \mathcal{R} + r \dot{r} \mathcal{T}) \boldsymbol{\lambda} - r\dot{r} \mathcal{W} \textbf{k} \right].
+= &\frac{1}{GM}\left[ 2\ell \mathcal{T} \textbf{n} - (\ell \mathcal{S} + r \dot{r} \mathcal{T}) \boldsymbol{\lambda} - r\dot{r} \mathcal{W} \textbf{k} \right].
 \end{align}
 Also show that this equation implies the relations
 \begin{equation}
-\frac{de}{dt} = \frac{1}{GM}\left[ \ell \sin f \mathcal{R} + \left( 2 \ell \cos f + r \dot{r} \sin f \right)\mathcal{T} \right]
+\frac{de}{dt} = \frac{1}{GM}\left[ \ell \sin f \mathcal{S} + \left( 2 \ell \cos f + r \dot{r} \sin f \right)\mathcal{T} \right]
 \end{equation}
 and
 \begin{align}
-\frac{d}{dt}\left( \frac{\textbf{e}}{e}\right) = &\frac{1}{GMe}\left[ -\ell \cos f \mathcal{R} + \left( 2 \ell \sin f - r \dot{r} \cos f \right)\mathcal{T} \right] \left[ \cos f \textbf{n} + \sin f \boldsymbol{\lambda}\right] \notag \\
-&- \frac{r \dot{r} \mathcal{W}}{GMe} \textbf{k}.
+\frac{d}{dt}\left( \frac{\textbf{e}}{e}\right) = &\frac{1}{GMe}\left[ -\ell \cos f \mathcal{S} + \left( 2 \ell \sin f - r \dot{r} \cos f \right)\mathcal{T} \right] \left[ \cos f \textbf{n} + \sin f \boldsymbol{\lambda}\right] - \frac{r \dot{r} \mathcal{W}}{GMe} \textbf{k}.
 \end{align}
 \end{exercise}
 
@@ -105,18 +104,22 @@ and
 Now we are ready to obtain the time dependence of the orbital elements. Differentiating equations (\ref{eq:2BodyOrbitalElements}) and using the above results, we obtain the differential equations known as \textit{osculating elements} or as \textit{Lagrange's planetary equations},
 \begin{subequations}\label{eq:OsculatingOrbitalElements}
 \begin{align}
-\frac{da}{dt} &= \frac{2}{n \sqrt{1-e^2}} \left[ e \sin f \mathcal{R} + (1+e\cos f) \mathcal{T} \right] \\
-\frac{de}{dt} &= \frac{\sqrt{1-e^2}}{na} \left[ \sin f \mathcal{R} + \frac{2\cos f + e \left( 1 + \cos^2 f \right) }{1 + e\cos f} \mathcal{T} \right] \\
-\frac{d \iota}{dt} &= \frac{\sqrt{1-e^2}}{na} \frac{\cos (f+\omega)}{1+e\cos f} \mathcal{W} \\
-\frac{d \Omega}{dt} &= \frac{\sqrt{1-e^2}}{na} \frac{\sin (f+\omega)}{(1+e\cos f)\sin \iota } \mathcal{W} \\
-\frac{d\omega}{dt} &=\frac{\sqrt{1-e^2}}{nae} \left[ -\cos f \mathcal{R} + \frac{2+e\cos f}{1 + e \cos f} \sin f \mathcal{T} - e  \frac{\sin (f + \omega)}{1 + e \cos f} \cot \iota \mathcal{W} \right] \\
-\frac{dl_0}{dt} &= -\sqrt{1-e^2} \left[ \frac{d\omega}{dt} + \cos \iota \frac{d\Omega}{dt} - \frac{2p}{na^2 (1+e \cos f)} \mathcal{T} \right] ,
+\frac{da}{dt} &= 2\sqrt{\frac{a^3}{GM (1-e^2)}} \left[ e \sin f \mathcal{S} + (1+e\cos f) \mathcal{T} \right] \\
+\frac{de}{dt} &= \sqrt{\frac{p}{GM}} \left[ \sin f \mathcal{S} + \frac{2\cos f + e \left( 1 + \cos^2 f \right) }{1 + e\cos f} \mathcal{T} \right] \\
+\frac{d \iota}{dt} &= \sqrt{\frac{p}{GM}} \frac{\cos (f+\omega)}{1+e\cos f} \mathcal{W} \\
+\frac{d \Omega}{dt} &= \sqrt{\frac{p}{GM}} \frac{\sin (f+\omega)}{(1+e\cos f)\sin \iota } \mathcal{W} \\
+\frac{d\omega}{dt} &=\frac{1}{e}\sqrt{\frac{p}{GM}} \left[ -\cos f \mathcal{S} + \frac{2+e\cos f}{1 + e \cos f} \sin f \mathcal{T} - e  \frac{\sin (f + \omega)}{1 + e \cos f} \cot \iota \mathcal{W} \right] \\
+\frac{dl_0}{dt} &= -\sqrt{1-e^2} \left[ \frac{d\omega}{dt} + \cos \iota \frac{d\Omega}{dt} - \frac{2p}{na^2 (1+e \cos f)} \mathcal{T} \right] .
 \end{align}
 \end{subequations}
-where $n = \sqrt{\frac{GM}{a^3}}$ is the mean motion.  We also include into this set the differential equation for the semi-latus rectum,
+
+We also include into this set the differential equation for the semi-latus rectum,
 \begin{equation}
-\frac{dp}{dt} = \frac{2}{n} \frac{(1-e^2)^{3/2}}{1+e\cos f} \mathcal{T}.
+\frac{dp}{dt} = 2 \sqrt{\frac{p}{GM}} \frac{\mathcal{T}}{1+e\cos f} .
 \end{equation}
+%\begin{equation}
+%\frac{dp}{dt} = \frac{2}{n} \frac{(1-e^2)^{3/2}}{1+e\cos f} \mathcal{T}.
+%\end{equation}
 
 From the relation
 \begin{equation}
@@ -124,7 +127,7 @@ From the relation
  \end{equation} 
 it is possible to obtain, after differentiation, the time evolution equation for the true anomaly,
  \begin{equation}
-\frac{df}{dt} = \frac{n  \left( 1 + e \cos f \right)^2 }{\sqrt{(1-e^2)^3}} \left[ 1 + \frac{(1-e^2)^2}{n^2ae} \left( \frac{\cos f}{(1+e \cos f) ^2} \mathcal{R} - \frac{2+e\cos f}{(1 + e\cos f)^3} \sin f \mathcal{T} \right) \right]. \label{eq:TrueAnomalyOsculatingEquation}
+\frac{df}{dt} = \sqrt{\frac{GM}{p^3}} \left( 1 + e \cos f \right)^2 \left[ 1 + \frac{1}{e}\sqrt{\frac{p}{GM}} \left( \frac{\cos f}{(1+e \cos f) ^2} \mathcal{S} - \frac{2+e\cos f}{(1 + e\cos f)^3} \sin f \mathcal{T} \right) \right]. \label{eq:TrueAnomalyOsculatingEquation}
  \end{equation} 
  
 Similarly, the time variation of the eccentric anomaly is obtained from Kepler's equation (\ref{eq:2BodyKeplerEquation}),
@@ -145,20 +148,33 @@ The time integration over one period can be replaced by an integration with the 
 \end{equation}  
 
 Assuming that both the perturbing force and the changes in the orbital elements are small, the first order approximation of the osculating elements as function of the true anomaly gives the equation
+%\begin{subequations}\label{eq:OsculatingOrbitalElementsinf}
+%\begin{align}
+%\frac{da}{df} &= \frac{2(1-e^2)}{n} \left[ \frac{e \sin f }{(1+e \cos f)^2}\mathcal{R} + \frac{1}{1+e\cos f} \mathcal{T} \right] \\
+%\frac{de}{df} &= \frac{(1-e^2)^2}{n^2a} \left[ \frac{\sin f}{(1+e \cos f)^2} \mathcal{R} + \frac{2\cos f + e \left( 1 + \cos^2 f \right) }{(1 + e\cos f)^3} \mathcal{T} \right] \\
+%\frac{d \iota}{df} &= \frac{(1-e^2)^2}{n^2 a} \frac{\cos (f+\omega)}{(1+e\cos f)^3} \mathcal{W} \\
+%\frac{d \Omega}{df} &= \frac{(1-e^2)^2}{n^2 a}  \frac{\sin (f+\omega)}{(1+e\cos f)^3 \sin \iota } \mathcal{W} \\
+%\frac{d\omega}{df} &=\frac{(1-e^2)^2}{n^2 a e}  \left[ - \frac{\cos f}{(1+e\cos f)^2} \mathcal{R} + \frac{2+e\cos f}{(1 + e \cos f)^3} \sin f \mathcal{T} - e  \frac{\sin (f + \omega)}{(1 + e \cos f)^3} \cot \iota \mathcal{W} \right] \\
+%\frac{dl_0}{df} &= -\sqrt{1-e^2} \left( \frac{d\omega}{df} + \cos \iota \frac{d\Omega}{df} \right) + \frac{2 (1-e^2)^3}{n^2 a (1+e \cos f)^3} \mathcal{T}  ,
+%\end{align}
+%\end{subequations}
 \begin{subequations}\label{eq:OsculatingOrbitalElementsinf}
 \begin{align}
-\frac{da}{df} &= \frac{2(1-e^2)}{n} \left[ \frac{e \sin f }{(1+e \cos f)^2}\mathcal{R} + \frac{1}{1+e\cos f} \mathcal{T} \right] \\
-\frac{de}{df} &= \frac{(1-e^2)^2}{n^2a} \left[ \frac{\sin f}{(1+e \cos f)^2} \mathcal{R} + \frac{2\cos f + e \left( 1 + \cos^2 f \right) }{(1 + e\cos f)^3} \mathcal{T} \right] \\
-\frac{d \iota}{df} &= \frac{(1-e^2)^2}{n^2 a} \frac{\cos (f+\omega)}{(1+e\cos f)^3} \mathcal{W} \\
-\frac{d \Omega}{df} &= \frac{(1-e^2)^2}{n^2 a}  \frac{\sin (f+\omega)}{(1+e\cos f)^3 \sin \iota } \mathcal{W} \\
-\frac{d\omega}{df} &=\frac{(1-e^2)^2}{n^2 a e}  \left[ - \frac{\cos f}{(1+e\cos f)^2} \mathcal{R} + \frac{2+e\cos f}{(1 + e \cos f)^3} \sin f \mathcal{T} - e  \frac{\sin (f + \omega)}{(1 + e \cos f)^3} \cot \iota \mathcal{W} \right] \\
+\frac{da}{df} &= \frac{2p^3}{GM(1-e^2)^2} \left[ \frac{e \sin f }{(1+e \cos f)^2}\mathcal{S} + \frac{1}{1+e\cos f} \mathcal{T} \right] \\
+\frac{de}{df} &= \frac{p^2}{GM} \left[ \frac{\sin f}{(1+e \cos f)^2} \mathcal{S} + \frac{2\cos f + e \left( 1 + \cos^2 f \right) }{(1 + e\cos f)^3} \mathcal{T} \right] \\
+\frac{d \iota}{df} &= \frac{p^2}{GM} \frac{\cos (f+\omega)}{(1+e\cos f)^3} \mathcal{W} \\
+\frac{d \Omega}{df} &= \frac{p^2}{GM} \frac{\sin (f+\omega)}{(1+e\cos f)^3 \sin \iota } \mathcal{W} \\
+\frac{d\omega}{df} &=\frac{p^2}{GMe}  \left[ - \frac{\cos f}{(1+e\cos f)^2} \mathcal{S} + \frac{2+e\cos f}{(1 + e \cos f)^3} \sin f \mathcal{T} - e  \frac{\sin (f + \omega)}{(1 + e \cos f)^3} \cot \iota \mathcal{W} \right] \\
 \frac{dl_0}{df} &= -\sqrt{1-e^2} \left( \frac{d\omega}{df} + \cos \iota \frac{d\Omega}{df} \right) + \frac{2 (1-e^2)^3}{n^2 a (1+e \cos f)^3} \mathcal{T}  ,
 \end{align}
 \end{subequations}
 together with a similar equation for the semi-latus rectum,
 \begin{equation}
-\frac{dp}{df} = \frac{2}{n^2} \frac{(1-e^2)^3}{(1+e\cos f)^3} \mathcal{T} .
+\frac{dp}{df} = \frac{2p^3}{GM} \frac{1}{(1+e\cos f)^3} \mathcal{T} .
 \end{equation}
+%\begin{equation}
+%\frac{dp}{df} = \frac{2}{n^2} \frac{(1-e^2)^3}{(1+e\cos f)^3} %\mathcal{T} .
+%\end{equation}
 
 %%%
 % Osculating Elements using the eccentric anomaly
@@ -228,7 +244,7 @@ In order to incorporate this force as a perturbation to the 2-Body system, we in
 Using the time dependent basis $(\textbf{n}, \boldsymbol{\lambda}, \textbf{k})$ in the plane of the 2-Body system's orbit, we obtain the components of the perturbing force as given in equations (\ref{eq:PerturbingForceComponents}),
 \begin{subequations} \label{eq:PerturbingForceComponentsApprox}
 \begin{align}
-\mathcal{R} &= - \frac{Gm_3 r}{\tilde{r}^3} \left[ 1- 3 (\textbf{n} \cdot \tilde{\textbf{n}})^2 + \Ordof \left( {\frac{r}{\tilde{r}}} \right) \right] \\
+\mathcal{S} &= - \frac{Gm_3 r}{\tilde{r}^3} \left[ 1- 3 (\textbf{n} \cdot \tilde{\textbf{n}})^2 + \Ordof \left( {\frac{r}{\tilde{r}}} \right) \right] \\
 \mathcal{T} &= 3 \frac{Gm_3 r}{\tilde{r}^3}  (\textbf{n} \cdot \tilde{\textbf{n}}) (\tilde{\textbf{n}} \cdot \boldsymbol{\lambda} ) + \Ordof \left( {\frac{r}{\tilde{r}}} \right) \\
 \mathcal{W} &= 3 \frac{Gm_3 r}{\tilde{r}^3}  (\textbf{n} \cdot \tilde{\textbf{n}}) (\tilde{\textbf{n}} \cdot \textbf{k} ) + \Ordof \left( {\frac{r}{\tilde{r}}} \right).
 \end{align}
@@ -253,7 +269,7 @@ and therefore its true anomaly is equal to its mean anomaly,
 Since the Keplerian period of the planet is
 $T = 2\pi \left[ \frac{G(m_1 + m_2)}{r^3} \right]^{-1/2}$, after one period of the planet, the change in the true anomaly of the perturbing body is
 \begin{equation}
-\Delta \tilde{f} = \sqrt{\frac{G(m_1 + m_3)}{\tilde{r}^3}} T = 2\pi \sqrt{ \frac{m_1 + m_3}{m_1 + m_2}} \left( \frac{r}{\tilde{r}} \right)^{3/2} \ll 1,
+\Delta \tilde{f} = \sqrt{\frac{G(m_1 + m_3)}{\tilde{r}^3}} T = 2\pi \sqrt{ \frac{m_1 + m_3}{m_1 + m_2}} \left( \frac{r}{\tilde{r}} \right)^{3/2} \ll 1,\label{eq:periodApprox}
 \end{equation}
 where we have applied the assumption $\tilde{r} \gg r$. This result means that the third body doesn't changes appreciably its position after one orbit of Mercury. 
 
@@ -275,7 +291,7 @@ Similarly, the unitary vector $\tilde{n}$, indicating the direction of the third
 As a result of these assumptions, the components of the perturbing force become
 \begin{subequations}\label{eq:ThirdBodyPerturbingForceComponents}
 \begin{align}
-\mathcal{R} &= - \frac{Gm_3 r}{\tilde{r}^3} \left[ 1- 3 \cos^2 (f + \omega - \tilde{f}) \right] \\
+\mathcal{S} &= - \frac{Gm_3 r}{\tilde{r}^3} \left[ 1- 3 \cos^2 (f + \omega - \tilde{f}) \right] \\
 \mathcal{T} &=- 3 \frac{Gm_3 r}{\tilde{r}^3}  \sin (f + \omega - \tilde{f}) \cos (f + \omega - \tilde{f}) \\
 \mathcal{W} &= 0.
 \end{align}
@@ -310,20 +326,20 @@ Replacing these components in equations (\ref{eq:OsculatingOrbitalElementsinf}) 
 \begin{subequations}\label{eq:PerihelionShiftOrbitalElements}
 \begin{align}
 \Delta a &= 0 \\ 
-\Delta e &= \frac{15 \pi}{2} \frac{G m_3}{n^2 \tilde{r}^3} e \sqrt{1-e^2}  \sin 2 (\omega - \tilde{f}) \\
+\Delta e &= \frac{15 \pi}{2}\frac{m_3}{M} \frac{p^3}{\tilde{r}^3} \frac{e}{(1-e^2)^{5/2}}  \sin 2 (\omega - \tilde{f}) \\
 \Delta \iota &= 0 \\
 \Delta \Omega &= 0 \\ 
-\Delta \omega &=  \frac{3 \pi}{2} \frac{G m_3}{n^2 \tilde{r}^3}   \sqrt{1-e^2} \left[ 1 + 5\cos  2 (\omega - \tilde{f})\right] \\
-\Delta p &= -15 \pi \frac{G m_3 a}{n^2 \tilde{r}^3} e^2  \sqrt{1-e^2}\sin 2(\omega - \tilde{f}).
+\Delta \omega &=  \frac{3 \pi}{2} \frac{m_3}{M} \frac{p^3}{\tilde{r}^3} \frac{1}{(1-e^2)^{5/2}} \left[ 1 + 5\cos  2 (\omega - \tilde{f})\right] \\
+\Delta p &= -15 \pi \frac{m_3}{M} \frac{p^4}{\tilde{r}^3} \frac{e^2}{(1-e^2)^{7/2}} \sin 2(\omega - \tilde{f}).
 \end{align}
 \end{subequations}
 
 \subsubsection{Precession of the Perihelia.}
 Equations (\ref{eq:PerihelionShiftOrbitalElements}) give the change of the orbital elements per obit of the planet. It is easy to see that the longitude of the perihelion is the only one that presents a secular contribution\footnote{The terms depending on $\sin 2(\omega - \tilde{f})$ or $\cos 2(\omega - \tilde{f})$ are periodic contributions that average to zero when calculating over many revolutions. Hence the only secular contribution corresponds to the first term in the $\Delta \omega$ equation.}. It corresponds to a shift in $\omega$ of
 \begin{equation}
-\left( \Delta \omega \right)_{sec} = \frac{3 \pi}{2} \frac{G m_3}{n^2 \tilde{r}^3}  \sqrt{1-e^2} =  \frac{3 \pi}{2} \frac{m_3}{m} \left( \frac{a}{\tilde{r}} \right)^3  \sqrt{1-e^2}
+\left( \Delta \omega \right)_{sec} = \frac{3 \pi}{2} \frac{m_3}{M} \frac{p^3}{\tilde{r}^3} \frac{1}{(1-e^2)^{5/2}} =  \frac{3 \pi}{2} \frac{m_3}{M} \left( \frac{a}{\tilde{r}} \right)^3  \sqrt{1-e^2}
 \end{equation}
-per orbit. As was discussed in the beginning of this section, the greater effect of advance of the perihelion for planets in the Solar System is obtained for Mercury. Using the data from Table \ref{tab:SolarSystemData}, the secular contribution for the advance of the perihelion of Mercury produced by all of the planets of the Solar System, within this approximation, give the values shown in Table \ref{tab:MercuryPerihelionShift}. We also include a column with the calculated values obtained by Le Verrier \cite{LeVerrier1859, Krizek2017} for comparison. The evident difference between our calculations and Le Verrier results ( specially for Earth and Venus' contributions), are due to the approximation $\tilde{r} \gg r$ in equations (\ref{eq:PerturbingForceComponentsApprox}). To obtain a better result for the perihelion advance we need to include higher terms in $\frac{r}{\tilde{r}}$.
+per orbit. As was discussed in the beginning of this section, the greater effect of advance of the perihelion for planets in the Solar System is obtained for Mercury. Using the data from Table \ref{tab:SolarSystemData}, the secular contribution for the advance of the perihelion of Mercury produced by all of the planets of the Solar System, within this approximation, gives the values shown in Table \ref{tab:MercuryPerihelionShift}. We also include a column with the calculated values obtained by Le Verrier \cite{LeVerrier1859, Krizek2017} for comparison. The evident difference between our calculations and Le Verrier results (specially for Earth and Venus' contributions) are due to two facts: the first one corresponds to the approximation $\tilde{r} \gg r$ in equations (\ref{eq:PerturbingForceComponentsApprox}). For example, the contribution due to Earth has $\frac{r}{\tilde{r}}  \sim  0.38$, and therefore, to obtain a better result for the perihelion advance we need to include higher perturbative terms in the expansions. On the other hand, the second source of difference comes from the approximation made in equation (\ref{eq:periodApprox}. The orbital period of Earth is just four times longer than Mercury's and hence, the perturbing body can not be considered as static. 
 
 \begin{table}[h]
 \centering
@@ -378,7 +394,7 @@ We will assume that the perturbing body moves in a circular orbit, defining the 
 Using these vectors, we obtain the components of the perturbing force (\ref{eq:PerturbingForceComponentsApprox}) as
 \begin{subequations}
  \begin{align}
- \mathcal{R} = &-\frac{Gm_3 r}{\tilde{r}^3} \left[ 1 - 3 \cos^2 \tilde{f} \cos^2 (f+\omega) - 3 \cos^2 \iota \sin^2 \tilde{f} \sin^2 (f+\omega) \right. \notag \\
+ \mathcal{S} = &-\frac{Gm_3 r}{\tilde{r}^3} \left[ 1 - 3 \cos^2 \tilde{f} \cos^2 (f+\omega) - 3 \cos^2 \iota \sin^2 \tilde{f} \sin^2 (f+\omega) \right. \notag \\
  &\left. -6 \cos \iota \sin \tilde{f} \cos \tilde{f} \sin (f+\omega) \cos (f+\omega) \right]\\
  \mathcal{T} = &\frac{Gm_3 r}{\tilde{r}^3} \left[ \left( \cos^2 \iota \sin^2 \tilde{f} - \cos^2 \tilde{f} \right) \sin (f+\omega) \cos (f+\omega) \right. \notag \\
  &\left. - \cos \iota \sin \tilde{f} \cos \tilde{f} \left( \sin^2 (f+\omega) -\cos^2 (f+\omega) \right) \right]\\
